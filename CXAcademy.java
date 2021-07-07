@@ -15,4 +15,9 @@ public class CXAcademy
 	{
 		System.out.println("add something")
 	}
+
+	public void add()
+	{
+		System.out.println("add something")
+	}
 }

@@ -1,7 +1,7 @@
 public class SAPCommerce {
 
 	public void addToCart () {
-		System.out.println("Adiciona item ao carrinho");
+		System.out.println ("Adiciona item ao carrinho");
     }
 
 	public void removeItemFromCart () {
@@ -9,4 +9,13 @@ public class SAPCommerce {
     }
 
 
-}
+     public void metodoNovo () {
+ 	System.out.println ("metodoNovo...");
+    }
+
+    public void updateItemFromCart () {
+        System.out.println ("Atualiza item do carrinho");
+    }
+
+ 
+ }

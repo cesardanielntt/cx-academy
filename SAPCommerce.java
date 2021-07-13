@@ -1,10 +1,3 @@
-public class SAPCommerce {
-
-	public void addToCart(){
-		System.out.println("Adiciona item ao carrinho");
-
-		public void removeItemFromCart(){
-			System.out.println("removeItemFromCart")
-		}
-	}
+public void updateItemFromcart() {
+	System.out.println("Atualiza Item ao carrinho")
 }

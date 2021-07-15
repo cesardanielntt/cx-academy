@@ -1,7 +1,3 @@
--- ----------------------------------------------------- --
--- Arquivo para armazenar todos os scripts SQL da aula 1 --
--- ----------------------------------------------------- --
-create database cxacademia
 drop database cxcommerce
 
 create database cxcommerce
@@ -61,6 +57,7 @@ INSERT INTO cliente (cpf, nome) VALUES ('18505318526', 'Adriana'), ('24710483619
 
 SELECT * FROM endereco
 
+
 INSERT INTO endereco (cliente_id, cep, logradouro, numero, bairro, cidade, uf) VALUES ('1', '69620970', 'Praça São Cristovão', '32', 'Centro', 'Amaturá', 'AM');
 INSERT INTO endereco (cliente_id, cep, logradouro, numero, bairro, cidade, uf) VALUES ('1', '69931970', 'Rua Ocimar Tessinari', '07', 'Conquista', 'Capixaba', 'AC');
 
@@ -100,17 +97,18 @@ INSERT INTO preco (cliente_id, produto_id, valor) values ('2', '6', '480.00');
 INSERT INTO preco (cliente_id, produto_id, valor) values ('1', '6', '530.00');
 INSERT INTO preco (cliente_id, produto_id, valor) values ('3', '6', '585.50');
 
-select * from carrinho
 
-INSERT INTO carrinho (dataHora, total, cliente_id) values ('2021-08-15 16:00:00',0, (SELECT id FROM cliente WHERE nome = 'Adriana'));
-INSERT INTO carrinho (DataHora, total, cliente_id) values ('2021-03-14 20:00:00',0, (SELECT id FROM cliente WHERE nome = 'André'));
-INSERT INTO carrinho (dataHora, total, cliente_id) values ('2021-02-08 08:00:00',0, (SELECT id FROM cliente WHERE nome = 'Cristina'));
+
+
+INSERT INTO carrinho (datahora, total, cliente_id) values ('2007/07/12 11:50:00', '0', '2');
+INSERT INTO carrinho (datahora, total, cliente_id) values ('2014/04/08 16:30:00', '0', '1');
+INSERT INTO carrinho (datahora, total, cliente_id) values ('2009/03/18 09:20:00', '0', '3');
 
 select * from item;
 
 INSERT INTO item (quantidade, total, produto_id, preco_id, carrinho_id) values ('2', 0, '1', '1', '1'), ('2', 0, '6', '6', '2');
 insert into item (quantidade, total, produto_id, preco_id, carrinho_id) values ('3', 0, '2', '2', '2'), ('1', 0, '4', '4', '3');
-insert into item (quantidade, total, produto_id, preco_id, carrinho_id) values ('1', 0, '5', '5', '3'), ('3', 0, '2', '2', '1');
+insert into item (quantidade, total, produto_id, preco_id, carrinho_id) values ('1', 0, '5', '5', '2'), ('3', 0, '2', '2', '2');
 
 UPDATE item i
 JOIN carrinho c ON c.id = i.carrinho_id
@@ -118,48 +116,39 @@ JOIN cliente cl ON c.cliente_id = cl.id
 JOIN preco p ON i.preco_id = p.id
 SET i.total = i.quantidade * p.valor;
 
-SET SQL_SAFE_UPDATES = 0;
-
 select * from item;
+
+SET SQL_SAFE_UPDATES = 0;
 
 UPDATE carrinho c, (SELECT carrinho_id, SUM(total) AS total
 FROM item GROUP BY carrinho_id) AS i
 SET c.total = i.total
 WHERE c.id = i.carrinho_id;
 
-SELECT p.nome as produto, i.quantidade as quantidade, pr.valor as ValorUnitario, i.total as valortotal
+SET SQL_SAFE_UPDATES = 0;
+
+select p.nome, p.preco, i.quantidade, i.total, i.carrinho_id
+from produto p
+Inner join item i
+on p.id = i.produro_id;
+
+select p.nome, pr.valor, i.quantidade,i.total,i.carrinho_id
+FROM produto p
+inner join item i
+on p.id = i.produto_id
+inner join preco pr
+on p.id = pr.produto_id
+limit 1;
+
+SELECT p.produto as produto, i.quantidade as quantidade, pr.preco as ValorUnitario, i.total as valortotal
 FROM produto p, item i, preco pr, carrinho c, cliente cl
-WHERE c.cliente_id = 1
+WHERE c.cliente_id = 1 
 AND c.cliente_id = c.id
 AND p.id = pr.produto_id 
 AND cl.id = pr.cliente_id
 AND i.produto_id = p.id 
-AND i.preco_id = pr.id 
+AND i.preço_id = pr.id 
 AND i.carrinho_id = c.id;
-
-select i.quantidade, p.nome as produto 
-from item i
-inner join produto p 
-on p.id = i.produto_id 
-where quantidade > 0 order by quantidade
-desc limit 1;
-
-select sum(total), cliente_id from carrinho group by cliente_id
-order by sum(cliente_id) desc limit 1;
-
-SELECT i.quantidade, i.total, p.nome 
-From item i 
-INNER JOIN produto p 
-on p.id = i.produto_id 
-WHERE quantidade > 0 order by total
-
-
-
-
-
-
-
-
 
 
 

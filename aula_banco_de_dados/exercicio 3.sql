@@ -56,38 +56,35 @@ foreign key (carrinho_id) references carrinho(id)
 );
 
 insert into cliente (cpf,nome)
-values ('12345678901', 'Leandro'),('10987654321', 'João'),('67891234567','Maria');
-select * from cliente;
+values ('12345678901', 'Leandro'),
+('10987654321', 'João'),('67891234567','Maria');
 
 insert into endereco(cep, logradouro,numero,bairro,cidade,uf,cliente_id)
 values ('12341','Emil Gaston','463','Cidade Jardim','Rio Braco','AC',3),
-	('3213','Camelias','432','Pompeia','Rio de Janeiro','RJ',3);
+('3213','Camelias','432','Pompeia','Rio de Janeiro','RJ',3);
 select * from endereco;
 
 insert into produto (sku, nome)
 values('123','lapis'),
-	('435','borracha'),
-	('432','caderno'),	
-	('234','caneta'),
-	('789','mochila'),
-	('980','apontador');
-select * from produto;
+('435','borracha'),('432','caderno'),	
+('234','caneta'),('789','mochila'),
+('980','apontador');
 
 insert into preco(valor, produto_id, cliente_id)
-values('30.50',4,1),('29.99',4,2),('31.99',4,3),('32.50',5,1),('36.99',5,2),('22.95',5,3),('42.85',6,1),('45.00',6,2),('43.50',6,3);
-select*from preco;
+values('30.50',4,1),
+('29.99',4,2),('31.99',4,3),
+('32.50',5,1),('36.99',5,2),
+('22.95',5,3),('42.85',6,1),
+('45.00',6,2),('43.50',6,3);
 
 alter table carrinho
 change column daathora datahora datetime;
-select * from carrinho;
 
 insert into carrinho (datahora,total,cliente_id)
 values ('2021-07-15 15:30','2',2);
 
 insert into item (quantidade, produto_id, preco_id,carrinho_id)
 values ('1', 4, 10, 2);
-
-select * from item;
 
 -- total item
 UPDATE item i
@@ -102,18 +99,24 @@ UPDATE carrinho c, (SELECT carrinho_id, SUM(total) AS total
  SET c.total = i.total
  WHERE c.id = i.carrinho_id;
 
-select * from item;
-select * from produto;
-select * from cliente;
-select * from carrinho;
-select * from preco;
+-- 11 - itens do cliente 1
+select p.nome, i.quantidade, pr.valor, i.total 
+from produto p join item i on p.id = i.produto_id
+join preco pr on pr.id = i.preco_id
+where pr.cliente_id = "1";
 
-
--- 11 -feito
-select p.nome, pr.valor, i.quantidade, i.total, i.carrinho_id
+-- 12 produto mais vendido
+select p.nome, pr.valor, i.quantidade, i.total
 from produto p
-inner join item i 
-on p.id = i.produto_id
-inner join preco pr
-on p.id = pr.produto_id
-limit 1;
+inner join item i on p.id = i.produto_id
+inner join preco pr on p.id = pr.produto_id
+limit 1; 
+
+-- 13 
+select ct.nome, max(c.total) as valor_da_compra
+from cliente ct, carrinho c
+where ct.id = c.cliente_id;
+
+-- 14
+select p.id, i.quantidade , i.total  from item i, produto p
+where i.produto_id = p.id; 

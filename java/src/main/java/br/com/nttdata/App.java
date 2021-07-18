@@ -7,8 +7,8 @@ import java.util.List;
 
 public class App {
 
-    static String meuNome = "Leandro";
-    static String sobreNome = "Rocha";
+//    static String meuNome = "Leandro";
+//    static String sobreNome = "Rocha";
 
     // metodo de inicialização do projeto
     //declarar um metodo puclico estatico não retorna nada e tem o nome main
@@ -35,19 +35,19 @@ public class App {
 
         for (Pessoa item: pessoas){
             System.out.println(item.getNome());
+            System.out.println(item.getSobreNome());
+            System.out.println(item.getEmail());
+            System.out.println(item.getIdade());
         }
-
-
-
-
 
     }
 
+    /*
     //metodo publico e estatico que vai retornar um valor double
     public static double soma(double valor1, double valor2){
         return valor1 + valor2;
     }
-    /*
+
     soma = +
     subtração = -
     divisão = /

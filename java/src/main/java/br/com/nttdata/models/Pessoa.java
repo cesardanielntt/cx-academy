@@ -5,7 +5,7 @@ public class Pessoa {
     private String sobreNome;
     private String email;
     int idade;
-    //private garante q as informações não sejam lidas só armazena
+    //private: faz com que as informações não possam ser lidas, só armazenadas
 
     public Pessoa(String nome){
         this.nome = nome;
@@ -13,6 +13,7 @@ public class Pessoa {
 
     //alt + insert > getter e setter - selecionar as linhas desejadas
     // para criar automaticamente as linhas abaixo
+    //converte os dados privados inseridos em um formato legivel
     public String getNome() {
         return nome;
     }

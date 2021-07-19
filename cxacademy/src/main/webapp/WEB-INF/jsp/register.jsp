@@ -12,5 +12,23 @@
 </head>
 <body>
     <h2>Register Page</h2>
+    <form action="" method="post">
+        <div class="row">
+            <label for="name" >Insira seu nome</label>
+            <input type="text" name="name" placeholder="Nome">
+
+        </div>
+        <div class="row">
+            <label for="last-name" >Insira seu sobrenome</label>
+            <input type="email" name="last-name" placeholder="Sobrenome">
+
+        </div>
+        <div class="row">
+            <label for="age" >Insira sua idade</label>
+            <input type="number" name="age" placeholder="Idade">
+
+        </div>
+        <input type="submit" value="Enviar">
+    </form>
 </body>
 </html>

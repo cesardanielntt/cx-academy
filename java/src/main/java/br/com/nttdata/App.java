@@ -1,6 +1,8 @@
 package br.com.nttdata;
 
 import br.com.nttdata.models.Pessoa;
+import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,29 +17,39 @@ public class App {
 
     public static void main(String[] args){
 
-        Pessoa pessoa = new Pessoa("Lucas");
+        PessoaFisica pessoa = new PessoaFisica();
+        pessoa.setNome("Lucas");
         pessoa.setSobreNome("Silva");
         pessoa.setEmail("teste@gmail.com");
         pessoa.setIdade(16);
         //System.out.println(pessoa.toString());
 
-        Pessoa pessoa2 = new Pessoa("Leandro");
+        PessoaFisica pessoa2 = new PessoaFisica();
+        pessoa2.setNome("Leandro");
         pessoa2.setSobreNome("Rocha");
         pessoa2.setEmail("leandro.r327@gmail.com");
         pessoa2.setIdade(19);
-        //System.out.println(pessoa2.toString());
+
+        PessoaJuridica pj1 = new PessoaJuridica();
+        pj1.setNome("Pessoa juridica");
+        pj1.setEmail("pj1@teste.com");
+        pj1.setCnpj("45.3423.11243.114");
 
         //criar uma lista de pessoas
-
+        //vai mostrar os campos em comum das classes
         List<Pessoa> pessoas = new ArrayList<>();
         pessoas.add(pessoa);
         pessoas.add(pessoa2);
+        pessoas.add(pj1); //adicionou pessoa juridica à lista pesoas
 
         for (Pessoa item: pessoas){
-            System.out.println(item.getNome());
-            System.out.println(item.getSobreNome());
-            System.out.println(item.getEmail());
-            System.out.println(item.getIdade());
+            System.out.println(item);
+            //se o item vier da instancia pessoa fisica
+            if(item instanceof PessoaFisica){
+                System.out.println(((PessoaFisica) item).getSobreNome());
+            }else if(item instanceof PessoaJuridica){
+                System.out.println(((PessoaJuridica) item).getCnpj());
+            }
         }
 
     }

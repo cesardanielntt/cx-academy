@@ -1,0 +1,5 @@
+br\com\nttdata\App.class
+br\com\nttdata\models\Pessoa.class
+br\com\nttdata\controllers\PessoaCadastroContoller.class
+br\com\nttdata\models\PessoaFisica.class
+br\com\nttdata\models\PessoaJuridica.class

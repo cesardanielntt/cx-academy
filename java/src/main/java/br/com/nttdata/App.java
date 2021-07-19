@@ -1,8 +1,9 @@
 package br.com.nttdata;
 
 import br.com.nttdata.models.Pessoa;
+import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 
-import java.awt.peer.SystemTrayPeer;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,16 +11,26 @@ public class App {
 
     public static void main(String args[]) {
 
-        Pessoa p = new Pessoa("Pedro", "Alves", "pedro@gmail.com",21);
+        PessoaFisica pf = new PessoaFisica();
+        Pessoa a = new PessoaJuridica();
 
-        Pessoa p2 = new Pessoa("Lucas", "Oliveira", "lucas@gmail.com", 19);
+        pf.setNome("Pedro");
+        pf.setSobrenome("Alves");
+        pf.setEmail("pedro@email.com");
+        pf.setIdade(21);
+
+        PessoaJuridica pj = new PessoaJuridica();
+
+        pj.setNome("Pessoa Juridica");
+        pj.setEmail("email@teste.com");
+        pj.setCnpj("123456789");
 
         List<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(p);
-        pessoas.add(p2);
+        pessoas.add(pf);
+        pessoas.add(pj);
 
-        for(Pessoa pe: pessoas){
-            System.out.println(pe.toString());
+        for(Pessoa p: pessoas){
+            System.out.println(p.toString());
         }
     }
 }

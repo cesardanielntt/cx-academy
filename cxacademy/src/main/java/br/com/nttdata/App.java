@@ -1,6 +1,7 @@
 package br.com.nttdata;
-
 import br.com.nttdata.models.Pessoa;
+import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,17 +10,40 @@ public class App {
     public static void main (String[] args) {
 
 
-        Pessoa person = new Pessoa("Leandro");
+        PessoaFisica person = new PessoaFisica();
+        person.setId("1");
+        person.setName("Leandro");
         person.setLastName("Rowling");
         person.setEmail("teste@gmail.com");
+        person.setCpf("11111111111");
         person.setAge(19);
-        System.out.println(person.toString());
 
-        Pessoa person2 = new Pessoa("Lucas");
+        PessoaFisica person2 = new PessoaFisica();
+        person2.setId("2");
+        person2.setName("Mateus");
         person2.setLastName("Vinular");
         person2.setEmail("teste2@gmail.com");
+        person2.setCpf("22222222222");
         person2.setAge(51);
-        System.out.println(person2.toString());
+
+        PessoaJuridica person3 = new PessoaJuridica();
+        person3.setName("Empresa Boa Mesmo ltda.");
+        person3.setCnpj("11111111111111");
+        person3.setEmail("hr@empresa.com");
+        person3.setId("3");
+
+        List<Pessoa> peopleList = new ArrayList<>();
+        peopleList.add(person);
+        peopleList.add(person2);
+        peopleList.add(person3);
+
+        for(Pessoa item: peopleList){
+            if (item instanceof PessoaFisica) {
+                System.out.println(((PessoaFisica)item).getLastName());
+            }else if(item instanceof PessoaJuridica) {
+                System.out.println(((PessoaJuridica)item).getCnpj());
+            }
+        }
 
 
 

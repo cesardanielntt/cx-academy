@@ -1,29 +1,24 @@
 package br.com.nttdata.models;
 
 public class Pessoa {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private int age;
+    private String name;
+    protected String id;
+    protected String email;
 
-    public Pessoa(String firstName) {
-        this.firstName = firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public String getId() {
+        return id;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getEmail() {
@@ -34,21 +29,12 @@ public class Pessoa {
         this.email = email;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     @Override
     public String toString() {
         return "Pessoa{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "name='" + name + '\'' +
+                ", id='" + id + '\'' +
                 ", email='" + email + '\'' +
-                ", age=" + age +
                 '}';
     }
 }

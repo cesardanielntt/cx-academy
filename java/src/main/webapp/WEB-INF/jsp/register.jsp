@@ -13,7 +13,7 @@
 <body>
     <h1>Pagina de cadastro</h1>
 
-    <form action="" method="post">
+    <form action="${pageContext.servletContext.contextPath}/pages/register" method="post">
         <div class="row">
             <label for="nome">Nome</label>
             <input type="text" name="nome" placeholder="Digite seu nome" />

@@ -4,4 +4,32 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>primeiro-servelet</servlet-name>
+    <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+
+    <init-param>
+      <param-name>jersey.config.server.provider.packages</param-name>
+      <param-value>
+        br.com.nttdata.controllers
+      </param-value>
+    </init-param>
+    <init-param>
+      <param-name>jersey.config.server.provider.classnames</param-name>
+      <param-value>org.glassfish.jersey.server.mvc.jsp.JspMvcFeature</param-value>
+    </init-param>
+
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>
+      primeiro-servelet
+    </servlet-name>
+    <url-pattern>
+      /pages/*
+    </url-pattern>
+  </servlet-mapping>
+
 </web-app>

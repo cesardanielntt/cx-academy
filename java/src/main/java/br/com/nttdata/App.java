@@ -1,7 +1,8 @@
 package br.com.nttdata;
 
-
 import br.com.nttdata.models.Pessoa;
+import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,26 +11,37 @@ public class App {
 
     public static void main(String[] args) {
 
-        Pessoa pessoa = new Pessoa("Ramon");
+        PessoaFisica pessoa = new PessoaFisica();
 
         pessoa.setNome("Jose");
         pessoa.setSobrenome("Silva");
         pessoa.setEmail("jose@gmail.com");
         pessoa.setIdade(12);
 
-        Pessoa pessoa2 = new Pessoa("Ramons");
+        PessoaFisica pessoa2 = new PessoaFisica();
+        pessoa2.setNome("hehe");
         pessoa2.setSobrenome("Chico");
         pessoa2.setEmail("Ramonsilva@gmail.com");
         pessoa2.setIdade(15);
 
+        PessoaJuridica pj1 = new PessoaJuridica();
+        pj1.setNome("Pessoa Juridica");
+        pj1.setEmail("pj1@teste.com");
+        pj1.setCnpj("185.8258.258.255");
+
+
+
         List<Pessoa> pessoas = new ArrayList<>();
         pessoas.add(pessoa);
         pessoas.add(pessoa2);
-
-
+        pessoas.add(pj1);
 
         for(Pessoa item: pessoas) {
-            System.out.println(item.getNome());
+            if(item instanceof PessoaFisica) {
+                System.out.println(((PessoaFisica) item).getSobrenome());
+            } else {
+                System.out.println(((PessoaJuridica) item).getCnpj());
+            }
         }
     }
 

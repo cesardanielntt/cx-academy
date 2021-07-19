@@ -1,24 +1,25 @@
 package br.com.nttdata.models;
 
 public class Pessoa {
-    String nome;
-    String sobrenome;
-    String email;
-    int idade;
+    protected String id;
+    protected String nome;
+    protected String sobrenome;
+    protected String email;
 
-
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "nome='" + nome + '\'' +
-                ", sobrenome='" + sobrenome + '\'' +
-                ", email='" + email + '\'' +
-                ", idade=" + idade +
-                '}';
+    public String getId() {
+        return id;
     }
 
-    public Pessoa(String nome) {
-        this.nome = nome;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getNome() {
@@ -37,19 +38,13 @@ public class Pessoa {
         this.sobrenome = sobrenome;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
+    @Override
+    public String toString() {
+        return "Pessoa{" +
+                "id='" + id + '\'' +
+                ", nome='" + nome + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

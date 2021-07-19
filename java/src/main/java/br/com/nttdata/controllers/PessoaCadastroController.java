@@ -1,11 +1,10 @@
 package br.com.nttdata.controllers;
 
 
+import br.com.nttdata.data.CadastroForm;
 import org.glassfish.jersey.server.mvc.Viewable;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 
 @Path("register")
@@ -15,6 +14,13 @@ public class PessoaCadastroController {
     @Produces(MediaType.TEXT_HTML)
     public Viewable getPage() {
         return new Viewable("/WEB-INF/jsp/register.jsp");
+    }
+
+    @POST
+    public String register(@BeanParam CadastroForm form){
+        System.out.println(form.getNome());
+        return "Funcionou";
+
     }
 
 }

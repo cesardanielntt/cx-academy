@@ -1,4 +1,4 @@
-package br.com.nttdata;
+/*package br.com.nttdata;
 
 import br.com.nttdata.models.Pessoa;
 import br.com.nttdata.models.PessoaFisica;
@@ -8,26 +8,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    final static String meuNome = "Lucas";
+    final static String meuNome = "Douglas";
 
     public static void main(String[] args) {
 
         PessoaFisica pessoa = new PessoaFisica();
-        pessoa.setNome("Lucas");
-        pessoa.setSobrenome("Kulik");
-        pessoa.setEmail("lucas.chropacz@nttdata.com");
+        pessoa.setNome("Douglas");
+        pessoa.setSobrenome("Almeida");
+        pessoa.setEmail("douglas.almeida02@hotmail.com");
         pessoa.setIdade(24);
 
         PessoaFisica pessoa2 = new PessoaFisica();
-        pessoa2.setNome("Cleber");
-        pessoa2.setSobrenome("Teste");
-        pessoa2.setEmail("teste@teste.com");
-        pessoa2.setIdade(32);
+        pessoa2.setNome("João");
+        pessoa2.setSobrenome("Henrique");
+        pessoa2.setEmail("joao.henrique@gmail.com");
+        pessoa2.setIdade(45);
 
         PessoaJuridica pj1 = new PessoaJuridica();
         pj1.setNome("Pessoa Jurídica");
         pj1.setEmail("pj@teste.com");
-        pj1.setCnpj("53.178.531/0001-35");
+        pj1.setCnpj("28.114.541/0001-41");
 
         List<Pessoa> pessoas = new ArrayList<>();
         pessoas.add(pessoa);
@@ -52,7 +52,7 @@ public class App {
     }
 
     public static void fors() {
-        String sobrenome = "Kulik";
+        String sobrenome = "Almeida";
 
         List<String> numerais = new ArrayList<>();
         numerais.add(meuNome);
@@ -79,4 +79,4 @@ public class App {
         }
     }
 
-}
+}*/

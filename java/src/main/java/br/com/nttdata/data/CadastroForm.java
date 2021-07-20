@@ -4,20 +4,20 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import javax.ws.rs.FormParam;
-import javax.xml.transform.Source;
 
-public class CadastroForm implements Source {
+public class CadastroForm {
+
     @FormParam("nome")
-    @Size(min = 3, max = 25, message = "O nome é obrigatorio!")
+    @Size(min = 3, max = 25, message = "O nome é obrigatório!")
     private String nome;
 
-    @FormParam("sobreNome")
-    @Size(min = 3, max = 25, message = "O sobreNome é obrigatorio!")
-    private String sobreNome;
+    @FormParam("sobrenome")
+    @Size(min = 3, max = 25, message = "O sobrenome é obrigatório!")
+    private String sobrenome;
 
     @FormParam("email")
-    @Email(message = "email invalido!")
-    @NotEmpty(message = "email é obrigatorio")
+    @Email(message = "E-mail inválido!")
+    @NotEmpty(message = "E-mail obrigatório!")
     private String email;
 
     @FormParam("idade")
@@ -31,12 +31,12 @@ public class CadastroForm implements Source {
         this.nome = nome;
     }
 
-    public String getSobreNome() {
-        return sobreNome;
+    public String getSobrenome() {
+        return sobrenome;
     }
 
-    public void setSobreNome(String sobreNome) {
-        this.sobreNome = sobreNome;
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
     }
 
     public String getEmail() {
@@ -53,15 +53,5 @@ public class CadastroForm implements Source {
 
     public void setIdade(int idade) {
         this.idade = idade;
-    }
-
-    @Override
-    public void setSystemId(String systemId) {
-
-    }
-
-    @Override
-    public String getSystemId() {
-        return null;
     }
 }

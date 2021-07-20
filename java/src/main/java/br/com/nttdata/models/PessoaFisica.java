@@ -1,16 +1,9 @@
 package br.com.nttdata.models;
 
 public class PessoaFisica extends Pessoa {
-    private String nome;
     private String sobrenome;
+    private int idade;
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
     public String getSobrenome() {
         return sobrenome;
@@ -20,6 +13,15 @@ public class PessoaFisica extends Pessoa {
         this.sobrenome = sobrenome;
     }
 
-    public void setIdade(int i) {
+    public String nomeCompleto(){
+        return this.nome+" "+this.sobrenome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
     }
 }

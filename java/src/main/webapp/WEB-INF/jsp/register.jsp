@@ -12,23 +12,35 @@
     <jsp:include page="header.jsp"/>
 </head>
 <body>
-<h1 style="text-align: center">Pagina de Cadastro</h1>
+<h1 style="text-align: center">Página de Cadastro</h1>
+
 <form action="${pageContext.servletContext.contextPath}/pages/register" method="POST">
     <div class="row">
         <label for="nome">Nome</label>
         <input type="text" name="nome" placeholder="Digite seu Nome"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="nome"/>
+        </jsp:include>
     </div>
     <div class="row">
-        <label for="sobrenome">sobrenome</label>
-        <input type="text" name="Sobrenome" placeholder="Digite seu SobreNome"/>
+        <label for="sobrenome">Sobrenome</label>
+        <input type="text" name="sobrenome" placeholder="Digite seu Sobrenome"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="sobrenome"/>
+        </jsp:include>
     </div>
     <div class="row">
-        <label for="email">email</label>
-        <input type="text" name="email" placeholder="Digite email"/>
-    </div><div class="row">
-        <label for="idade">idade</label>
-        <input type="text" name="idade" placeholder="Digite sua idade"/>
+        <label for="email">E-mail</label>
+        <input type="text" name="email" placeholder="Digite seu E-mail"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="email"/>
+        </jsp:include>
     </div>
+    <div class="row">
+        <label for="idade">Idade</label>
+        <input type="number" name="idade" placeholder="Digite sua Idade"/>
+    </div>
+
     <button type="submit">Enviar</button>
 </form>
 </body>

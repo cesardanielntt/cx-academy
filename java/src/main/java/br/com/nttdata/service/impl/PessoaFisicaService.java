@@ -8,12 +8,10 @@ import java.util.List;
 
 public class PessoaFisicaService implements PessoaService {
 
-
     @Override
     public void criarPessoa(PessoaFisica pessoa) {
         PessoaSingleton.getInstance().getData().add(pessoa);
     }
-
 
     @Override
     public List<PessoaFisica> listarPessoas() {

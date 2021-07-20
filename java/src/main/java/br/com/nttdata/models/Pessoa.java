@@ -3,7 +3,8 @@ package br.com.nttdata.models;
 public class Pessoa {
     protected String id;
     protected String email;
-    private String nome;
+    protected String nome;
+    protected Endereco endereco;
 
     public String getNome() {
         return nome;
@@ -27,6 +28,14 @@ public class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     @Override

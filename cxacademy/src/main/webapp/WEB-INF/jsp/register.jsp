@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>Register</title>
+    <jsp:include page="header.jsp"></jsp:include>
 </head>
 <body>
     <h2>Register Page</h2>

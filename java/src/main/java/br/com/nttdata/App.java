@@ -3,6 +3,7 @@ package br.com.nttdata;
 import br.com.nttdata.models.Pessoa;
 import br.com.nttdata.models.PessoaFisica;
 import br.com.nttdata.models.PessoaJuridica;
+import br.com.nttdata.singleton.PessoaSingleton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,26 +25,40 @@ public class App {
         pessoa2.setEmail("teste@teste.com");
         pessoa2.setIdade(32);
 
-        PessoaJuridica pj1 = new PessoaJuridica();
-        pj1.setNome("Pessoa Jurídica");
-        pj1.setEmail("pj@teste.com");
-        pj1.setCnpj("53.178.531/0001-35");
 
-        List<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(pessoa);
-        pessoas.add(pessoa2);
-        pessoas.add(pj1);
+        PessoaSingleton.getInstance().getData().add(pessoa);
+        PessoaSingleton.getInstance().getData().add(pessoa2);
 
-        for (Pessoa item : pessoas) {
-            if(item instanceof PessoaFisica){
-                System.out.println(((PessoaFisica) item).getSobrenome());
-            }else if(item instanceof PessoaJuridica){
-                System.out.println(((PessoaJuridica) item).getCnpj());
-            }
-        }
+        lerPessoas();
+
+
+//        PessoaJuridica pj1 = new PessoaJuridica();
+//        pj1.setNome("Pessoa Jurídica");
+//        pj1.setEmail("pj@teste.com");
+//        pj1.setCnpj("53.178.531/0001-35");
+//
+//        List<Pessoa> pessoas = new ArrayList<>();
+//        pessoas.add(pessoa);
+//        pessoas.add(pessoa2);
+//        pessoas.add(pj1);
+//
+//        for (Pessoa item : pessoas) {
+//            if(item instanceof PessoaFisica){
+//                System.out.println(((PessoaFisica) item).getSobrenome());
+//            }else if(item instanceof PessoaJuridica){
+//                System.out.println(((PessoaJuridica) item).getCnpj());
+//            }
+//        }
 
 
         //fors();
+    }
+
+
+    public static void lerPessoas() {
+        for (PessoaFisica item : PessoaSingleton.getInstance().getData()) {
+            System.out.println(item.getNome());
+        }
     }
 
 

@@ -9,23 +9,24 @@
 <html>
 <head>
     <title>Title</title>
+    <jsp:include page="header.jsp"/>
 </head>
 <body>
-<h1>Pagina de Cadastro</h1>
-<form> action="${pageContext.servletContext.contextPath}/pages/register" method="POST">
-    <div> class="row">
-        <label> for="nome">Nome</label>
+<h1 style="text-align: center">Pagina de Cadastro</h1>
+<form action="${pageContext.servletContext.contextPath}/pages/register" method="POST">
+    <div class="row">
+        <label for="nome">Nome</label>
         <input type="text" name="nome" placeholder="Digite seu Nome"/>
     </div>
-    <div> class="row">
-        <label> for="sobrenome">sobrenome</label>
+    <div class="row">
+        <label for="sobrenome">sobrenome</label>
         <input type="text" name="Sobrenome" placeholder="Digite seu SobreNome"/>
     </div>
-    <div> class="row">
-        <label> for="email">email</label>
+    <div class="row">
+        <label for="email">email</label>
         <input type="text" name="email" placeholder="Digite email"/>
-    </div><div> class="row">
-        <label> for="idade">idade</label>
+    </div><div class="row">
+        <label for="idade">idade</label>
         <input type="text" name="idade" placeholder="Digite sua idade"/>
     </div>
     <button type="submit">Enviar</button>

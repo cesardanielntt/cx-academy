@@ -19,4 +19,7 @@ public class PessoaFisica extends Pessoa {
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
     }
+
+    public void setIdade(int i) {
+    }
 }

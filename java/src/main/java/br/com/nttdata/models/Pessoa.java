@@ -4,6 +4,7 @@ package br.com.nttdata.models;
         protected String id;
         protected String nome;
         protected String email;
+        protected int idade;
 
         public String getId() {
             return id;

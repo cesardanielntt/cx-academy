@@ -16,4 +16,10 @@ public class PessoaJuridica {
 
     public void setNome(String pessoa_juridica) {
     }
+
+    public void setSobrenome(String teste) {
+    }
+
+    public void setIdade(int s) {
+    }
 }

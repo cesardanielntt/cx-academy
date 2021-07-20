@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: lucas
+  User: Onilson
   Date: 19/07/2021
   Time: 10:46
   To change this template use File | Settings | File Templates.
@@ -9,9 +9,10 @@
 <html>
 <head>
     <title>Title</title>
+    <jsp:include page="header.jsp"/>
 </head>
 <body>
-<h1>Página de Cadastro</h1>
+<h1 style="text-align: center">Página de Cadastro</h1>
 
 <form action="${pageContext.servletContext.contextPath}/pages/register" method="POST">
     <div class="row">

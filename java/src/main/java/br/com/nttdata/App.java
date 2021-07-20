@@ -8,25 +8,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    final static String meuNome = "Lucas";
+    final static String meuNome = "Onilson";
 
     public static void main(String[] args) {
 
         PessoaFisica pessoa = new PessoaFisica();
-        pessoa.setNome("Lucas");
-        pessoa.setSobrenome("Kulik");
-        pessoa.setEmail("lucas.chropacz@nttdata.com");
-        pessoa.setIdade(24);
+        pessoa.setNome("Onilson");
+        pessoa.setSobrenome("Cardoso");
+        pessoa.setEmail("onilson@gmail.com");
+        pessoa.setIdade(33);
 
         PessoaFisica pessoa2 = new PessoaFisica();
-        pessoa2.setNome("Cleber");
-        pessoa2.setSobrenome("Teste");
+        pessoa2.setNome("Maria");
+        pessoa2.setSobrenome("Maia");
         pessoa2.setEmail("teste@teste.com");
-        pessoa2.setIdade(32);
+        pessoa2.setIdade(50);
 
         PessoaJuridica pj1 = new PessoaJuridica();
-        pj1.setNome("Pessoa Jurídica");
-        pj1.setEmail("pj@teste.com");
+        pj1.setNome("teste");
+        pj1.setEmail("teste1@teste.com");
         pj1.setCnpj("53.178.531/0001-35");
 
         List<Pessoa> pessoas = new ArrayList<>();

@@ -17,11 +17,17 @@
         <div class="row">
             <label for="name" >Insira seu nome</label>
             <input type="text" name="name" placeholder="Nome">
+            <jsp:include page="error.jsp">
+                <jsp:param name="path" value="name"/>
+            </jsp:include>
 
         </div>
         <div class="row">
             <label for="last-name" >Insira seu sobrenome</label>
             <input type="text" name="last-name" placeholder="Sobrenome">
+            <jsp:include page="error.jsp">
+                <jsp:param name="path" value="lastName"/>
+            </jsp:include>
 
         </div>
         <div class="row">
@@ -32,6 +38,9 @@
         <div class="row">
             <label for="email" >Insira seu email</label>
             <input type="email" name="email" placeholder="Email">
+            <jsp:include page="error.jsp">
+                <jsp:param name="path" value="email"/>
+            </jsp:include>
 
         </div>
         <input type="submit" value="Enviar">

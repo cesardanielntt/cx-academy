@@ -1,6 +1,7 @@
 package br.com.nttdata.controllers;
 
 import br.com.nttdata.data.CadastroForm;
+import br.com.nttdata.service.impl.PessoaFisicaService;
 import org.glassfish.jersey.server.mvc.Viewable;
 
 import javax.ws.rs.*;
@@ -9,6 +10,9 @@ import javax.ws.rs.core.MediaType;
 @Path("register")
 
 public class PessoaCadastroContoller {
+
+    private PessoaFisicaService pessoaService;
+
     @GET
     @Produces(MediaType.TEXT_HTML)
     public Viewable getPage() {
@@ -18,6 +22,8 @@ public class PessoaCadastroContoller {
 
     @POST
     public String register(@BeanParam CadastroForm form) {
+
+        pessoaService = new PessoaFisicaService();
         System.out.println(form.getName());
         return "Funcionou";
     }

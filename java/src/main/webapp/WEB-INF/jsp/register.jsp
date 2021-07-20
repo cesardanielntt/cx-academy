@@ -9,26 +9,45 @@
 <html>
 <head>
     <title>Title</title>
+    <jsp:include page="header.jsp"/>
 </head>
 <body>
-<h1>Página de Cadastro</h1>
+<h1 style="text-align: center">Página de Cadastro</h1style>
+
 <form action="${pageContext.servletContext.contextPath}" method="POST">
     <div class="row">
         <label for="nome">Nome</label>
         <input type="text" name="nome" placeholder="Digite seu Nome"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="nome"/>
+        </jsp:include>
     </div>
     <div class="row">
         <label for="sobrenome">Sobrenome</label>
         <input type="text" name="sobrenome" placeholder="Digite seu Sobrenome"/>
+        <input type="text" name=sobrenome" placeholder="Digite seu Sobrenome"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="sobrenome"/>
+        </jsp:include>
     </div>
 
     <div class="row">
         <label for="email">E-mail</label>
-        <input type="text" name="email" placeholder="Digite seu e-mail"/>
+        <input type="text" name="email" placeholder="Digite seu E-mail"/>
+        <input type="text" name="email" placeholder="Digite seu E-mail"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="email"/>
+        </jsp:include>
     </div>
     <div class="row">
         <label for="idade">Idade</label>
         <input type="text" name="idade" placeholder="Digite sua idade"/>
+        <input type="text" name="idade" placeholder="Digite sua idade"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="idade"/>
+        </jsp:include>
+
+
     </div>
 
     <button type="submit">Enviar</button>

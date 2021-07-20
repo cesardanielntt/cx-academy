@@ -3,7 +3,7 @@ package br.com.nttdata.models;
 import br.com.nttdata.models.Pessoa;
 
 public class PessoaFisica extends Pessoa {
-    private int idade;
+    protected int idade;
 
     public int getIdade() {
         return idade;

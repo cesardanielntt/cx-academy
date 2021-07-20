@@ -1,3 +1,4 @@
+/*
 package br.com.nttdata;
 
 import br.com.nttdata.models.Pessoa;
@@ -96,3 +97,4 @@ public class App {
         }
     }
 }
+*/

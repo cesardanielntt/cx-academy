@@ -45,6 +45,12 @@ public class PessoaCadastroController {
         if (!constraintViolations.isEmpty()) {
             final Map<String, String> errors = new HashMap<>();
 
+
+            // For de exemplo
+//            for (ConstraintViolation<CadastroForm> item : constraintViolations) {
+//                errors.put(item.getPropertyPath().toString(), item.getMessage());
+//            }
+
             constraintViolations.stream().forEach(item -> {
                 errors.put(item.getPropertyPath().toString(), item.getMessage());
             });

@@ -4,6 +4,10 @@ public class PessoaFisica extends Pessoa{
     private String sobrenome;
     private int idade;
 
+    public PessoaFisica(){
+        endereco = new Endereco();
+    }
+
     public String getSobrenome() {
         return sobrenome;
     }

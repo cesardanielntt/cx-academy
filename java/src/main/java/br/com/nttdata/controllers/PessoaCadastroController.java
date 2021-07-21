@@ -64,6 +64,8 @@ public class PessoaCadastroController {
         }
 
 
+        System.out.println(form.toString());
+
         PessoaFisica pessoaFisica = new PessoaFisica();
 
         String id = UUID.randomUUID().toString();
@@ -73,6 +75,13 @@ public class PessoaCadastroController {
         pessoaFisica.setSobrenome(form.getSobrenome());
         pessoaFisica.setIdade(form.getIdade());
         pessoaFisica.setEmail(form.getEmail());
+        pessoaFisica.getEndereco().setRua(form.getRua());
+        pessoaFisica.getEndereco().setNumero(form.getNumero());
+        pessoaFisica.getEndereco().setComplemento(form.getComplemento());
+        pessoaFisica.getEndereco().setBairro(form.getBairro());
+        pessoaFisica.getEndereco().setCidade(form.getCidade());
+        pessoaFisica.getEndereco().setEstado(form.getEstado());
+        pessoaFisica.getEndereco().setCep(form.getCep());
 
         pessoaService.criarPessoa(pessoaFisica);
 

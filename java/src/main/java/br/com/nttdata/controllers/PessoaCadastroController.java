@@ -70,6 +70,17 @@ public class PessoaCadastroController {
         pessoaFisica.setSobrenome(form.getSobrenome());
         pessoaFisica.setIdade(form.getIdade());
         pessoaFisica.setEmail(form.getEmail());
+        pessoaFisica.setRua(form.getRua());
+        pessoaFisica.setNumero(form.getNumero());
+        pessoaFisica.setComplemento(form.getComplemento());
+        pessoaFisica.setBairro(form.getBairro());
+        pessoaFisica.setCidade(form.getCidade());
+        pessoaFisica.setEstado(form.getEstado());
+        pessoaFisica.setCep(form.getCep());
+
+
+
+
 
         pessoaService.criarPessoa(pessoaFisica);
 

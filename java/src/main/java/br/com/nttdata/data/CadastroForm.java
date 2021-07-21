@@ -25,21 +25,26 @@ public class CadastroForm {
     private int idade;
 
     @FormParam("rua")
+    @NotEmpty(message = "Campo Rua é obrigatório!")
     private String rua;
 
     @FormParam("numero")
     private int numero;
 
     @FormParam("complemento")
+    @NotEmpty(message = "Campo complemento Obrigatório!")
     private String complemento;
 
     @FormParam("bairro")
+    @NotEmpty(message = "Campo bairro Obrigatório!")
     private String bairro;
 
     @FormParam("cidade")
+    @NotEmpty(message = "Campo cidade Obrigatório!")
     private String cidade;
 
     @FormParam("estado")
+    @NotEmpty(message = "Campo estado Obrigatório!")
     private String estado;
 
     @FormParam("cep")

@@ -24,7 +24,6 @@
         </a>
     </div>
 
-
 <div class="table">
 
 <table cellspacing="0" cellpadding="0">

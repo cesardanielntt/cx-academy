@@ -2,6 +2,7 @@ package br.com.nttdata.controllers;
 
 import br.com.nttdata.data.CadastroForm;
 import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 import br.com.nttdata.services.PessoaService;
 import br.com.nttdata.services.impl.PessoaFisicaService;
 import org.glassfish.jersey.server.mvc.Viewable;
@@ -32,7 +33,7 @@ public class PessoaCadastroController {
     }
 
     @POST
-    public Response register(@Valid @BeanParam CadastroForm form, @Context HttpServletRequest request) throws URISyntaxException {
+    public Response register(@BeanParam CadastroForm form, @Context HttpServletRequest request) throws URISyntaxException {
 
         pessoaService = new PessoaFisicaService();
 
@@ -42,6 +43,11 @@ public class PessoaCadastroController {
 
         if (!constraintViolations.isEmpty()) {
             final Map<String, String> errors = new HashMap<>();
+
+            // For de exemplo
+//            for (ConstraintViolation<CadastroForm> item : constraintViolations) {
+//               errors.put(item.getPropertyPath().toString(), item.getMessage());
+//            }
 
             constraintViolations.stream().forEach(item -> {
                 errors.put(item.getPropertyPath().toString(), item.getMessage());
@@ -75,7 +81,6 @@ public class PessoaCadastroController {
 
         pessoaService.criarPessoa(pessoaFisica);
 
-        System.out.println(form.getSobrenome());
         return Response.seeOther(new URI("pessoas")).build();
     }
 }

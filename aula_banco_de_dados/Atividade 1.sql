@@ -1,3 +1,5 @@
+-- Pedro Henrique Alves de Souza --
+
 CREATE DATABASE cxacademy;
 
 -- CREATES --

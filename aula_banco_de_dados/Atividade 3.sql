@@ -1,3 +1,5 @@
+-- Pedro Henrique Alves de Souza --
+
 CREATE DATABASE ecommerce;
 
 CREATE TABLE cliente(

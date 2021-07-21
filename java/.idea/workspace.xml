@@ -10,15 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="522ab92e-8f2a-4ddd-a6bd-2aea8f5e8171" name="Default Changelist" comment="19/07 - Servlet - Requisição Post funcionando">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/error.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nttdata/controllers/PessoaCadastroController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nttdata/controllers/PessoaCadastroController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nttdata/data/CadastroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nttdata/data/CadastroForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/java/WEB-INF/jsp/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/java/WEB-INF/jsp/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/nttdata/models/Endereco.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/nttdata/models/Endereco.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,17 +79,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -211,7 +193,8 @@
       <workItem from="1626450252760" duration="84000" />
       <workItem from="1626694746544" duration="1752000" />
       <workItem from="1626696585159" duration="10697000" />
-      <workItem from="1626781180821" duration="13064000" />
+      <workItem from="1626781180821" duration="13178000" />
+      <workItem from="1626866735893" duration="574000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1626449408667</created>

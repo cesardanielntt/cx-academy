@@ -5,13 +5,12 @@ public class Pessoa<nome> {
     protected String nome;
     protected String email;
 
+
     public String getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
+    public void setId(String id) { this.id = id; }
 
     public String getNome() {
         return nome;
@@ -28,4 +27,5 @@ public class Pessoa<nome> {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

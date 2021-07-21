@@ -1,7 +1,9 @@
 package com.nttdata.spring.facade.impl;
 
+import com.nttdata.spring.data.AddressData;
 import com.nttdata.spring.data.CustomerData;
 import com.nttdata.spring.facade.CustomerFacade;
+import com.nttdata.spring.model.AddressModel;
 import com.nttdata.spring.model.CustomerModel;
 import com.nttdata.spring.service.CustomerService;
 import org.apache.commons.collections.CollectionUtils;
@@ -54,6 +56,10 @@ public class DefaultCustomerFacade implements CustomerFacade {
         target.setName(source.getName());
         target.setEmail(source.getEmail());
 
+        if (CollectionUtils.isNotEmpty(source.getAddresses())) {
+            target.setAddresses(source.getAddresses().stream().map(address -> reverseConvert(address, new AddressModel())).collect(Collectors.toList()));
+        }
+
         return target;
     }
 
@@ -61,6 +67,28 @@ public class DefaultCustomerFacade implements CustomerFacade {
         target.setId(source.getId());
         target.setName(source.getName());
         target.setEmail(source.getEmail());
+
+        if (CollectionUtils.isNotEmpty(source.getAddresses())) {
+            target.setAddresses(source.getAddresses().stream().map(address -> convert(address, new AddressData())).collect(Collectors.toList()));
+        }
+
+        return target;
+    }
+
+    private AddressModel reverseConvert(AddressData source, AddressModel target) {
+        target.setId(source.getId());
+        target.setStreetName(source.getStreetName());
+        target.setStreetNumber(source.getStreetNumber());
+        target.setCity(source.getCity());
+
+        return target;
+    }
+
+    private AddressData convert(AddressModel source, AddressData target) {
+        target.setId(source.getId());
+        target.setStreetName(source.getStreetName());
+        target.setStreetNumber(source.getStreetNumber());
+        target.setCity(source.getCity());
 
         return target;
     }

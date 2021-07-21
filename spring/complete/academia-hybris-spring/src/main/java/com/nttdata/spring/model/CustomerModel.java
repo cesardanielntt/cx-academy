@@ -1,10 +1,14 @@
 package com.nttdata.spring.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity(name = "Customer")
 public class CustomerModel {
@@ -18,6 +22,10 @@ public class CustomerModel {
 
     @Column(nullable = false, unique = true)
     private String email;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
+    private List<AddressModel> addresses;
 
     public Integer getId() {
         return id;
@@ -41,5 +49,13 @@ public class CustomerModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<AddressModel> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<AddressModel> addresses) {
+        this.addresses = addresses;
     }
 }

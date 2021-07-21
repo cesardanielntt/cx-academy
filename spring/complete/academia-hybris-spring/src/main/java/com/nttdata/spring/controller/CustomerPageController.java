@@ -1,5 +1,6 @@
 package com.nttdata.spring.controller;
 
+import com.nttdata.spring.data.AddressData;
 import com.nttdata.spring.data.CustomerData;
 import com.nttdata.spring.facade.CustomerFacade;
 import com.nttdata.spring.form.CustomerForm;
@@ -9,10 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.Collections;
 
 @Controller
 @RequestMapping(value = "/customers")
@@ -81,6 +83,16 @@ public class CustomerPageController {
         data.setId(form.getId());
         data.setName(form.getName());
         data.setEmail(form.getEmail());
+
+        if (form.getStreetName() != null && !form.getStreetName().isEmpty() && form.getStreetNumber() != null && !form.getStreetNumber().isEmpty() && form.getCity() != null && !form.getCity().isEmpty()) {
+            AddressData address = new AddressData();
+            address.setId(form.getAddressID());
+            address.setStreetName(form.getStreetName());
+            address.setStreetNumber(form.getStreetNumber());
+            address.setCity(form.getCity());
+            data.setAddresses(Collections.singletonList(address));
+        }
+
         return data;
     }
 }

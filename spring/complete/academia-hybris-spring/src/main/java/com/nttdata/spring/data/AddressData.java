@@ -1,11 +1,8 @@
-package com.nttdata.spring.form;
+package com.nttdata.spring.data;
 
-public class CustomerForm {
+public class AddressData {
 
     private Integer id;
-    private String name;
-    private String email;
-    private Integer addressID;
     private String streetName;
     private String streetNumber;
     private String city;
@@ -16,30 +13,6 @@ public class CustomerForm {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Integer getAddressID() {
-        return addressID;
-    }
-
-    public void setAddressID(Integer addressID) {
-        this.addressID = addressID;
     }
 
     public String getStreetName() {

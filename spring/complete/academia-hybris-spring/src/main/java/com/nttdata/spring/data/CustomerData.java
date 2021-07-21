@@ -1,10 +1,13 @@
 package com.nttdata.spring.data;
 
+import java.util.List;
+
 public class CustomerData {
 
     private Integer id;
     private String name;
     private String email;
+    private List<AddressData> addresses;
 
     public Integer getId() {
         return id;
@@ -28,5 +31,13 @@ public class CustomerData {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<AddressData> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<AddressData> addresses) {
+        this.addresses = addresses;
     }
 }

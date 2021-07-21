@@ -1,4 +1,4 @@
-CREATE TABLE paciente ( 
+CREATE TABLE paciente (  -- thales assis --
 	id int primary key auto_increment ,
 	nome_paciente varchar (50),
     cpf varchar (11)

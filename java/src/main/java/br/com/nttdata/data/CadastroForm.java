@@ -19,7 +19,8 @@ public class CadastroForm {
     private String sobrenome;
 
     @FormParam("idade")
-    private int idade;
+    @Size (min =2, max =3, message = "A idade é obrigatória")
+    private String idade;
 
 
     @FormParam("email")
@@ -90,11 +91,11 @@ public class CadastroForm {
 
 
 
-    public int getIdade() {
+    public String getIdade() {
         return idade;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(String idade) {
         this.idade = idade;
     }
 

@@ -33,6 +33,9 @@
         <label for="idade">Idade</label>
         <input type="text" name="idade" placeholder="Digite sua idade"/>
     </div>
+    <jsp:include page="error.jsp">
+        <jsp:param name="path" value="idade"/>
+    </jsp:include>
 
 
     <div class="row">

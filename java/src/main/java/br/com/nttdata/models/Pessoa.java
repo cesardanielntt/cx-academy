@@ -4,6 +4,7 @@ public class Pessoa {
     protected String id;
     protected String nome;
     protected String email;
+    protected String Idade;
     protected String rua;
     protected String numero;
     protected String complemento;

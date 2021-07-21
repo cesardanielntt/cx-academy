@@ -1,3 +1,4 @@
+-- Karoline Lays Penteado Alves --
 CREATE TABLE Médico (
 id integer primary key auto_increment,
 NomeMédico varchar (100)

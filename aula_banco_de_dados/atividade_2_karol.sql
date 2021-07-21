@@ -1,3 +1,5 @@
+
+-- Karoline Lays Penteado Alves --
 CREATE TABLE Estado (
 id integer primary key auto_increment,
 Nome varchar (100),

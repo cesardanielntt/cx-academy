@@ -17,38 +17,55 @@
 <h1 style="text-align: center">Pessoas</h1>
 
 <div class="content">
-    <div style="display: block"
-         <a href="register">
-             <button class="register-button" type="button">Novo Cadastro</button>
-         </a>
+    <div style="display: block">
+        <a href="register">
+            <button class="register-button" type="button">Novo Cadastro</button>
+        </a>
     </div>
 
-<table cellpadding="0" cellspacing="0">
+    <div class="table">
+        <table cellspacing="0" cellpadding="0">
     <thead>
         <tr>
             <th class="id-collum">ID</th>
             <th>Nome</th>
             <th>Sobrenome</th>
-            <th>Email</th>
+            <th>E-mail</th>
             <th>Idade</th>
+            <th>Rua</th>
+            <th>Numero</th>
+            <th>Complemento</th>
+            <th>Bairro</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+            <th>Cep</th>
+
         </tr>
         </thead>
 
     <tbody>
     <c:forEach items="${pessoas}" var="pessoa">
+
     <tr>
         <td>${pessoa.id}</td>
         <td>${pessoa.nome}</td>
         <td>${pessoa.sobrenome}</td>
         <td>${pessoa.email}</td>
         <td>${pessoa.idade}</td>
+        <td>${pessoa.rua}</td>
+        <td>${pessoa.numero}</td>
+        <td>${pessoa.complemento}</td>
+        <td>${pessoa.bairro}</td>
+        <td>${pessoa.cidade}</td>
+        <td>${pessoa.estado}</td>
+        <td>${pessoa.cep}</td>
 
-
-    <b>${pessoa.nome}</b>
-         </c:forEach>
-       </tbody>
-    </table>
-  </div>
+    </tr>
+             </c:forEach>
+            </tbody>
+        </table>
+    </div>
  </div>
+
 </body>
 </html>

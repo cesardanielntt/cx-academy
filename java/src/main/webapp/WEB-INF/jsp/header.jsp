@@ -6,6 +6,15 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.cep').mask("00.000-000");
+    })
+</script>
+
 <style>
     * {
         font-family: 'Arial';

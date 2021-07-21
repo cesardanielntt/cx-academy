@@ -24,4 +24,6 @@ public class PessoaFisica extends Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
+
 }

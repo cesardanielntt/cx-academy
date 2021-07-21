@@ -14,7 +14,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
+import java.util.UUID;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.*;
@@ -49,6 +49,7 @@ public class PessoaCadastroController {
                 errors.put(item.getPropertyPath().toString(), item.getMessage());
             
             });
+
             request.setAttribute("formErrors", errors);
             return Response.status(Response.Status.OK)
                     .entity(new Viewable("/WEB-INF/jsp/register/jsp"))
@@ -65,6 +66,14 @@ public class PessoaCadastroController {
         pessoaFisica.setSobrenome((form.getSobrenome()));
         pessoaFisica.setIdade(form.getIdade());
         pessoaFisica.setEmail(form.getEmail());
+        pessoaFisica.setRua(form.getRua());
+        pessoaFisica.setNumero(form.getNumero());
+        pessoaFisica.setComplemento(form.getComplemento());
+        pessoaFisica.setBairro((form.getBairro()));
+        pessoaFisica.setCidade(form.getCidade());
+        pessoaFisica.setEstado(form.getEstado());
+        pessoaFisica.setCep(form.getCep());
+
 
         pessoaService.criarPessoa(pessoaFisica);
 

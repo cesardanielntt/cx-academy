@@ -44,16 +44,17 @@ public class    PessoaCadastroController {
         if(!constraintViolations.isEmpty()){
             final Map<String, String> errors = new HashMap<>();
 
-            for(ConstraintViolation<CadastroForm> item: constraintViolations){
-                errors.put(item.getPropertyPath().toString(), item.getMessage());
-            }
+//            for(ConstraintViolation<CadastroForm> item: constraintViolations){
+//                errors.put(item.getPropertyPath().toString(), item.getMessage());
+//            }
+
+            constraintViolations.stream().forEach(items ->{
+                errors.put(items.getPropertyPath().toString(), items.getMessage());
+            });
 
             request.setAttribute("formErrors", errors);
 
-            return Response.status(Response.Status.OK)
-                    .entity(new Viewable("/WEB-INT/jsp/register.jsp"))
-                    .type(MediaType.TEXT_HTML)
-                    .build();
+            return Response.status(Response.Status.OK).entity(new Viewable("/WEB-INF/jsp/register.jsp")).type(MediaType.TEXT_HTML).build();
         }
 
 

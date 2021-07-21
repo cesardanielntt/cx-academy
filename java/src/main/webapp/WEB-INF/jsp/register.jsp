@@ -54,9 +54,6 @@
     <div class="row w30">
         <label for="numero">Numero</label>
         <input type="number" name="numero" placeholder="Digite o Numero da residencia">
-        <jsp:include page="error.jsp">
-            <jsp:param name="path" value="numero"/>
-        </jsp:include>
     </div>
 
     <div class="row">
@@ -94,9 +91,6 @@
     <div class="row">
         <label for="cep">CEP</label>
         <input type="text" name="cep" placeholder="Digite o CEP">
-        <jsp:include page="error.jsp">
-            <jsp:param name="path" value="cep"/>
-        </jsp:include>
     </div>
 
     <button type="submit">Enviar</button>

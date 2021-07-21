@@ -8,10 +8,12 @@ import javax.ws.rs.FormParam;
 public class CadastroForm {
     @FormParam("nome")
     @Size(min = 3, max = 25, message= "Nome Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String nome;
 
     @FormParam("sobrenome")
     @Size(min = 3, max = 25, message= "Sobrenome Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String sobrenome;
 
     @FormParam("email")
@@ -24,6 +26,7 @@ public class CadastroForm {
 
     @FormParam("rua")
     @Size(min = 3, max = 100, message= "Rua Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String rua;
 
     @FormParam("numero")
@@ -31,21 +34,25 @@ public class CadastroForm {
 
     @FormParam("complemento")
     @Size(min = 3, max = 100, message= "Complemento Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String complemento;
 
     @FormParam("bairro")
     @Size(min = 3, max = 100, message= "Bairro Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String bairro;
 
     @FormParam("cidade")
     @Size(min = 3, max = 100, message= "Cidade Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String cidade;
 
     @FormParam("estado")
     @Size(min = 2, max = 2, message= "Estado Obrigatório")
+    @NotEmpty(message = "Obrigatório")
     private String estado;
 
-    @FormParam("cep")
+    @FormParam(".cep")
     private int cep;
 
 

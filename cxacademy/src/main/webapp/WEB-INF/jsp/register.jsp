@@ -10,6 +10,30 @@
 <head>
     <title>Title</title>
     <jsp:include page="header.jsp"/>
+    <script>
+        function alternateToCpf() {
+            if ($(".cpf") != "") {
+                $(".cnpj").prop("disabled", true);
+            } else {
+                $(".cnpj").prop("disabled", false);
+            }
+        }
+
+        function alternateToCnpj() {
+            if ($(".cnpj") != "") {
+                $(".cpf").prop("disabled", true);
+            } else {
+                $(".cpf").prop("disabled", false);
+            }
+        }
+
+        function enableFields() {
+            $(".cpf").val("")
+            $(".cnpj").val("")
+            $(".cpf").prop("disabled", false);
+            $(".cnpj").prop("disabled", false);
+        }
+    </script>
 </head>
 <body>
 <h1 style="text-align: center">Página de Cadastro</h1>
@@ -89,6 +113,17 @@
         <jsp:include page="error.jsp">
             <jsp:param name="path" value="cep"/>
         </jsp:include>
+    </div>
+    <div>
+        <div>
+            <label for="cpf">CPF</label>
+            <input class="cpf" name="cpf" type="text" onkeyup="alternateToCpf()">
+        </div>
+        <div>
+            <label for="cnpj">CNPJ</label>
+            <input class="cnpj" name="cnpj" type="text" onkeyup="alternateToCnpj()">
+        </div>
+        <a href="javascript:enableFields()">Limpar e Resetar campos de CPF e CNPJ</a>
     </div>
     <input type="submit" value="Enviar">
 </form>

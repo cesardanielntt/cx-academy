@@ -2,7 +2,9 @@ package br.com.nttdata.controllers;
 
 import br.com.nttdata.data.CadastroForm;
 import br.com.nttdata.models.PessoaFisica;
+import br.com.nttdata.models.PessoaJuridica;
 import br.com.nttdata.service.impl.PessoaFisicaService;
+import br.com.nttdata.service.impl.PessoaJuridicaService;
 import org.glassfish.jersey.server.mvc.Viewable;
 
 import javax.servlet.http.HttpServletRequest;
@@ -24,6 +26,7 @@ import java.util.UUID;
 public class PessoaCadastroContoller {
 
     private PessoaFisicaService pessoaService;
+    private PessoaJuridicaService empresaService;
 
     @GET
     @Produces(MediaType.TEXT_HTML)
@@ -35,7 +38,7 @@ public class PessoaCadastroContoller {
     @POST
     public Response register(@BeanParam CadastroForm form, @Context HttpServletRequest request) throws URISyntaxException {
 
-        pessoaService = new PessoaFisicaService();
+
 
 
         ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
@@ -60,7 +63,7 @@ public class PessoaCadastroContoller {
         }
 
 
-
+        pessoaService = new PessoaFisicaService();
         PessoaFisica pessoaFisica = new PessoaFisica();
 
         UUID id = UUID.randomUUID();

@@ -1,3 +1,4 @@
+-- Karoline Lays Penteado Alves --
 CREATE DATABASE cxcommerce;
 
 CREATE TABLE produto (

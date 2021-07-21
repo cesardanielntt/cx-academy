@@ -40,6 +40,50 @@
         <label for="idade">Idade</label>
         <input type="number" name="idade" placeholder="Digite sua Idade"/>
     </div>
+    <h1 style="text-align: center">Endereço</h1>
+    <div class="row">
+        <label for="rua">Rua</label>
+        <input type="text" name="rua" placeholder="Digite sua Rua"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="rua"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="numero">Número</label>
+        <input type="number" name="numero" placeholder="Digite o Número"/>
+    </div>
+    <div class="row">
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento" placeholder="Digite o Complemento"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="complemento"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" placeholder="Informe o seu Bairro"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="bairro"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" placeholder="Informe a sua Cidade"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="cidade"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" placeholder="Informe o seu Bairro"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="estado"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="cep">CEP</label>
+        <input type="number" name="cep" placeholder="Informe o seu CEP"/>
+    </div>
 
     <button type="submit">Enviar</button>
 </form>

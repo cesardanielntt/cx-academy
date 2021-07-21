@@ -4,6 +4,7 @@ import br.com.nttdata.models.PessoaFisica;
 import br.com.nttdata.service.PessoaService;
 import br.com.nttdata.singleton.PessoaSingleton;
 
+
 import java.util.List;
 
 public class PessoaFisicaService implements PessoaService {

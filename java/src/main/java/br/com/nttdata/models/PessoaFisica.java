@@ -5,6 +5,7 @@ public class PessoaFisica extends Pessoa {
     private int idade;
 
 
+
     public String getSobrenome() {
         return sobrenome;
     }
@@ -24,4 +25,5 @@ public class PessoaFisica extends Pessoa {
     public void setIdade(int idade) {
         this.idade = idade;
     }
+
 }

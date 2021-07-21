@@ -8,8 +8,8 @@
 <%@page contentType = "text / html; charset = UTF-8" language = "java"%>
 <%@taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core"%>
 
-<c:if test = "$ {formErrors [param.path]! = null}">
+<c:if test = "${formErrors[param.path] != null}">
     <div class = "error">
-        <span> $ {formErrors [param.path]} </span>
+        <span>${formErrors[param.path]}</span>
     </div>
 </c:if>

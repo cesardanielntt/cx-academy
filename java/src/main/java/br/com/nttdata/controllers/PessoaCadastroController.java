@@ -48,13 +48,13 @@ public class PessoaCadastroController {
 
 
             // For de exemplo
-//            for (ConstraintViolation<CadastroForm> item : constraintViolations) {
-//                errors.put(item.getPropertyPath().toString(), item.getMessage());
-//            }
-
-            constraintViolations.stream().forEach(item -> {
+            for (ConstraintViolation<CadastroForm> item : constraintViolations) {
                 errors.put(item.getPropertyPath().toString(), item.getMessage());
-            });
+           }
+
+//            constraintViolations.stream().forEach(item -> {
+ //               errors.put(item.getPropertyPath().toString(), item.getMessage());
+//            });
 
             request.setAttribute("formErrors", errors);
 

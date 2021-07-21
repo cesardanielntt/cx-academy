@@ -1,3 +1,5 @@
+
+-- Karoline Lays Penteado Alves --
 -- Criar tabelas Médico, Paciente e Consulta
 Create TABLE Médico (
 id integer primary key auto_increment,

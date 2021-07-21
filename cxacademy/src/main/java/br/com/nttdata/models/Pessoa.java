@@ -1,9 +1,14 @@
 package br.com.nttdata.models;
 
 public class Pessoa {
-    private String name;
+    protected String name;
     protected String id;
     protected String email;
+    protected Endereco address;
+
+    public Pessoa() {
+        address = new Endereco();
+    }
 
     public String getName() {
         return name;
@@ -29,12 +34,8 @@ public class Pessoa {
         this.email = email;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" +
-                "name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public Endereco getAddress() {
+        return address;
     }
+
 }

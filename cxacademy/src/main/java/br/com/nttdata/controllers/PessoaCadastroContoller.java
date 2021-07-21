@@ -51,6 +51,8 @@ public class PessoaCadastroContoller {
 
             request.setAttribute("formErrors", errors);
 
+            System.out.println(errors);
+
             return Response.status(Response.Status.OK)
                     .entity(new Viewable("/WEB-INF/jsp/register.jsp"))
                     .type(MediaType.TEXT_HTML)
@@ -68,8 +70,17 @@ public class PessoaCadastroContoller {
         pessoaFisica.setLastName(form.getLastName());
         pessoaFisica.setEmail(form.getEmail());
         pessoaFisica.setAge(form.getAge());
+        pessoaFisica.getAddress().setStreet(form.getStreet());
+        pessoaFisica.getAddress().setNumber(form.getNumber());
+        pessoaFisica.getAddress().setComplement(form.getComplement());
+        pessoaFisica.getAddress().setDistrict(form.getDistrict());
+        pessoaFisica.getAddress().setCity(form.getCity());
+        pessoaFisica.getAddress().setState(form.getState());
+        pessoaFisica.getAddress().setCep(form.getCep());
 
         pessoaService.criarPessoa(pessoaFisica);
+
+        System.out.println(pessoaFisica);
 
         return Response.seeOther(new URI("pessoas")).build();
     }

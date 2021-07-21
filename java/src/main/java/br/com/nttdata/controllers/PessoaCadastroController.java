@@ -2,6 +2,7 @@ package br.com.nttdata.controllers;
 
 
 import br.com.nttdata.data.CadastroForm;
+import br.com.nttdata.models.Pessoa;
 import br.com.nttdata.models.PessoaFisica;
 import br.com.nttdata.service.PessoaService;
 import br.com.nttdata.service.impl.PessoaFisicaService;
@@ -71,8 +72,15 @@ public class PessoaCadastroController {
         pessoaFisica.setId(id);
         pessoaFisica.setNome(form.getNome());
         pessoaFisica.setSobrenome(form.getSobrenome());
-        pessoaFisica.setIdade(form.getIdade());
         pessoaFisica.setEmail(form.getEmail());
+        pessoaFisica.setIdade(form.getIdade());
+        pessoaFisica.setRua(form.getRua());
+        pessoaFisica.setNumero(form.getNumero());
+        pessoaFisica.setBairro(form.getBairro());
+        pessoaFisica.setComplemento(form.getComplemento());
+        pessoaFisica.setCidade(form.getCidade());
+        pessoaFisica.setEstado(form.getEstado());
+        pessoaFisica.setCep(form.getCep());
 
         pessoaService.criarPessoa(pessoaFisica);
 

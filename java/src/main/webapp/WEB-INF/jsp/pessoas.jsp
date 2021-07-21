@@ -9,7 +9,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-    <title>Pessoas</title>
+    <title>Rua</title>
     <jsp:include page="header.jsp"/>
 </head>
 <body>
@@ -31,6 +31,13 @@
         <th>Sobrenome</th>
         <th>E-mail</th>
         <th>Idade</th>
+        <th>Rua</th>
+        <th>Numero</th>
+        <th>Complemento</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>CEP</th>
     </tr>
     </thead>
 
@@ -38,10 +45,17 @@
     <c:forEach items="${pessoas}" var="pessoa">
         <tr>
             <td>${pessoa.id}</td>
-            <td>${pessoa.nome}</td>
-            <td>${pessoa.sobrenome}</td>
+            <th>${pessoa.nome}</th>
+            <th>${pessoa.sobrenome}</th>
             <td>${pessoa.email}</td>
             <td>${pessoa.idade}</td>
+            <td>${pessoa.rua}</td>
+            <td>${pessoa.numero}</td>
+            <td>${pessoa.complemento}</td>
+            <td>${pessoa.bairro}</td>
+            <td>${pessoa.cidade}</td>
+            <td>${pessoa.estado}</td>
+            <td>${pessoa.cep}</td>
         </tr>
            </c:forEach>
     <tbody/>

@@ -23,6 +23,79 @@ public class CadastroForm {
     @FormParam("idade")
     private int idade;
 
+    @FormParam("rua")
+    @Size(min = 3, max = 25, message = "A Rua é obrigatório!")
+    private String rua;
+
+    @FormParam("numero")
+    private int numero;
+
+    @FormParam("complemento")
+    private String complemento;
+
+    @FormParam("bairro")
+    @Size(min = 3, max = 25, message = "O Bairro é obrigatório!")
+    private String bairro;
+
+    @FormParam("cidade")
+    @Size(min = 3, max = 25, message = "A Cidade é obrigatória!")
+    private String cidade;
+
+    @FormParam("estado")
+    @Size(min = 3, max = 25, message = "O Estado é obrigatório!")
+    private String estado;
+
+    @FormParam("cep")
+    private int cep;
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public int getCep() { return cep; }
+
+    public void setCep(int cep) { this.cep = cep; }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getRua() { return rua; }
+
+    public void setRua(String rua) { rua = rua;}
+
     public String getNome() {
         return nome;
     }

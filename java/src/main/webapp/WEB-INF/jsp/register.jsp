@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lucas
-  Date: 19/07/2021
-  Time: 10:46
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -39,6 +32,52 @@
     <div class="row">
         <label for="idade">Idade</label>
         <input type="number" name="idade" placeholder="Digite sua Idade"/>
+    </div>
+    <div class="row">
+        <label for="rua">Rua</label>
+        <input type="text" name="rua" placeholder="Digite sua rua"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="rua"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="numero">Numero</label>
+        <input type="number" name="numero" placeholder="Digite seu Numero"/>
+    </div>
+    <div class="row">
+        <label for="complemento">Complemento</label>
+        <input type="text" name="complemento" placeholder="Digite seu Complemento"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="complemento"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" placeholder="Digite seu Bairro"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="bairro"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" placeholder="Digite sua Cidade"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="cidade"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="estado">Estado</label>
+        <input type="text" name="estado" placeholder="Digite seu Estado"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="estado"/>
+        </jsp:include>
+    </div>
+    <div class="row">
+        <label for="cep">CEP</label>
+        <input type="number" size="8"   name="cep" placeholder="Digite seu CEP"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="cep"/>
+        </jsp:include>
     </div>
 
     <button type="submit">Enviar</button>

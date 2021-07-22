@@ -53,7 +53,7 @@ public class CadastroForm {
     private String estado;
 
     @FormParam("cep")
-    @Size (min =3, max =25, message = "O CEP é obrigatório")
+    @Size (min =3, max =8, message = "O CEP é obrigatório")
     private String cep;
 
 

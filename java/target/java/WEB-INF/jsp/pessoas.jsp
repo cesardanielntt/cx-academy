@@ -32,6 +32,13 @@
                         <th>Sobrenome</th>
                         <th>E-mail</th>
                         <th>Idade</th>
+                        <th>Rua</th>
+                        <th>Complemento</th>
+                        <th>Número</th>
+                        <th>Bairro</th>
+                        <th>Estado</th>
+                        <th>Cidade</th>
+                        <th>CEP</th>
                     </tr>
                 </thead>
 
@@ -42,7 +49,15 @@
                             <td>${pessoa.nome}</td>
                             <td>${pessoa.sobrenome}</td>
                             <td>${pessoa.email}</td>
-                            <td>${pessoa.idade}</td>
+                            <td>${pessoa.getIdade()}</td>
+                            <td>${pessoa.getEndereco().getRua()}</td>
+                            <td>${pessoa.getEndereco().getComplemento()}</td>
+                            <td>${pessoa.getEndereco().getNumero()}</td>
+                            <td>${pessoa.getEndereco().getBairro()}</td>
+                            <td>${pessoa.getEndereco().getEstado()}</td>
+                            <td>${pessoa.getEndereco().getCidade()}</td>
+                            <td>${pessoa.getEndereco().getCep()}</td>
+
                         </tr>
                     </c:forEach>
                 </tbody>

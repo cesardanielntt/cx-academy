@@ -71,10 +71,10 @@
         margin: 0 auto;
         border-radius: 10px;
         padding: 2px;
+        overflow-x: scroll;
     }
 
     .table {
-        width: 100%;
         margin: 0 auto;
         border: solid 0.5px #ccc;
         border-radius: 10px;
@@ -82,7 +82,6 @@
     }
 
     table {
-        width: 100%;
         margin: 0 auto;
         border-radius: 50px;
     }

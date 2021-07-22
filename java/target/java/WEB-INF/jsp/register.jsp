@@ -39,6 +39,62 @@
     <div class="row">
         <label for="idade">Idade</label>
         <input type="number" name="idade" placeholder="Digite sua Idade"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="idade"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="rua">Rua</label>
+        <input type="text" name="rua" placeholder="Digite a rua"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="rua"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="numero">Numero</label>
+        <input type="number" name="numero" placeholder="Digite o numero"/>
+    </div>
+
+    <div class="row">
+        <label for="complememento">Complemento</label>
+        <input type="text" name="complemento" placeholder="Digite o complemento"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="complemento"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="bairro">Bairro</label>
+        <input type="text" name="bairro" placeholder="Digite o bairro"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="bairro"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="cidade">Cidade</label>
+        <input type="text" name="cidade" placeholder="Digite a cidade"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="cidade"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="rua">Estado</label>
+        <input type="text" name="estado" placeholder="Digite o estado"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="estado"/>
+        </jsp:include>
+    </div>
+
+    <div class="row">
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" placeholder="Digite o CEP"/>
+        <jsp:include page="error.jsp">
+            <jsp:param name="path" value="cep"/>
+        </jsp:include>
     </div>
 
     <button type="submit">Enviar</button>

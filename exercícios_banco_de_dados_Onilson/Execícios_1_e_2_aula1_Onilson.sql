@@ -92,14 +92,15 @@ Select * from Paciente;
 
 Select * from Médico;
 
-SELECT m.nomeMédico, p.nomePaciente, c.datahora
-FROM Médico m JOIN Paciente p 
-ON p.id = m.id JOIN Consulta c;
 
+select p.nomePaciente, c.nomeMédico_id from Paciente p join Consulta c
+on p.id = c.id;
 
+select c.nomeMédico_id, m.nomePaciente as Paciente
+From Paciente m Join Consulta c on m.id = c.id;
 
-SELECT m.NomeMédico, COUNT(*) as Qnt FROM Paciente p LEFT JOIN Médico m ON p.id = m.id GROUP BY nomeMédico_id;
-
+SELECT m.nomeMédico_id, COUNT(*) as Qnt FROM Paciente p LEFT JOIN Consulta m 
+ON p.id = m.id GROUP BY nomeMédico_id;
 
 
 

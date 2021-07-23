@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class DefaultProductService implements ProductService {
@@ -21,16 +22,23 @@ public class DefaultProductService implements ProductService {
 
     @Override
     public void saveProduct(ProductModel product) {
+        if(product != null){
+            productDao.save(product);
+        }
 
     }
 
     @Override
     public ProductModel getProductByCode(Integer productCode) {
+        if(productCode != null){
+            Optional<ProductModel> model = productDao.findById(productCode);
+            return model.orElse(null);
+        }
         return null;
     }
 
     @Override
     public void deleteProduct(Integer productCode) {
-
+        productDao.deleteById(productCode);
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 public class PessoaFisicaService implements PessoaService {
 
     @Override
-    public void criarPessoa(PessoaFisica pessoa){
+    public void criarPessoa(PessoaFisica pessoa) {
         PessoaSingleton.getInstance().getData().add(pessoa);
     }
 

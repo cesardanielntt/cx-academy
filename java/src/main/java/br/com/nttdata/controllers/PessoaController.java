@@ -17,8 +17,10 @@ public class PessoaController {
     @GET
     public Viewable getPage(@Context HttpServletRequest request){
         pessoaService = new PessoaFisicaService();
+        System.out.println(pessoaService.listarPessoas());
         request.setAttribute("pessoas", pessoaService.listarPessoas());
 
         return new Viewable("/WEB-INF/jsp/pessoas.jsp");
     }
+
 }

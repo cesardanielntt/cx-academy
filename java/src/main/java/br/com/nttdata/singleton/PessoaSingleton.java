@@ -10,8 +10,7 @@ public class PessoaSingleton {
     private List<PessoaFisica> data;
 
     public static PessoaSingleton getInstance() {
-
-        if (instance == null){
+        if (instance == null) {
             instance = new PessoaSingleton();
         }
 

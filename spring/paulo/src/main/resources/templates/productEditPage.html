@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edit Product</title>
+    <style type="text/css">
+        #todocontainer {
+            margin-top: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<section id="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand text-white" href="/">Home</a>
+        <a class="navbar-brand text-white" href="/customers">Customers</a>
+        <a class="navbar-brand text-white" href="/products">Products</a>
+        <a class="navbar-brand text-white" href="/cart">Cart</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+</section>
+
+<section id="todocontainer">
+    <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+    <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form th:action="@{/products/edit}" method="POST" name="productForm">
+                <div class="form-group">
+                    <label for="id">CODE</label>
+                    <input type="text" class="form-control" name="code"  placeholder="Code" readonly th:value="${product.code}">
+                </div>
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input type="text" class="form-control" name="name"  placeholder="Name" th:value="${product.name}">
+                </div>
+                <div class="form-group">
+                    <label for="email">PRICE</label>
+                    <input type="text" class="form-control" name="price"  placeholder="Price" th:value="${product.price}">
+                </div>
+                <div class="form-group">
+                    <label for="availableOnlineSelect">Status</label>
+                    <select class="form-control" th:field="*{product.availableOnline}">
+                        <option th:value="true" th:text="Online"></option>
+                        <option th:value="false" th:text="Offline"></option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">SAVE</button>
+                <a th:href="@{/products}" class="btn btn-secondary text-white">BACK</a>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -10,7 +10,6 @@ public interface ProductFacade {
 
     void saveProduct(ProductData product);
 
-
     ProductData getProductByCode(Integer productCode);
 
     void deleteProduct(Integer productCode);

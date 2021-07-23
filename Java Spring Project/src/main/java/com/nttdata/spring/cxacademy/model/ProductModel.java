@@ -1,7 +1,10 @@
 package com.nttdata.spring.cxacademy.model;
 
-import javax.persistence.*;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity(name = "Product")
 public class ProductModel {
@@ -17,7 +20,8 @@ public class ProductModel {
     private String price;
 
     @Column(nullable = false)
-    private Boolean availableOnline;
+    private boolean availableOnline;
+
 
     public Integer getCode() {
         return code;
@@ -43,11 +47,11 @@ public class ProductModel {
         this.price = price;
     }
 
-    public Boolean getAvailableOnline() {
+    public boolean isAvailableOnline() {
         return availableOnline;
     }
 
-    public void setAvailableOnline(Boolean availableOnline) {
+    public void setAvailableOnline(boolean availableOnline) {
         this.availableOnline = availableOnline;
     }
 }

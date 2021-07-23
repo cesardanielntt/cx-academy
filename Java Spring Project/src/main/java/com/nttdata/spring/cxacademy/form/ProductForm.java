@@ -1,7 +1,6 @@
-package com.nttdata.spring.cxacademy.data;
+package com.nttdata.spring.cxacademy.form;
 
-
-public class ProductData {
+public class ProductForm {
 
     private Integer code;
     private String name;

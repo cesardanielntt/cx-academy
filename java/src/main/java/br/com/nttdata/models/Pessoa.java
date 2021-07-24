@@ -2,6 +2,7 @@ package br.com.nttdata.models;
 
 public class Pessoa {
     protected String id;
+<<<<<<< HEAD
     private String nome;
     protected String email;
 
@@ -14,6 +15,11 @@ public class Pessoa {
         this.nome = nome;
     }
 
+=======
+    protected String nome;
+    protected String email;
+
+>>>>>>> origin/master
     public String getId() {
         return id;
     }
@@ -22,6 +28,17 @@ public class Pessoa {
         this.id = id;
     }
 
+<<<<<<< HEAD
+=======
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+>>>>>>> origin/master
     public String getEmail() {
         return email;
     }
@@ -30,6 +47,11 @@ public class Pessoa {
         this.email = email;
     }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> origin/master
     @Override
     public String toString() {
         return "Pessoa{" +
@@ -39,6 +61,7 @@ public class Pessoa {
                 '}';
     }
 }
+<<<<<<< HEAD
 
 //public class Pessoa {
 //    protected String id;
@@ -101,3 +124,5 @@ public class Pessoa {
 //                '}';
 //    }
 //}
+=======
+>>>>>>> origin/master

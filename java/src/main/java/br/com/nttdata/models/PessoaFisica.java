@@ -1,5 +1,6 @@
 package br.com.nttdata.models;
 
+<<<<<<< HEAD
 //classe pessoa fisica é uma extensão de Pessoa
 public class PessoaFisica extends Pessoa {
 
@@ -49,11 +50,34 @@ public class PessoaFisica extends Pessoa {
 
     public void setSobreNome(String sobreNome) {
         this.sobreNome = sobreNome;
+=======
+public class PessoaFisica extends Pessoa {
+    private String sobrenome;
+    private int idade;
+
+
+    public String getSobrenome() {
+        return sobrenome;
+    }
+
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
+
+    public String nomeCompleto(){
+        return this.nome+" "+this.sobrenome;
+>>>>>>> origin/master
     }
 
     public int getIdade() {
         return idade;
     }
 
+<<<<<<< HEAD
     public void setIdade(int idade) { this.idade = idade; }
+=======
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+>>>>>>> origin/master
 }

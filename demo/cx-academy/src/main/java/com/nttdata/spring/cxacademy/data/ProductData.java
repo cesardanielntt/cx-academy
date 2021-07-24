@@ -7,6 +7,7 @@ public class ProductData {
     private String price;
     private boolean avaliableOnline;
 
+
     public Integer getCode() {
         return code;
     }
@@ -31,11 +32,7 @@ public class ProductData {
         this.price = price;
     }
 
-    public boolean isAvaliableOnline() {
-        return avaliableOnline;
-    }
+    public boolean isAvaliableOnline() { return avaliableOnline; }
 
-    public void setAvaliableOnline(boolean avaliableOnline) {
-        this.avaliableOnline = avaliableOnline;
-    }
+    public void setAvaliableOnline(boolean avaliableOnline) { this.avaliableOnline = avaliableOnline; }
 }

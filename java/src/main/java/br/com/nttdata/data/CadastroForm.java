@@ -1,6 +1,9 @@
 package br.com.nttdata.data;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
@@ -18,12 +21,17 @@ public class CadastroForm {
 
     @FormParam("email")
     @Email(message = "E-mail inválido!")
+<<<<<<< HEAD
     @NotEmpty(message = "E-mail é obrigatório!")
+=======
+    @NotEmpty(message = "E-mail obrigatório!")
+>>>>>>> origin/master
     private String email;
 
     @FormParam("idade")
     private int idade;
 
+<<<<<<< HEAD
     @FormParam("rua")
     @Size(min = 2, max = 50, message = "Rua é obrigatório!")
     private String rua;
@@ -77,6 +85,8 @@ public class CadastroForm {
 
     public void setRua(String rua) { this.rua = rua; }
 
+=======
+>>>>>>> origin/master
     public String getNome() {
         return nome;
     }

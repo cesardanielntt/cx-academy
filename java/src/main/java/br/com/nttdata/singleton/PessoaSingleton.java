@@ -1,11 +1,19 @@
 package br.com.nttdata.singleton;
 
+<<<<<<< HEAD
 
 import br.com.nttdata.models.PessoaFisica;
 import java.util.ArrayList;
 import java.util.List;
 
 
+=======
+import br.com.nttdata.models.PessoaFisica;
+
+import java.util.ArrayList;
+import java.util.List;
+
+>>>>>>> origin/master
 public class PessoaSingleton {
     private static PessoaSingleton instance;
     private List<PessoaFisica> data;
@@ -22,7 +30,10 @@ public class PessoaSingleton {
         data = new ArrayList<>();
     }
 
+<<<<<<< HEAD
     //get e set
+=======
+>>>>>>> origin/master
     public List<PessoaFisica> getData() {
         return data;
     }
@@ -31,6 +42,7 @@ public class PessoaSingleton {
         this.data = data;
     }
 }
+<<<<<<< HEAD
 
 
 
@@ -68,3 +80,5 @@ public class PessoaSingleton {
 //    }
 //    public void setData(List<PessoaFisica>data) {this.data = data;}
 //}
+=======
+>>>>>>> origin/master

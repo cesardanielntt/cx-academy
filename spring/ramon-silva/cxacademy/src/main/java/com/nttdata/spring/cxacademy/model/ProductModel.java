@@ -20,7 +20,7 @@ public class ProductModel {
     private String price;
 
     @Column(nullable = false)
-    private Boolean avaliableOnline;
+    private boolean avaliableOnline;
 
     public Integer getCode() {
         return code;
@@ -46,11 +46,11 @@ public class ProductModel {
         this.price = price;
     }
 
-    public Boolean getAvaliableOnline() {
+    public boolean isAvaliableOnline() {
         return avaliableOnline;
     }
 
-    public void setAvaliableOnline(Boolean avaliableOnline) {
+    public void setAvaliableOnline(boolean avaliableOnline) {
         this.avaliableOnline = avaliableOnline;
     }
 }

@@ -7,7 +7,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @ServletComponentScan
-@EnableJpaRepositories("com.nttdata.spring.dao")
+@EnableJpaRepositories("com.nttdata.spring.cxacademy.dao")
 @SpringBootApplication(scanBasePackages = "com.nttdata.spring.cxacademy.*")
 @EntityScan("com.nttdata.spring.cxacademy.model")
 public class CxacademyApplication {

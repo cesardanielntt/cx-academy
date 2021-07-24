@@ -31,27 +31,48 @@ public class DefaultProductFacade implements ProductFacade {
     }
 
     @Override
-    public void saveProduct(ProductData product) {
-
+    public void saveProduct(ProductData product) {// salvar o product
+        if (product != null){ // se produto não for vazio...
+            ProductModel model = reverseConvert(product, new ProductModel());
+            productService.saveProduct(model);
+        }
     }
 
     @Override
     public ProductData getProductByCode(Integer productCode) {
+        ProductModel model = productService.getProductByCode(productCode);
+        if (model != null) {
+            return convert(model, new ProductData());
+        }
+
         return null;
     }
 
     @Override
     public void deleteProduct(Integer productCode) {
-
+        productService.deleteProduct(productCode);
     }
 
     //converte model para data
     private ProductData convert(ProductModel source , ProductData target) {
         target.setCode(source.getCode());
         target.setName(source.getName());
-        target.setPrice("R$" + source.getPrice());
+        target.setPrice("R$ " + source.getPrice());
         target.setAvaliableOnline(source.isAvaliableOnline());
         return target;
     }
 
+    private ProductModel reverseConvert(ProductData source, ProductModel target) {
+        target.setCode(source.getCode());
+        target.setName(source.getName());
+        String price = source.getPrice();
+        if (source.getPrice().contains("R$ ")) {
+            price = source.getPrice().replace("R$ ", "");
+
+        }
+        target.setPrice(price);
+        target.setAvaliableOnline(source.isAvaliableOnline());
+        return target;
+
+    }
 }

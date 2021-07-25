@@ -1,6 +1,6 @@
--- ----------------------------------------------------- --
--- Arquivo para armazenar todos os scripts SQL da aula 1 --
--- ----------------------------------------------------- --
+-- ATIVIDADE3MATHEUSMELO
+
+
 create database cxacademia
 drop database cxcommerce
 

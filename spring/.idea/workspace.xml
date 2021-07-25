@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b00d9024-1cc3-43e0-902f-0ec0937bd02f" name="Default Changelist" comment="Merge with master">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/controller/CustomerPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/controller/ProductPageController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/dao/CustomerDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/data/AddressData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/data/CustomerData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/data/ProductData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/facade/CustomerFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/facade/ProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/facade/impl/DefaultCustomerFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/facade/impl/DefaultProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/form/CustomerForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/form/ProductForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/model/AddressModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/model/CustomerModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/model/ProductModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/service/impl/DefaultCustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/java/com/nttdata/spring/service/impl/DefaultProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/static/error.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/static/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/templates/customerEditPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/templates/customerPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/templates/productEditPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/main/resources/templates/productPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complete/academia-hybris-spring/src/test/java/com/nttdata/spring/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/dummy.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/CxAcademyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/data/ProductData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/facade/ProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/form/ProductForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/model/ProductModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/resources/templates/productEditPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/main/resources/templates/productPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/paulo/src/test/java/com/nttdata/spring/cxacademy/CxAcademyApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/CxAcademyApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/data/ProductData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/facade/ProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultProductFacade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/form/ProductForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/model/ProductModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productEditPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/productPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/nttdata/spring/cxacademy/CxAcademyApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RESET_MODE" value="HARD" />
+  </component>
+  <component name="ProjectId" id="1vfZ74djdUTFIUScKOuZTnqU3P8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/teilor" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\spring" />
+      <recent name="X:\cx-academy-spring" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.nttdata.spring.cxacademy" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CxAcademyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="cx-academy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.nttdata.spring.cxacademy.CxAcademyApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SHORTEN_COMMAND_LINE" value="NONE" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b00d9024-1cc3-43e0-902f-0ec0937bd02f" name="Default Changelist" comment="" />
+      <created>1626954937540</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626954937540</updated>
+      <workItem from="1626954939248" duration="1029000" />
+      <workItem from="1626956442577" duration="2141000" />
+      <workItem from="1626959320931" duration="6936000" />
+      <workItem from="1626967319312" duration="1216000" />
+      <workItem from="1627040440779" duration="1054000" />
+      <workItem from="1627041801424" duration="13238000" />
+    </task>
+    <task id="LOCAL-00001" summary="Creation of ProductController and productPage.html">
+      <created>1627042034769</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1627042034769</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Save and Edit features">
+      <created>1627058754304</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1627058754304</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="Creation of ProductController and productPage.html" />
+    <MESSAGE value="Save and Edit features" />
+    <option name="LAST_COMMIT_MESSAGE" value="Save and Edit features" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((DefaultProductFacade)((ProductController)this).productFacade).productService" custom="com.nttdata.spring.cxacademy.controller.ProductController,com.nttdata.spring.cxacademy.facade.impl.DefaultProductFacade" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

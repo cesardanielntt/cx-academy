@@ -31,12 +31,12 @@ public class ProductPageController {
     @PostMapping("/create")
     public String create(final ProductForm form, Model model, RedirectAttributes redirectAttributes) {
         if (form == null || form.getName().isEmpty()) {
-            redirectAttributes.addFlashAttribute("error", "Error: Code / Name cannot be empty");
+            redirectAttributes.addFlashAttribute("error", "Erro: Código ou Nome não podem ficar vazios");
             return "redirect:/products";
         }
 
         productFacade.saveProduct(convert(form));
-        redirectAttributes.addFlashAttribute("success", "Product saved successfully");
+        redirectAttributes.addFlashAttribute("success", "Produto salvo com sucesso");
         return "redirect:/products";
     }
 
@@ -50,19 +50,19 @@ public class ProductPageController {
             return "productEditPage";
         }
 
-        redirectAttributes.addFlashAttribute("error", "Error: Invalid Product Code");
+        redirectAttributes.addFlashAttribute("error", "Erro: Código de produto inválido");
         return "redirect:/products";
     }
 
     @PostMapping(value = "/edit")
     public String editProduct(final ProductForm form, Model model, RedirectAttributes redirectAttributes) {
         if (form == null || form.getName().isEmpty()) {
-            redirectAttributes.addFlashAttribute("error", "Error: Code / Name cannot be empty");
+            redirectAttributes.addFlashAttribute("error", "Erro: Código ou Nome não podem ficar vazios");
             return "redirect:/products";
         }
 
         productFacade.saveProduct(convert(form));
-        redirectAttributes.addFlashAttribute("success", "Product saved successfully");
+        redirectAttributes.addFlashAttribute("success", "Produto salvo sucesso");
         return "redirect:/products";
     }
 
@@ -70,9 +70,9 @@ public class ProductPageController {
     public String delete(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
             productFacade.deleteProduct(id);
-            redirectAttributes.addFlashAttribute("success", "Product deleted successfully");
+            redirectAttributes.addFlashAttribute("success", "Produto deletado com sucesso");
         } catch (Exception e) {
-            redirectAttributes.addFlashAttribute("error", "Error to delete Product");
+            redirectAttributes.addFlashAttribute("error", "Erro ao deletar produto");
         }
         return "redirect:/products";
     }

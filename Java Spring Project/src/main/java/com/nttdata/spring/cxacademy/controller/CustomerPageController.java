@@ -31,14 +31,7 @@ public class CustomerPageController {
 
     @PostMapping("/create")
     public String create(final CustomerForm form, Model model, RedirectAttributes redirectAttributes) {
-        if (form == null || form.getEmail().isEmpty() || form.getName().isEmpty()) {
-            redirectAttributes.addFlashAttribute("error", "Error: Name / Email cannot be empty");
-            return "redirect:/customers";
-        }
-
-        customerFacade.saveCustomer(convert(form));
-        redirectAttributes.addFlashAttribute("success", "Customer saved successfully");
-        return "redirect:/customers";
+        return getString(form, redirectAttributes);
     }
 
     @GetMapping(value = "/edit")
@@ -51,19 +44,23 @@ public class CustomerPageController {
             return "customerEditPage";
         }
 
-        redirectAttributes.addFlashAttribute("error", "Error: Invalid Customer ID");
+        redirectAttributes.addFlashAttribute("error", "Erro: Identificador de cliente inválido");
         return "redirect:/customers";
     }
 
     @PostMapping(value = "/edit")
     public String editCustomer(final CustomerForm form, Model model, RedirectAttributes redirectAttributes) {
+        return getString(form, redirectAttributes);
+    }
+
+    private String getString(CustomerForm form, RedirectAttributes redirectAttributes) {
         if (form == null || form.getEmail().isEmpty() || form.getName().isEmpty()) {
-            redirectAttributes.addFlashAttribute("error", "Error: Name / Email cannot be empty");
+            redirectAttributes.addFlashAttribute("error", "Erro: Nome ou Email não podem ficar vazios");
             return "redirect:/customers";
         }
 
         customerFacade.saveCustomer(convert(form));
-        redirectAttributes.addFlashAttribute("success", "Customer saved successfully");
+        redirectAttributes.addFlashAttribute("success", "Cliente salvo com sucesso");
         return "redirect:/customers";
     }
 
@@ -71,9 +68,9 @@ public class CustomerPageController {
     public String delete(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {
             customerFacade.deleteCustomer(id);
-            redirectAttributes.addFlashAttribute("success", "Customer deleted successfully");
+            redirectAttributes.addFlashAttribute("success", "Cliente deletado com sucesso");
         } catch (Exception e) {
-            redirectAttributes.addFlashAttribute("error", "Error to delete Customer");
+            redirectAttributes.addFlashAttribute("error", "Erro ao deletar cliente");
         }
         return "redirect:/customers";
     }

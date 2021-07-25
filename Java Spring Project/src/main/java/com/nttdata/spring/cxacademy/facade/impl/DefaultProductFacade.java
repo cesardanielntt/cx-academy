@@ -52,7 +52,7 @@ public class DefaultProductFacade implements ProductFacade {
     private ProductModel reverseConvert(ProductData source, ProductModel target) {
         target.setCode(source.getCode());
         target.setName(source.getName());
-        target.setPrice(source.getPrice());
+        target.setPrice("R$ " + source.getPrice());
         target.setAvailableOnline(source.isAvailableOnline());
         return target;
     }
@@ -60,6 +60,13 @@ public class DefaultProductFacade implements ProductFacade {
     private ProductData convert(ProductModel source, ProductData target) {
         target.setCode(source.getCode());
         target.setName(source.getName());
+
+        String price = source.getPrice();
+        if(source.getPrice().contains("R$ ")){
+            price = source.getPrice().replace("R$ ", "");
+        }
+        target.setPrice(price);
+
         target.setPrice(source.getPrice());
         target.setAvailableOnline(source.isAvailableOnline());
         return target;

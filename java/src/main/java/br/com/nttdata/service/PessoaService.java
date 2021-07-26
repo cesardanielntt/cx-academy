@@ -1,5 +1,9 @@
 package br.com.nttdata.service;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
 import br.com.nttdata.models.PessoaFisica;
 
 import java.util.List;

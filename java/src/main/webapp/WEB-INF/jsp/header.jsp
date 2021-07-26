@@ -1,10 +1,27 @@
+<<<<<<< HEAD
+=======
+<%--
+  Created by IntelliJ IDEA.
+  User: lucas
+  Date: 20/07/2021
+  Time: 11:14
+  To change this template use File | Settings | File Templates.
+--%>
+>>>>>>> origin/master
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<<<<<<< HEAD
 <script>
     $(document).ready(function () {
         $('.cep').mask("00.000-000");
+=======
+
+<script>
+    $(document).ready(function() {
+        $('.cep').mask("00.000-00");
+>>>>>>> origin/master
     })
 </script>
 
@@ -13,6 +30,10 @@
         font-family: 'Arial';
         background-color: #ffffff;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     input, select, option, textarea {
         margin: 10px auto;
         border: none;
@@ -21,6 +42,10 @@
         border-radius: 10px;
         width: 100%;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     button {
         margin: 10px auto;
         border: none;
@@ -32,29 +57,53 @@
         color: #fff;
         font-size: 18px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     .error {
         color: red;
         margin-bottom: 15px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     form {
         width: 400px;
         text-align: left;
         margin: 0 auto;
     }
+<<<<<<< HEAD
     .row {
         display: block;
     }
+=======
+
+    .row {
+        display: block;
+    }
+
+>>>>>>> origin/master
     .content-form {
         width: 400px;
         text-align: center;
         margin: 0 auto;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     .content {
         width: 80%;
         margin: 0 auto;
         border-radius: 10px;
         padding: 2px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     .table {
         width: 100%;
         margin: 0 auto;
@@ -62,31 +111,55 @@
         border-radius: 10px;
         padding: 2px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     table {
         width: 100%;
         margin: 0 auto;
         border-radius: 50px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     tr:last-child {
         border-bottom: solid 1px #ccc;
         width: 16%;
         padding: 15px;
+<<<<<<< HEAD
     }
 
+=======
+
+    }
+
+
+>>>>>>> origin/master
     th {
         border-bottom: solid 0.5px #ccc;
         width: 16%;
         padding: 15px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     td {
         border-bottom: solid 0.5px #ccc;
         border-right: solid 0.5px #ccc;
         padding: 10px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     td:last-child {
         border-right: none;
         padding: 10px;
     }
+<<<<<<< HEAD
     tr:last-child td {
         border-bottom: none;
     }
@@ -100,3 +173,28 @@
         width: 200px;
     }
 </style>
+=======
+
+    tr:last-child td {
+        border-bottom: none;
+    }
+
+    .id-collum {
+        width: 5%;
+    }
+
+    .register-button {
+        width: auto;
+    }
+
+    .radio {
+        width: 200px;
+        display: inline-block;
+    }
+
+    .radio input {
+        width: 30px;
+        display: inline-block;
+    }
+</style>
+>>>>>>> origin/master

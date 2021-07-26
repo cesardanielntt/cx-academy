@@ -13,6 +13,7 @@ import javax.persistence.Id;
 public class ProductModel {
 
     @Id
+
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer code;
 

@@ -8,6 +8,8 @@ import java.util.List;
 
 public interface ProductFacade {
 
+    List<ProductData> getOnlineProducts();
+
     List<ProductData> getAllProducts();
 
     void saveProduct(ProductData product);
@@ -15,6 +17,5 @@ public interface ProductFacade {
     ProductData getProductByCode(Integer productCode);
 
     void deleteProduct(Integer productCode);
-
 
 }

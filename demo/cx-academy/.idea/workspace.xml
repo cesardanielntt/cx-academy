@@ -5,8 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b780606-9c57-4ce4-b5bb-e6a12dca9791" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../java/src/main/java/br/com/nttdata/data/CadastroForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/src/main/java/br/com/nttdata/data/CadastroForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../java/src/main/webapp/WEB-INF/jsp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../java/src/main/webapp/WEB-INF/jsp/header.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/form/ProductForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/resources/templates/ProductPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/resources/templates/productEditPage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultProductFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultProductFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../spring/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultProductService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../spring/cx-academy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../java" />
   </component>
   <component name="RunManager">
     <configuration name="CxAcademyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -48,6 +53,8 @@
       <updated>1626954951276</updated>
       <workItem from="1626954952693" duration="140000" />
       <workItem from="1626955164590" duration="25000" />
+      <workItem from="1627128477904" duration="41000" />
+      <workItem from="1627128928855" duration="112000" />
     </task>
     <servers />
   </component>

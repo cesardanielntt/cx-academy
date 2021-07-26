@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface ProductService {
 
+    List<ProductModel> getOnlineProducts();
+
     List<ProductModel> getAllProducts();
 
     void saveProduct(ProductModel product);
@@ -13,6 +15,7 @@ public interface ProductService {
     ProductModel getProductByCode(Integer productCode);
 
     void deleteProduct(Integer productCode);
+
 
 
 }

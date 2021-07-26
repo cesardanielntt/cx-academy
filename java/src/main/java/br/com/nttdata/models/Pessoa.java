@@ -1,17 +1,9 @@
 package br.com.nttdata.models;
 
-<<<<<<< HEAD
-public class Pessoa<nome> {
-    protected String id;
-    protected String nome;
-    protected String email;
-
-=======
 public class Pessoa {
     protected String id;
     protected String nome;
     protected String email;
-    protected int idade;
     protected String rua;
     protected int numero;
     protected String complemento;
@@ -19,19 +11,14 @@ public class Pessoa {
     protected String cidade;
     protected String estado;
     protected String cep;
->>>>>>> origin/master
 
     public String getId() {
         return id;
     }
 
-<<<<<<< HEAD
-    public void setId(String id) { this.id = id; }
-=======
     public void setId(String id) {
         this.id = id;
     }
->>>>>>> origin/master
 
     public String getNome() {
         return nome;
@@ -47,17 +34,6 @@ public class Pessoa {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-<<<<<<< HEAD
-}
-=======
-    public int getIdade() {
-        return idade;
-    }
-
-    public void setIdade(int idade) {
-        this.idade = idade;
     }
 
     public String getRua() {
@@ -122,15 +98,16 @@ public class Pessoa {
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
-                ", idade=" + idade +
                 ", rua='" + rua + '\'' +
                 ", numero=" + numero +
                 ", complemento='" + complemento + '\'' +
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", estado='" + estado + '\'' +
-                ", cep='" + cep + '\'' +
+                ", cep=" + cep +
                 '}';
     }
 }
->>>>>>> origin/master
+
+      
+

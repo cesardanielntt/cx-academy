@@ -6,7 +6,11 @@ import br.com.nttdata.singleton.PessoaSingleton;
 
 import java.util.List;
 
+<<<<<<< HEAD
+public class PessoaFisicaService implements PessoaService{
+=======
 public class PessoaFisicaService implements PessoaService {
+>>>>>>> origin/master
 
     @Override
     public void criarPessoa(PessoaFisica pessoa) {

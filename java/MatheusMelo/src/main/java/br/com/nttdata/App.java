@@ -1,4 +1,4 @@
-package br.com.nttdata;
+/*package br.com.nttdata;
 
 import br.com.nttdata.models.Pessoa;
 import br.com.nttdata.models.PessoaFisica;
@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    final static String meuNome = "Lucas";
+    final static String meuNome = "Douglas";
 
     public static void main(String[] args) {
 

@@ -31,6 +31,19 @@ public class DefaultProductFacade implements ProductFacade {
     }
 
     @Override
+    public List<ProductData> getOnlineProducts() {
+        List<ProductModel> productModels = productService.getOnlineProducts();
+        List<ProductData> productDatas = new ArrayList<>();
+
+        for (ProductModel product : productModels) {
+            ProductData data = convert(product, new ProductData());
+            productDatas.add(data);
+        }
+
+        return productDatas;
+    }
+
+    @Override
     public void saveProduct(ProductData product) {
         if(product != null) {
             ProductModel model = reverseConvert(product, new ProductModel());
@@ -53,6 +66,7 @@ public class DefaultProductFacade implements ProductFacade {
     public void deleteProduct(Integer productCode) {
         productService.deleteProduct(productCode);
     }
+
 
     private ProductData convert(ProductModel source, ProductData target) {
         target.setCode(source.getCode());

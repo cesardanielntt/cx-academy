@@ -14,4 +14,6 @@ public interface ProductFacade {
 
     void deleteProduct(Integer productCode);
 
+    List<ProductData> getOnlineProducts();
+
 }

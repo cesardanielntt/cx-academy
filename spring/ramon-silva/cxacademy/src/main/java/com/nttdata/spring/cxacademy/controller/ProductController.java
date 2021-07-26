@@ -22,6 +22,12 @@ public class ProductController {
         return "productPage";
     }
 
+    @GetMapping(value = "filters")
+    public String getProductsFilters(Model model) {
+        model.addAttribute("products", productFacade.getOnlineProducts());
+        return "productFilterPage";
+    }
+
     @PostMapping("/create")
     public String create(ProductForm productForm, RedirectAttributes redirectAttributes) {
         if(productForm.getName().isEmpty()) {
@@ -30,7 +36,7 @@ public class ProductController {
         }
 
         productFacade.saveProduct(convert(productForm));
-        redirectAttributes.addFlashAttribute("success", "producto salvo com sucesso!");
+        redirectAttributes.addFlashAttribute("success", "produto salvo com sucesso!");
         return "redirect:/products";
     }
 
@@ -81,6 +87,5 @@ public class ProductController {
 
         return data;
     }
-
 
 }

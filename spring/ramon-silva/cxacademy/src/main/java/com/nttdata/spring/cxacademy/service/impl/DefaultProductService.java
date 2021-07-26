@@ -41,4 +41,9 @@ public class DefaultProductService implements ProductService {
     public void deleteProduct(Integer productCode) {
         productDao.deleteById(productCode);
     }
+
+    @Override
+    public List<ProductModel> getOnlineProducts() {
+        return productDao.findAllByAvaliableOnlineIsTrue();
+    }
 }

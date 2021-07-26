@@ -2,6 +2,7 @@
 -- Arquivo para armazenar todos os scripts SQL da aula 2 --
 -- ----------------------------------------------------- --
 
+--  Francisco Ramon Da Silva Holanda  --
 
 create database cxcommerce;
 use cxcommerce;

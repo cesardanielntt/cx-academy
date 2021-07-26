@@ -2,6 +2,8 @@
 -- Arquivo para armazenar todos os scripts SQL da aula 1 --
 -- ----------------------------------------------------- --
 
+--  Francisco Ramon Da Silva Holanda  --
+
 create database if not exists cxacademy;
 use cxacademy;
 

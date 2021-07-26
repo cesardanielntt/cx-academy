@@ -2,10 +2,14 @@ package com.nttdata.spring.cxacademy.data;
 
 public class ProductData {
 
-    private Integer code;
+    private int code;
     private String name;
     private String price;
     private boolean availableOnline;
+
+    public void setCode(int code) {
+        this.code = code;
+    }
 
     public Integer getCode() {
         return code;

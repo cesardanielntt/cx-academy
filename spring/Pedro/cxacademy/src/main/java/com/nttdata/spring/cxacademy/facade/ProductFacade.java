@@ -8,6 +8,8 @@ public interface ProductFacade {
 
     List<ProductData> getAllProduts();
 
+  //  List<ProductData> getAllEnabled();
+
     void saveProduct(ProductData product);
 
     ProductData getProductByCode(Integer productCode);

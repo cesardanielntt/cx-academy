@@ -9,7 +9,6 @@ public class ProductModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer code;
 
-
     @Column(nullable = false)
     private String nome;
 

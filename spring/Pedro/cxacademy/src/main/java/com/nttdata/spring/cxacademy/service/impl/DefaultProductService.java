@@ -19,7 +19,12 @@ public class DefaultProductService implements ProductService {
     public List<ProductModel> getAllProduts() {
         return productDao.findAll();
     }
-
+/*
+    @Override
+    public List<ProductModel> getAllEnabled(){
+        return productDao.findEnabled();
+    }
+*/
     @Override
     public void saveProduct(ProductModel product) {
         if(product != null){

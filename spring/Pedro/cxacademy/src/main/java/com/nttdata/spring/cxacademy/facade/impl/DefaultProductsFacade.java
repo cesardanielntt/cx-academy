@@ -27,7 +27,19 @@ public class DefaultProductsFacade implements ProductFacade {
         }
         return productDatas;
     }
+/*
+    @Override
+    public List<ProductData> getAllEnabled(){
+        List<ProductModel> productModels = productService.getAllEnabled();
+        List<ProductData> productDatas = new ArrayList<>();
 
+        for(ProductModel product: productModels){
+            ProductData data = convert(product, new ProductData());
+            productDatas.add(data);
+        }
+        return productDatas;
+    }
+*/
     @Override
     public void saveProduct(ProductData product) {
         if(product != null){

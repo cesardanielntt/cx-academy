@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: lucas
-  Date: 20/07/2021
-  Time: 11:14
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -28,10 +22,11 @@
         padding: 15px;
         background-color: #f1f1f1;
         border-radius: 10px;
-        width: 100%;
+        width: 200%;
     }
 
     button {
+
         margin: 10px auto;
         border: none;
         padding: 15px;
@@ -49,7 +44,7 @@
     }
 
     form {
-        width: 400px;
+        width: 500px;
         text-align: left;
         margin: 0 auto;
     }
@@ -59,13 +54,13 @@
     }
 
     .content-form {
-        width: 400px;
+        width: 500px;
         text-align: center;
         margin: 0 auto;
     }
 
     .content {
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         border-radius: 10px;
         padding: 2px;

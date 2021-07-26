@@ -13,4 +13,6 @@ public interface ProductService {
     ProductModel getProductByCode(Integer productCode);
 
     void deleteProduct(Integer productCode);
+
+    List<ProductModel> getOnlineProducts();
 }

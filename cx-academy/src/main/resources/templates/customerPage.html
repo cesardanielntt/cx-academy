@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Customers Page</title>
+    <title>Customers</title>
     <style type="text/css">
         #todocontainer {
             margin-top: 50px;
@@ -41,11 +41,11 @@
                     <th scope="col">SURNAME</th>
                     <th scope="col">EMAIL</th>
                     <th scope="col">STREET</th>
-                    <th scope="col">NUMBER</th>
-                    <th scope="col">COMPLEMENT</th>
-                    <th scope="col">CEP</th>
-                    <th scope="col">CITY</th>
-                    <th scope="col">STATE</th>
+<!--                    <th scope="col">NUMBER</th>-->
+<!--                    <th scope="col">COMPLEMENT</th>-->
+<!--                    <th scope="col">CEP</th>-->
+<!--                    <th scope="col">CITY</th>-->
+<!--                    <th scope="col">STATE</th>-->
                     <th scope="col">EDIT</th>
                     <th scope="col">DELETE</th>
 
@@ -58,11 +58,11 @@
                     <td th:text=${customer.surname}></td>
                     <td th:text=${customer.email}></td>
                     <td th:text=${customer.street}></td>
-                    <td th:text=${customer.number}></td>
-                    <td th:text=${customer.complement}></td>
-                    <td th:text=${customer.cep}></td>
-                    <td th:text=${customer.city}></td>
-                    <td th:text=${customer.state}></td>
+<!--                    <td th:text=${customer.number}></td>-->
+<!--                    <td th:text=${customer.complement}></td>-->
+<!--                    <td th:text=${customer.cep}></td>-->
+<!--                    <td th:text=${customer.city}></td>-->
+<!--                    <td th:text=${customer.state}></td>-->
                     <td>
                         <div class="form-group">
                             <a th:href="@{/customers/edit?code={id}(id=${customer.code})}" class="btn btn-success btn-sm text-white">EDIT</a>
@@ -96,6 +96,7 @@
                 </div>
                 <div class="modal-body">
                     <form th:action="@{/customers/create}" method="POST" name="customerForm">
+
                         <div class="form-group">
                             <label for="name">NAME</label>
                             <input type="text" class="form-control" name="name" placeholder="Name">
@@ -140,6 +141,7 @@
                             <label for="state">STATE</label>
                             <input type="text" class="form-control" name="state"  placeholder="State" th:value="${State}">
                         </div>
+
 
                         <button type="submit" class="btn btn-primary">SAVE</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>

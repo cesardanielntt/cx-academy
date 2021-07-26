@@ -17,8 +17,8 @@ public class DefaultProductFacade implements ProductFacade {
     private ProductService productService;
 
     @Override
-    public List<ProductData> getAllProducts() {
-        List<ProductModel> productModels = productService.getAllProducts();
+    public List<ProductData> getOnlineProducts() {
+        List<ProductModel> productModels = productService.getOnlineProducts();
         List<ProductData> productData = new ArrayList<>();
 
         for (ProductModel product : productModels){
@@ -28,6 +28,7 @@ public class DefaultProductFacade implements ProductFacade {
 
         return productData;
     }
+
 
     @Override
     public void saveProduct(ProductData product) {

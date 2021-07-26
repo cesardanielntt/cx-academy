@@ -22,7 +22,7 @@ public class ProductController {
 
     @GetMapping
     public String getProducts(Model model){
-        model.addAttribute("products", productFacade.getAllProducts());
+        model.addAttribute("products", productFacade.getOnlineProducts());
         return "productPage";
     }
 

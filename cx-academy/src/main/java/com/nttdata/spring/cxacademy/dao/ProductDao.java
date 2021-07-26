@@ -10,4 +10,6 @@ import java.util.List;
 public interface ProductDao extends CrudRepository<ProductModel, Integer> {
 
     List<ProductModel> findAll();
+
+    List<ProductModel> findAllByAvailableOnlineIsTrue();
 }

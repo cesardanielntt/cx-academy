@@ -4,7 +4,10 @@ public class PessoaFisica extends Pessoa {
     private String sobrenome;
     private int idade;
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> origin/master
     public String getSobrenome() {
         return sobrenome;
     }
@@ -13,10 +16,13 @@ public class PessoaFisica extends Pessoa {
         this.sobrenome = sobrenome;
     }
 
+<<<<<<< HEAD
+=======
     public String nomeCompleto(){
         return this.nome+" "+this.sobrenome;
     }
 
+>>>>>>> origin/master
     public int getIdade() {
         return idade;
     }
@@ -25,6 +31,9 @@ public class PessoaFisica extends Pessoa {
         this.idade = idade;
     }
 
+<<<<<<< HEAD
+    }
+=======
     public String getRua() {
         return rua;
     }
@@ -84,3 +93,4 @@ public class PessoaFisica extends Pessoa {
 
 
 }
+>>>>>>> origin/master

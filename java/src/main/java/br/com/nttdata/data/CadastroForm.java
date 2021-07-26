@@ -1,13 +1,95 @@
 package br.com.nttdata.data;
 
+<<<<<<< HEAD
+=======
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.*;
+>>>>>>> origin/master
 import javax.ws.rs.FormParam;
 
 public class CadastroForm {
 
     @FormParam("nome")
+<<<<<<< HEAD
+    private String nome;
+
+    @FormParam("sobrenome")
+    private String sobrenome;
+
+    @FormParam("email")
+    private String email;
+
+    @FormParam("idade")
+    private int idade;
+
+    @FormParam("rua")
+    private String rua;
+
+    @FormParam("numero")
+    private String numero;
+
+    @FormParam("complemento")
+    private String complemento;
+
+    @FormParam("bairro")
+    private String bairro;
+
+    @FormParam("cidade")
+    private String cidade;
+
+    @FormParam("estado")
+    private String estado;
+
+    @FormParam("cep")
+    private String cep;
+
+    public String getNome() { return nome; }
+
+    public void setNome(String nome) { this.nome = nome; }
+
+    public String getSobrenome() { return sobrenome; }
+
+    public void setSobrenome(String sobrenome) { this.sobrenome = sobrenome; }
+
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) { this.email = email; }
+
+    public int getIdade() { return idade; }
+
+    public void setIdade(int idade) { this.idade = idade; }
+
+    public String getRua() { return rua; }
+
+    public void setRua(String rua) { this.rua = rua; }
+
+    public String getNumero() { return numero; }
+
+    public void setNumero(String numero) { this.numero = numero; }
+
+    public String getComplemento() { return complemento; }
+
+    public void setComplemento(String complemento) { this.complemento = complemento; }
+
+    public String getBairro() { return bairro; }
+
+    public void setBairro(String bairro) { this.bairro = bairro; }
+
+    public String getCidade() { return cidade; }
+
+    public void setCidade(String cidade) { this.cidade = cidade; }
+
+    public String getEstado() { return estado; }
+
+    public void setEstado(String estado) { this.estado = estado; }
+
+    public String getCep() { return cep; }
+
+    public void setCep(String cep) { this.cep = cep; }
+}
+
+=======
     @Size(min = 3, max = 25, message = "O nome é obrigatório!")
     private String nome;
 
@@ -141,3 +223,4 @@ public class CadastroForm {
         this.cep = cep;
     }
 }
+>>>>>>> origin/master

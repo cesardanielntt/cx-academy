@@ -10,8 +10,13 @@ public class PessoaSingleton {
     private List<PessoaFisica> data;
 
     public static PessoaSingleton getInstance() {
+<<<<<<< HEAD
+        if (instance==null) {
+        instance = new PessoaSingleton();
+=======
         if (instance == null) {
             instance = new PessoaSingleton();
+>>>>>>> origin/master
         }
 
         return instance;
@@ -28,4 +33,8 @@ public class PessoaSingleton {
     public void setData(List<PessoaFisica> data) {
         this.data = data;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin/master

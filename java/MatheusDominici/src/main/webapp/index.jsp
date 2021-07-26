@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 =======
 NTT DATA
->>>>>>> origin/master
+
+<a href="pages/register">Register</a>
 </body>
 </html>

@@ -132,7 +132,6 @@ public class App {
                 System.out.println(i + " é ímpar");
             }
         }
->>>>>>> origin/master
-    }
+    }*/
 
 }

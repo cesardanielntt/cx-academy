@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31f53023-b906-4cc9-80ea-21fb5ff08a15" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/dao/CustomerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/dao/ProductDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/data/CustomerData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/data/ProductData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/CustomerFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/ProductFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultCustomerFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/facade/impl/DefaultProductFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/form/CustomerForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/form/ProductForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/model/CustomerModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/model/ProductModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultCustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/java/com/nttdata/spring/cxacademy/service/impl/DefaultProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/resources/static/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/resources/templates/customerEditPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/resources/templates/customerPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/resources/templates/productEditPage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cx-academy/src/main/resources/templates/productPage.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1vmimA9ahimnaFTw5jSF6vil1jN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/cx-academy" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31f53023-b906-4cc9-80ea-21fb5ff08a15" name="Default Changelist" comment="" />
+      <created>1627173820990</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627173820990</updated>
+      <workItem from="1627173822705" duration="24000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

@@ -5,7 +5,22 @@ public class AddressData {
     private Integer id;
     private String streetName;
     private String streetNumber;
+    private String address2;
+    private String zipCode;
     private String city;
+    private String state;
+
+    public String getAddress2() { return address2; }
+
+    public void setAddress2(String address2) { this.address2 = address2; }
+
+    public String getZipCode() { return zipCode; }
+
+    public void setZipCode(String zipCode) { this.zipCode = zipCode; }
+
+    public String getState() { return state; }
+
+    public void setState(String state) { this.state = state; }
 
     public Integer getId() {
         return id;

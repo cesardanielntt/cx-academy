@@ -30,21 +30,29 @@ public class CustomerPageController {
     }
 
     @PostMapping("/create")
-    public String create(CustomerForm customerForm, RedirectAttributes redirectAttributes) {
-        if (customerForm.getName().isEmpty()) {
-            redirectAttributes.addFlashAttribute("error", "Error: Name / Email cannot be empty");
+    public String create(CustomerForm customerForm, RedirectAttributes redirectAttributes){
+        if (customerForm.getName().isEmpty()){
+            redirectAttributes.addFlashAttribute("error", "O nome do cliente é obrigatório");
+            return "redirect:/customers";
+        }
+        if (customerForm.getLastname().isEmpty()){
+            redirectAttributes.addFlashAttribute("error", "O sobrenome do cliente é obrigatório");
+            return "redirect:/customers";
+        }
+        if (customerForm.getEmail().isEmpty()){
+            redirectAttributes.addFlashAttribute("error", "O email do cliente é obrigatório");
             return "redirect:/customers";
         }
 
         customerFacade.saveCustomer(convert(customerForm));
-        redirectAttributes.addFlashAttribute("success", "Customer saved successfully");
+        redirectAttributes.addFlashAttribute("success", "Cliente salvo com sucesso");
         return "redirect:/customers";
     }
 
     @GetMapping(value = "/edit")
-    public String editCustomer(@RequestParam String email, Model model, RedirectAttributes redirectAttributes) {
+    public String editCustomer(@RequestParam Integer id, Model model, RedirectAttributes redirectAttributes) {
 
-        CustomerData customer = customerFacade.getCustomerByEmail(email);
+        CustomerData customer = customerFacade.getCustomerById(id);
 
         if (customer != null) {
             model.addAttribute("customer", customer);
@@ -52,6 +60,17 @@ public class CustomerPageController {
         }
 
         redirectAttributes.addFlashAttribute("error", "Error: Invalid Customer ID");
+        return "redirect:/customers";
+    }
+    @PostMapping("/edit")
+    public String editCustomer(CustomerForm customerForm, RedirectAttributes redirectAttributes){
+        if (customerForm.getName().isEmpty()){
+            redirectAttributes.addFlashAttribute("error", "O nome do cliente e obrigatorio");
+            return "redirect:/customers";
+        }
+
+        customerFacade.saveCustomer(convert(customerForm));
+        redirectAttributes.addFlashAttribute("success", "Cliente salvo com sucesso");
         return "redirect:/customers";
     }
 
@@ -70,14 +89,18 @@ public class CustomerPageController {
         CustomerData data = new CustomerData();
         data.setId(form.getId());
         data.setName(form.getName());
+        data.setLastname(form.getLastname());
         data.setEmail(form.getEmail());
 
         if (form.getStreetName() != null && !form.getStreetName().isEmpty() && form.getStreetNumber() != null && !form.getStreetNumber().isEmpty() && form.getCity() != null && !form.getCity().isEmpty()) {
             AddressData address = new AddressData();
-            address.setId(form.getAddressID());
+            address.setId(form.getAddressId());
             address.setStreetName(form.getStreetName());
             address.setStreetNumber(form.getStreetNumber());
+            address.setAddress2(form.getAddress2());
+            address.setZipCode(form.getZipCode());
             address.setCity(form.getCity());
+            address.setState(form.getState());
             data.setAddresses(Collections.singletonList(address));
         }
 

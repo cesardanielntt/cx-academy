@@ -47,6 +47,10 @@
                            th:value="${customer.name}">
                 </div>
                 <div class="form-group">
+                    <label for="lastname">LASTNAME</label>
+                    <input type="text" class="form-control" name="lastname" aria-describedby="emailHelp" placeholder="lastname" th:value="${customer.lastname}">
+                </div>
+                <div class="form-group">
                     <label for="email">EMAIL</label>
                     <input type="text" class="form-control" name="email" aria-describedby="emailHelp"
                            placeholder="E-mail" th:value="${customer.email}">
@@ -54,16 +58,28 @@
 
                 <div th:if="${#lists.isEmpty(customer.addresses)}">
                     <div class="form-group">
-                        <label for="email">STREET NAME</label>
+                        <label for="streetName">STREET NAME</label>
                         <input type="text" class="form-control" name="streetName" placeholder="Street Name">
                     </div>
                     <div class="form-group">
-                        <label for="email">STREET NUMBER</label>
+                        <label for="streetNumber">STREET NUMBER</label>
                         <input type="text" class="form-control" name="streetNumber" placeholder="Street Number">
                     </div>
                     <div class="form-group">
-                        <label for="email">CITY</label>
+                        <label for="address2">ADDRESS 2</label>
+                        <input type="text" class="form-control" name="address2" placeholder="address2">
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">ZIP CODE</label>
+                        <input type="text" class="form-control" name="zipCode" placeholder="Zip Code">
+                    </div>
+                    <div class="form-group">
+                        <label for="city">CITY</label>
                         <input type="text" class="form-control" name="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">STATE</label>
+                        <input type="text" class="form-control" name="state" placeholder="State">
                     </div>
                 </div>
                 <div th:each="address : ${customer.addresses}">
@@ -72,18 +88,27 @@
                     </div>
                     <div class="form-group">
                         <label for="streetName">STREET NAME</label>
-                        <input type="text" class="form-control" name="streetName" placeholder="Street Name"
-                               th:value="${address.streetName}">
+                        <input type="text" class="form-control" name="streetName" placeholder="Street Name">
                     </div>
                     <div class="form-group">
                         <label for="streetNumber">STREET NUMBER</label>
-                        <input type="text" class="form-control" name="streetNumber" placeholder="Street Number"
-                               th:value="${address.streetNumber}">
+                        <input type="text" class="form-control" name="streetNumber" placeholder="Street Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">ADDRESS 2</label>
+                        <input type="text" class="form-control" name="address2" placeholder="Address 2">
+                    </div>
+                    <div class="form-group">
+                        <label for="zipCode">ZIP CODE</label>
+                        <input type="text" class="form-control" name="zipCode" placeholder="Zip Code">
                     </div>
                     <div class="form-group">
                         <label for="city">CITY</label>
-                        <input type="text" class="form-control" name="city" placeholder="City"
-                               th:value="${address.city}">
+                        <input type="text" class="form-control" name="city" placeholder="City">
+                    </div>
+                    <div class="form-group">
+                        <label for="state">STATE</label>
+                        <input type="text" class="form-control" name="state" placeholder="State">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">SAVE</button>

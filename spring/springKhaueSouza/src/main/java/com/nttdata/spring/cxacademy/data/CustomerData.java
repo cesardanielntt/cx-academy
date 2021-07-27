@@ -6,8 +6,13 @@ public class CustomerData {
 
     private Integer id;
     private String name;
+    private String lastname;
     private String email;
     private List<AddressData> addresses;
+
+    public String getLastname() { return lastname; }
+
+    public void setLastname(String lastname) { this.lastname = lastname; }
 
     public Integer getId() {
         return id;
@@ -21,9 +26,7 @@ public class CustomerData {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name) { this.name = name; }
 
     public String getEmail() {
         return email;

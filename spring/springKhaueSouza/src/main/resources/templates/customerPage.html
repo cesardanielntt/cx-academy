@@ -39,6 +39,7 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">NAME</th>
+                    <th scope="col">LASTNAME</th>
                     <th scope="col">EMAIL</th>
                     <th scope="col">EDIT</th>
                     <th scope="col">DELETE</th>
@@ -48,10 +49,11 @@
                 <tr th:each="customer : ${customers}">
                     <th scope="row" th:text=${customer.id}></th>
                     <td th:text=${customer.name}></td>
+                    <td th:text=${customer.lastname}></td>
                     <td th:text=${customer.email}></td>
                     <td>
                         <div class="form-group">
-                            <a th:href="@{/customers/edit?email={id}(id=${customer.email})}"
+                            <a th:href="@{/customers/edit?id={id}(id=${customer.id})}"
                                class="btn btn-success btn-sm text-white">EDIT</a>
                         </div>
 
@@ -92,10 +94,15 @@
                                    placeholder="Name">
                         </div>
                         <div class="form-group">
+                            <label for="lastname">LAST NAME</label>
+                            <input type="text" class="form-control" name="lastname" aria-describedby="emailHelp"
+                                   placeholder="Last Name">
+                        </div>
+                        <div class="form-group">
                             <label for="email">E-MAIL</label>
                             <input type="text" class="form-control" name="email" aria-describedby="emailHelp"
                                    placeholder="E-mail">
-                        </div>
+
                         <button type="submit" class="btn btn-primary">SAVE</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
                     </form>

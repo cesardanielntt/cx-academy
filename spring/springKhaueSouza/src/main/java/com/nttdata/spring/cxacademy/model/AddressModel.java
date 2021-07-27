@@ -1,5 +1,6 @@
 package com.nttdata.spring.cxacademy.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,11 +13,36 @@ public class AddressModel {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
+    @Column
     private String streetName;
 
+    @Column
     private String streetNumber;
 
+    @Column
+    private String address2;
+
+    @Column
+    private String zipCode;
+
+    @Column
     private String city;
+
+    @Column
+    private String state;
+
+
+    public String getAddress2() { return address2; }
+
+    public void setAddress2(String address2) { this.address2 = address2; }
+
+    public String getZipCode() { return zipCode; }
+
+    public void setZipCode(String zipCode) { this.zipCode = zipCode; }
+
+    public String getState() { return state; }
+
+    public void setState(String state) { this.state = state; }
 
     public Integer getId() {
         return id;

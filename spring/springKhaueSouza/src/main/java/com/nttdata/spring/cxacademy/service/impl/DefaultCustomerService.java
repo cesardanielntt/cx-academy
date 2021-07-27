@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component
 public class DefaultCustomerService implements CustomerService {
@@ -20,25 +21,21 @@ public class DefaultCustomerService implements CustomerService {
     }
 
     @Override
-    public void save(CustomerModel customer) {
+    public void saveCustomer(CustomerModel customer) {
         if (customer != null) {
             customerDao.save(customer);
-        } else {
-            System.out.println("Customer is null");
         }
     }
 
     @Override
-    public CustomerModel getCustomerByEmail(String email) {
-        if (email != null) {
-            return customerDao.findCustomerByEmail(email);
+    public CustomerModel getCustomerById(Integer customerId) {
+        if (customerId != null) {
+            Optional<CustomerModel> model = customerDao.findById(customerId);
+            return model.orElse(null);
         }
-
         return null;
     }
 
     @Override
-    public void deleteCustomer(Integer id) {
-        customerDao.deleteById(id);
-    }
+    public void deleteCustomer(Integer customerId) { customerDao.deleteById(customerId); }
 }

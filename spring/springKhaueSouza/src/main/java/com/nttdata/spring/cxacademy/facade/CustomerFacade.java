@@ -10,7 +10,7 @@ public interface CustomerFacade {
 
     void saveCustomer(CustomerData customer);
 
-    CustomerData getCustomerByEmail(final String email);
+    CustomerData getCustomerById(Integer customerId);
 
-    void deleteCustomer(Integer id);
+    void deleteCustomer(Integer customerId);
 }

@@ -10,6 +10,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,23 +23,28 @@ public class DefaultCustomerFacade implements CustomerFacade {
 
     @Override
     public List<CustomerData> getAllCustomers() {
-        List<CustomerModel> customers = customerService.getAllCustomers();
-        if (CollectionUtils.isNotEmpty(customers)) {
-            return customers.stream().map(customer -> convert(customer, new CustomerData())).collect(Collectors.toList());
+        List<CustomerModel> customerModels = customerService.getAllCustomers();
+        List<CustomerData> customerDatas = new ArrayList<>();
+
+        for (CustomerModel customer : customerModels){
+            CustomerData data = convert(customer, new CustomerData());
+            customerDatas.add(data);
         }
 
-        return Collections.emptyList();
+        return customerDatas;
     }
 
     @Override
     public void saveCustomer(CustomerData customer) {
-        CustomerModel model = reverseConvert(customer, new CustomerModel());
-        customerService.save(model);
+        if (customer != null) {
+            CustomerModel model = reverseConvert(customer, new CustomerModel());
+            customerService.saveCustomer(model);
+        }
     }
 
     @Override
-    public CustomerData getCustomerByEmail(String email) {
-        CustomerModel model = customerService.getCustomerByEmail(email);
+    public CustomerData getCustomerById(Integer customerId) {
+        CustomerModel model = customerService.getCustomerById(customerId);
         if (model != null) {
             return convert(model, new CustomerData());
         }
@@ -47,13 +53,12 @@ public class DefaultCustomerFacade implements CustomerFacade {
     }
 
     @Override
-    public void deleteCustomer(Integer id) {
-        customerService.deleteCustomer(id);
-    }
+    public void deleteCustomer(Integer customerId) { customerService.deleteCustomer(customerId); }
 
     private CustomerModel reverseConvert(CustomerData source, CustomerModel target) {
         target.setId(source.getId());
         target.setName(source.getName());
+        target.setLastname(source.getLastname());
         target.setEmail(source.getEmail());
 
         if (CollectionUtils.isNotEmpty(source.getAddresses())) {
@@ -66,6 +71,7 @@ public class DefaultCustomerFacade implements CustomerFacade {
     private CustomerData convert(CustomerModel source, CustomerData target) {
         target.setId(source.getId());
         target.setName(source.getName());
+        target.setLastname(source.getLastname());
         target.setEmail(source.getEmail());
 
         if (CollectionUtils.isNotEmpty(source.getAddresses())) {
@@ -75,21 +81,29 @@ public class DefaultCustomerFacade implements CustomerFacade {
         return target;
     }
 
-    private AddressModel reverseConvert(AddressData source, AddressModel target) {
-        target.setId(source.getId());
-        target.setStreetName(source.getStreetName());
-        target.setStreetNumber(source.getStreetNumber());
-        target.setCity(source.getCity());
-
-        return target;
-    }
-
     private AddressData convert(AddressModel source, AddressData target) {
         target.setId(source.getId());
         target.setStreetName(source.getStreetName());
         target.setStreetNumber(source.getStreetNumber());
+        target.setAddress2(source.getAddress2());
+        target.setZipCode(source.getZipCode());
         target.setCity(source.getCity());
+        target.setState(source.getState());
 
         return target;
     }
+
+    private AddressModel reverseConvert(AddressData source, AddressModel target) {
+        target.setId(source.getId());
+        target.setStreetName(source.getStreetName());
+        target.setStreetNumber(source.getStreetNumber());
+        target.setAddress2(source.getAddress2());
+        target.setZipCode(source.getZipCode());
+        target.setCity(source.getCity());
+        target.setState(source.getState());
+
+        return target;
+    }
+
 }
+

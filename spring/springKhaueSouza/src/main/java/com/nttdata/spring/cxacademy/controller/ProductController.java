@@ -49,6 +49,19 @@ public class ProductController {
         redirectAttributes.addFlashAttribute("error", "Produto não encontrado");
         return "redirect:products";
     }
+    @PostMapping("/edit")
+    public String editProduct(ProductForm productForm, RedirectAttributes redirectAttributes){
+        if (productForm.getName().isEmpty()){
+            redirectAttributes.addFlashAttribute("error", "O nome do produto é obrigatório");
+            return "redirect:/products";
+        }
+
+        productFacade.saveProduct(convert(productForm));
+        redirectAttributes.addFlashAttribute("success", "Produto salvo com sucesso");
+        return "redirect:/products";
+    }
+
+
     @PostMapping("/delete/{id}")
     public String delete(@PathVariable Integer id, Model model, RedirectAttributes redirectAttributes) {
         try {

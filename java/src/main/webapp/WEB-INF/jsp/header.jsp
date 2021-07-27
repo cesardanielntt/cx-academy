@@ -1,18 +1,30 @@
 <%--
   Created by IntelliJ IDEA.
+<<<<<<< HEAD
   User: AlphaPlayerOne
   Date: 20/07/21
   Time: 11:14
+=======
+  User: Onilson Cardoso
+  Date: 20/07/2021
+  Time: 11:12
+>>>>>>> master
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<<<<<<< HEAD
 
 <script>
     $(document).ready(function () {
         $('.cep').mask("00.000-00");
+=======
+<script>
+    $(document).ready(function () {
+        $('.cep').mask("00.000-000");
+>>>>>>> master
     })
 </script>
 
@@ -80,6 +92,10 @@
         width: 16%;
         padding: 15px;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     th {
         border-bottom: solid 0.5px #ccc;
         width: 16%;

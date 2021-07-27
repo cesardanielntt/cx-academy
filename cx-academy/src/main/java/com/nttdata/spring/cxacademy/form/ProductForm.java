@@ -1,6 +1,10 @@
 package com.nttdata.spring.cxacademy.form;
 
 public class ProductForm {
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
     private Integer code;
     private String name;
     private String price;
@@ -37,4 +41,8 @@ public class ProductForm {
     public void setAvailableOnline(boolean availableOnline) {
         this.availableOnline = availableOnline;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 }

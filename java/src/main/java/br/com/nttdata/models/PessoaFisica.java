@@ -5,6 +5,10 @@ public class PessoaFisica extends Pessoa {
     private int idade;
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
     public String getSobrenome() {
         return sobrenome;
     }
@@ -25,5 +29,9 @@ public class PessoaFisica extends Pessoa {
         this.idade = idade;
     }
 
+<<<<<<< HEAD
+}
+=======
 
 }
+>>>>>>> master

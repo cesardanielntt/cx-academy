@@ -9,6 +9,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 import java.util.Optional;
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
 @Component
 public class DefaultProductService implements ProductService {
 
@@ -17,6 +21,10 @@ public class DefaultProductService implements ProductService {
 
     @Override
     public List<ProductModel> getAllProducts() {
+<<<<<<< HEAD
+
+=======
+>>>>>>> master
         return productDao.findAll();
     }
 
@@ -24,15 +32,27 @@ public class DefaultProductService implements ProductService {
     public void saveProduct(ProductModel product) {
         if (product != null) {
             productDao.save(product);
+<<<<<<< HEAD
+
+        }
+=======
         }
 
+>>>>>>> master
     }
 
     @Override
     public ProductModel getProductByCode(Integer productCode) {
+<<<<<<< HEAD
+        if (productCode != null) {
+            Optional<ProductModel> model = productDao.findById(productCode);
+            return model.orElse(null);
+
+=======
         if (productCode != null){
             Optional<ProductModel> model = productDao.findById(productCode);
             return model.orElse(null);
+>>>>>>> master
         }
 
         return null;
@@ -41,6 +61,10 @@ public class DefaultProductService implements ProductService {
     @Override
     public void deleteProduct(Integer productCode) {
         productDao.deleteById(productCode);
+<<<<<<< HEAD
+    }
+}
+=======
 
     }
 
@@ -49,3 +73,4 @@ public class DefaultProductService implements ProductService {
         return productDao.findAllByAvailableOnlineIsTrue();
     }
 }
+>>>>>>> master

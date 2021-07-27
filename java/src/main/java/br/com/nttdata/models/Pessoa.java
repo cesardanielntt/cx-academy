@@ -10,7 +10,13 @@ public class Pessoa {
     protected String bairro;
     protected String cidade;
     protected String estado;
+<<<<<<< HEAD
+    protected int cep;
+
+
+=======
     protected String cep;
+>>>>>>> master
 
     public String getId() {
         return id;
@@ -84,11 +90,19 @@ public class Pessoa {
         this.estado = estado;
     }
 
+<<<<<<< HEAD
+    public int getCep() {
+        return cep;
+    }
+
+    public void setCep(int cep) {
+=======
     public String getCep() {
         return cep;
     }
 
     public void setCep(String cep) {
+>>>>>>> master
         this.cep = cep;
     }
 
@@ -98,6 +112,20 @@ public class Pessoa {
                 "id='" + id + '\'' +
                 ", nome='" + nome + '\'' +
                 ", email='" + email + '\'' +
+<<<<<<< HEAD
+                ", email='" + rua + '\'' +
+                ", email='" + numero + '\'' +
+                ", email='" + complemento + '\'' +
+                ", email='" + bairro + '\'' +
+                ", email='" + cidade + '\'' +
+                ", email='" + estado + '\'' +
+                ", email='" + cep + '\'' +
+                '}';
+    }
+
+
+}
+=======
                 ", rua='" + rua + '\'' +
                 ", numero=" + numero +
                 ", complemento='" + complemento + '\'' +
@@ -111,3 +139,4 @@ public class Pessoa {
 
       
 
+>>>>>>> master

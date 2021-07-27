@@ -1,10 +1,22 @@
 public class SAPCommerce {
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> master
 	public void addToCart() {
 		System.out.println("Adiciona item ao carrinho");
 	}
 
 	public void removeItemFromCart() {
+<<<<<<< HEAD
+		System.out.println("removeItemFromCart");
+	}
+
+}	
+	
+	
+=======
 		System.out.println("Remove item ao carrinho");
 	}
 	public void updateItemFromCart() {
@@ -44,3 +56,4 @@ public class SAPCommerce {
 }
 >>>>>>> master
 >>>>>>> origin/master
+>>>>>>> master

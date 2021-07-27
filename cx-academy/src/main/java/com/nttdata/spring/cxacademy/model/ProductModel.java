@@ -3,7 +3,10 @@ package com.nttdata.spring.cxacademy.model;
 import javax.persistence.*;
 
 @Entity(name = "Product")
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 public class ProductModel {
 
     @Id

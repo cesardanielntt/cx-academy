@@ -23,7 +23,7 @@ public class ProductController {
     }
 
     @GetMapping(value = "filters")
-    public String getProductsFilters(Model model) {
+    public String getOnlineProducts(Model model) {
         model.addAttribute("products", productFacade.getOnlineProducts());
         return "productFilterPage";
     }

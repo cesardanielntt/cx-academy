@@ -3,52 +3,94 @@ package br.com.nttdata;
 import br.com.nttdata.models.Pessoa;
 import br.com.nttdata.models.PessoaFisica;
 import br.com.nttdata.models.PessoaJuridica;
-
-import java.util.ArrayList;
-import java.util.List;
-
+import br.com.nttdata.singleton.PessoaSingleton;
 
 public class App {
     final static String meuNome = "Maiara";
 
     public static void main(String[] args) {
 
-        PessoaFisica pessoa = new PessoaFisica ();
+        PessoaFisica pessoa = new PessoaFisica();
         pessoa.setNome("Maiara");
         pessoa.setSobrenome("Alves");
         pessoa.setEmail("mama@hotmail.com");
         pessoa.setIdade(24);
 
 
-        PessoaFisica pessoa2 = new PessoaFisica ();
+        PessoaFisica pessoa2 = new PessoaFisica();
         pessoa2.setNome("Julia");
         pessoa2.setSobrenome("Rios");
         pessoa2.setEmail("juju@hotmail.com");
         pessoa2.setIdade(20);
 
-        PessoaJuridica pj1 = new PessoaJuridica();
-        pj1.setNome("Pessoa Juridica");
-        pj1.setEmail("pj@teste.com");
-        pj1.setCpnj("87.564.987/0001-65");
+        PessoaSingleton.getInstance().getData().add(pessoa);
+        PessoaSingleton.getInstance().getData().add(pessoa2);
 
-
-        List<Pessoa> pessoas = new ArrayList<>();
-        pessoas.add(pessoa);
-        pessoas.add(pessoa2);
-        pessoas.add(pj1);
-
-        for (Pessoa item : pessoas) {
-            if(item instanceof PessoaFisica){
-                System.out.println(((PessoaFisica) item) .getSobrenome());
-            }else if(item instanceof PessoaJuridica){
-                System.out.println(((PessoaJuridica) item) .getCpnj());
-            }
-
-        }
+        lerPessoas();
 
 
     }
+
+    public static void lerPessoas() {
+        for (PessoaFisica item : PessoaSingleton.getInstance().getData()) {
+            System.out.println(item.getNome());
+        }
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//         PessoaJuridica pj1 = new PessoaJuridica();
+//         pj1.setNome("Pessoa Juridica");
+//         pj1.setEmail("pj@teste.com");
+//         pj1.setCpnj("87.564.987/0001-65");
+
+
+//         List<Pessoa> pessoas = new ArrayList<>();
+//         pessoas.add(pessoa);
+//         pessoas.add(pessoa2);
+//         pessoas.add(pj1);
+
+//         for (Pessoa item : pessoas) {
+//             if(item instanceof PessoaFisica){
+//                 System.out.println(((PessoaFisica) item) .getSobrenome());
+//             }else if(item instanceof PessoaJuridica){
+//                System.out.println(((PessoaJuridica) item) .getCpnj());
+//            }
+//
+//        }
+
+
+
 
 
 

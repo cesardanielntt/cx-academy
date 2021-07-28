@@ -7,13 +7,15 @@ public class EnderecoDTO implements Serializable {
 
     private Integer id;
 
+    private String cep;
+
     private String logradouro;
 
     private String number;
 
     private String district;
 
-    private String state;
+    private String uf;
 
     private String city;
 
@@ -23,6 +25,14 @@ public class EnderecoDTO implements Serializable {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public String getLogradouro() {
@@ -49,12 +59,12 @@ public class EnderecoDTO implements Serializable {
         this.district = district;
     }
 
-    public String getState() {
-        return state;
+    public String getUf() {
+        return uf;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setUf(String uf) {
+        this.uf = uf;
     }
 
     public String getCity() {
@@ -65,14 +75,16 @@ public class EnderecoDTO implements Serializable {
         this.city = city;
     }
 
+
     @Override
     public String toString() {
         return "EnderecoDTO{" +
                 "id=" + id +
+                ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
                 ", number='" + number + '\'' +
                 ", district='" + district + '\'' +
-                ", state='" + state + '\'' +
+                ", uf='" + uf + '\'' +
                 ", city='" + city + '\'' +
                 '}';
     }

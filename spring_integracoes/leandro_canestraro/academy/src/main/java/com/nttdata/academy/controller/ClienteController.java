@@ -29,7 +29,7 @@ public class ClienteController {
 
         LOG.debug(cliente.toString());
 
-        clienteFacade.adicionar(cliente);
+        cliente = clienteFacade.adicionar(cliente);
 
         return ResponseEntity.ok().body(cliente);
     }

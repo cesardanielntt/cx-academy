@@ -4,5 +4,5 @@ import com.nttdata.academy.model.ClienteModel;
 
 public interface ClienteService {
 
-    void saveCliente(ClienteModel cliente);
+    ClienteModel saveCliente(ClienteModel cliente);
 }

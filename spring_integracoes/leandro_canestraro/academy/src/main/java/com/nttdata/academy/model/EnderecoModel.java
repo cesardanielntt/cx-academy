@@ -11,6 +11,9 @@ public class EnderecoModel {
     private Integer id;
 
     @Column(nullable = false)
+    private String cep;
+
+    @Column(nullable = false)
     private String logradouro;
 
     @Column(nullable = false)
@@ -20,13 +23,21 @@ public class EnderecoModel {
     private String district;
 
     @Column(nullable = false)
-    private String state;
+    private String uf;
 
     @Column(nullable = false)
     private String city;
 
     public Integer getId() {
         return id;
+    }
+
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
     }
 
     public void setId(Integer id) {
@@ -57,12 +68,12 @@ public class EnderecoModel {
         this.district = district;
     }
 
-    public String getState() {
-        return state;
+    public String getUf() {
+        return uf;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setUf(String uf) {
+        this.uf = uf;
     }
 
     public String getCity() {

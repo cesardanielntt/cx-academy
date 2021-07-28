@@ -16,7 +16,7 @@ public class ClienteModel {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "cliente_id")
     private List<EnderecoModel> enderecos;
 

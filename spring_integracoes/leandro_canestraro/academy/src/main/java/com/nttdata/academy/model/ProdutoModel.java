@@ -14,9 +14,6 @@ public class ProdutoModel {
     private String sku;
 
     @Column(nullable = false)
-    private String price;
-
-    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
@@ -36,14 +33,6 @@ public class ProdutoModel {
 
     public void setSku(String sku) {
         this.sku = sku;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
     }
 
     public String getName() {

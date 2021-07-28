@@ -1,6 +1,7 @@
 package com.nttdata.academy.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "Cliente")
 public class ClienteModel {
@@ -14,6 +15,10 @@ public class ClienteModel {
 
     @Column(nullable = false)
     private String name;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "cliente_id")
+    private List<EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -37,5 +42,9 @@ public class ClienteModel {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<EnderecoModel> getEnderecos() {
+        return enderecos;
     }
 }

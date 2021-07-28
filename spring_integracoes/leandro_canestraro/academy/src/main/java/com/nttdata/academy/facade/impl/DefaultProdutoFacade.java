@@ -18,7 +18,6 @@ public class DefaultProdutoFacade implements ProdutoFacade {
     @Override
     public void adicionar(ProdutoDTO source) {
         ProdutoModel target = new ProdutoModel();
-        target.setPrice(source.getPrice());
         target.setSku(source.getSku());
         target.setName(source.getName());
         target.setBrand(source.getBrand());

@@ -1,5 +1,30 @@
 public class SAPCommerce {
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
+>>>>>>> master
+	public void addToCart() {
+		System.out.println("Adiciona item ao carrinho");
+	}
+
+	public void removeItemFromCart() {
+<<<<<<< HEAD
+		System.out.println("removeItemFromCart");
+	}
+
+}	
+	
+	
+=======
+		System.out.println("Remove item ao carrinho");
+	}
+	public void updateItemFromCart() {
+		System.out.println(""Atualizando item do carrinho);
+	}
+}
+=======
+<<<<<<< HEAD
   
 	public void addToCart() {
 		System.out.println("Adiciona item ao carrinho.");
@@ -16,13 +41,19 @@ public class SAPCommerce {
 }
 =======
 
- public void addToCart() {
-System.out.println("Adicionando item ao carrinho...");
-}
+    public void addToCart() {
+        System.out.println("Adicionando item ao carrinho...");
+    }
 
- public void removeItemFromCart() {
-System.out.println("Remove item do carrinho...");
-}
+    public void removeItemFromCart() {
+        System.out.println("Removendo item do carrinho...");
+    }
 
+     public void updateItemFromCart() {
+        System.out.println("Atualizando item do carrinho...");
+
+     }
 }
+>>>>>>> master
+>>>>>>> origin/master
 >>>>>>> master

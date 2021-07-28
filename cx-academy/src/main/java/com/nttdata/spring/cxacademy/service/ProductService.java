@@ -14,5 +14,9 @@ public interface ProductService {
 
     void deleteProduct(Integer productCode);
 
+<<<<<<< HEAD
+
+=======
     List<ProductModel> getOnlineProducts();
+>>>>>>> master
 }

@@ -74,5 +74,16 @@ public class EnderecoModel {
         this.uf = uf;
     }
 
-
+    @Override
+    public String toString() {
+        return "EnderecoModel{" +
+                "id=" + id +
+                ", cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", uf='" + uf + '\'' +
+                '}';
+    }
 }

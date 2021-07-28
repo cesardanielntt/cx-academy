@@ -3,7 +3,7 @@ package com.nttdata.academy.dto;
 import java.io.Serializable;
 import java.util.List;
 
-public class ClienteDTO implements Serializable {
+public class ClienteDTO extends MessageDTO implements Serializable {
 
     private Integer id;
 
@@ -12,6 +12,13 @@ public class ClienteDTO implements Serializable {
     private String nome;
 
     private List<EnderecoDTO> enderecos;
+
+    public ClienteDTO() {
+    }
+
+    public ClienteDTO(String message, int status) {
+        super(message, status);
+    }
 
     public Integer getId() {
         return id;

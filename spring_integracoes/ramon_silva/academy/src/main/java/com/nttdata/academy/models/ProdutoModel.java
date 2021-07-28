@@ -1,7 +1,15 @@
-package com.nttdata.academy.dto;
+package com.nttdata.academy.models;
 
-public class ProdutoDTO {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class ProdutoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String sku;
@@ -30,14 +38,5 @@ public class ProdutoDTO {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    @Override
-    public String toString() {
-        return "ProdutoDTO{" +
-                "id=" + id +
-                ", sku='" + sku + '\'' +
-                ", nome='" + nome + '\'' +
-                '}';
     }
 }

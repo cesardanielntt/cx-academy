@@ -22,13 +22,9 @@ public class ClienteController {
     private ClienteFacade clienteFacade;
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente) {
-
+    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
         LOG.debug(cliente.toString());
-
-        clienteFacade.adicionar(cliente);
-
-        return ResponseEntity.ok().body(cliente);
+        return clienteFacade.adicionar(cliente);
     }
 
 }

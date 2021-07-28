@@ -23,8 +23,6 @@ public class PessoaCadastroController {
 
     }
 
-    
-
     @POST
     public Response register(@BeanParam CadastroForm form) throws URISyntaxException {
         PessoaService pessoaService = new PessoaFisicaService();

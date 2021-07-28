@@ -1,6 +1,5 @@
 package com.nttdata.academy.service.impl;
 
-import com.nttdata.academy.facade.impl.DefaultClienteFacade;
 import com.nttdata.academy.service.ModelMapperService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +14,7 @@ public class DefaultModelMapperService implements ModelMapperService {
 
     @Override
     public ModelMapper modelMapper() {
-       
+
         return new ModelMapper();
     }
 }

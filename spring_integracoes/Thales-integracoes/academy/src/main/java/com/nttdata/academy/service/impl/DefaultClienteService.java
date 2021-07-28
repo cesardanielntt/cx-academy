@@ -1,7 +1,6 @@
 package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.daos.ClienteRepository;
-import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.models.ClienteModel;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;

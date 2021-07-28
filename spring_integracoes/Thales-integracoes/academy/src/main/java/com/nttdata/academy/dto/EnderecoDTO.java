@@ -2,13 +2,29 @@ package com.nttdata.academy.dto;
 
 import java.io.Serializable;
 
-public class EnderecoDTO implements Serializable {
+public class EnderecoDTO extends MessageDTO implements Serializable {
+
+    private Integer id;
     private String cep;
     private String logradouro;
-    private Integer numero;
+    private String numero;
     private String bairro;
     private String cidade;
     private String uf;
+
+    public EnderecoDTO() {
+    }
+
+    public EnderecoDTO(String message, int status) { super(message, status);
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCep() {
         return cep;
@@ -26,11 +42,11 @@ public class EnderecoDTO implements Serializable {
         this.logradouro = logradouro;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(Integer numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -61,9 +77,10 @@ public class EnderecoDTO implements Serializable {
     @Override
     public String toString() {
         return "EnderecoDTO{" +
-                "cep='" + cep + '\'' +
+                "id=" + id +
+                ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
-                ", numero=" + numero +
+                ", numero='" + numero + '\'' +
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", uf='" + uf + '\'' +

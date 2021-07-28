@@ -1,8 +1,25 @@
 package com.nttdata.academy.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
+@Entity
 public class PrecoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String preco;
+
+    private Double valor;
+
+    @OneToOne
+    private ClienteModel cliente;
+
+    @OneToOne
+    private ProdutoModel produto;
 
     public Integer getId() {
         return id;
@@ -12,19 +29,37 @@ public class PrecoModel {
         this.id = id;
     }
 
-    public String getPreco() {
-        return preco;
+    public Double getValor() {
+        return valor;
     }
 
-    public void setPreco(String preco) {
-        this.preco = preco;
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public ClienteModel getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClienteModel cliente) {
+        this.cliente = cliente;
+    }
+
+    public ProdutoModel getProduto() {
+        return produto;
+    }
+
+    public void setProduto(ProdutoModel produto) {
+        this.produto = produto;
     }
 
     @Override
     public String toString() {
-        return "PrecoDTO{" +
+        return "Preco{" +
                 "id=" + id +
-                ", preco='" + preco + '\'' +
+                ", valor=" + valor +
+                ", cliente=" + cliente +
+                ", produto=" + produto +
                 '}';
     }
 }

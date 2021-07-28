@@ -1,6 +1,5 @@
 package com.nttdata.academy.models;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -8,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class EnderecoModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -76,10 +76,11 @@ public class EnderecoModel {
 
     @Override
     public String toString() {
-        return "EnderecoDTO{" +
-                "cep='" + cep + '\'' +
+        return "EnderecoModel{" +
+                "id=" + id +
+                ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
-                ", numero=" + numero +
+                ", numero='" + numero + '\'' +
                 ", bairro='" + bairro + '\'' +
                 ", cidade='" + cidade + '\'' +
                 ", uf='" + uf + '\'' +

@@ -1,9 +1,26 @@
 package com.nttdata.academy.models;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
 public class CarrinhoModel {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String datahora;
-    private String total;
+
+    private Double total;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ItemModel> items = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -13,28 +30,29 @@ public class CarrinhoModel {
         this.id = id;
     }
 
-    public String getDatahora() {
-        return datahora;
-    }
-
-    public void setDatahora(String datahora) {
-        this.datahora = datahora;
-    }
-
-    public String getTotal() {
+    public Double getTotal() {
         return total;
     }
 
-    public void setTotal(String total) {
+    public void setTotal(Double total) {
         this.total = total;
+    }
+
+    public List<ItemModel> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemModel> items) {
+        this.items = items;
     }
 
     @Override
     public String toString() {
-        return "CarrinhoDTO{" +
+        return "Carrinho{" +
                 "id=" + id +
-                ", datahora='" + datahora + '\'' +
-                ", total='" + total + '\'' +
+                ", total=" + total +
+                ", items=" + items +
                 '}';
     }
 }
+

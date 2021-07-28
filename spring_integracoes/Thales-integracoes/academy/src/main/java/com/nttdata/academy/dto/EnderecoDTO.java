@@ -1,6 +1,8 @@
 package com.nttdata.academy.dto;
 
-public class EnderecoDTO {
+import java.io.Serializable;
+
+public class EnderecoDTO implements Serializable {
     private String cep;
     private String logradouro;
     private Integer numero;

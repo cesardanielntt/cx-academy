@@ -1,4 +1,4 @@
 package com.nttdata.academy.daos;
 
-public class PrecoRepository {
+public interface PrecoRepository {
 }

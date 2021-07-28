@@ -1,4 +1,4 @@
 package com.nttdata.academy.populators;
 
-public class EnderecoPopulator {
+public interface EnderecoPopulator {
 }

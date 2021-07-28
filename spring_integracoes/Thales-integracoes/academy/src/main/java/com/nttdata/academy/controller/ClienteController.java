@@ -27,7 +27,9 @@ public class ClienteController {
 
         LOG.debug(cliente.toString());
 
-        clienteFacade.adicionar(cliente);
+        cliente =clienteFacade.adicionar(cliente);
+
+        LOG.debug(cliente.toString());
 
         return ResponseEntity.ok().body(cliente);
 

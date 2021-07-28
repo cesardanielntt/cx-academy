@@ -1,8 +1,8 @@
 package com.nttdata.academy.models;
 
-public class Item {
+public class CarrinhoModel {
     private Integer id;
-    private Integer quantidade;
+    private String datahora;
     private String total;
 
     public Integer getId() {
@@ -13,12 +13,12 @@ public class Item {
         this.id = id;
     }
 
-    public Integer getQuantidade() {
-        return quantidade;
+    public String getDatahora() {
+        return datahora;
     }
 
-    public void setQuantidade(Integer quantidade) {
-        this.quantidade = quantidade;
+    public void setDatahora(String datahora) {
+        this.datahora = datahora;
     }
 
     public String getTotal() {
@@ -31,9 +31,9 @@ public class Item {
 
     @Override
     public String toString() {
-        return "ItemDTO{" +
+        return "CarrinhoDTO{" +
                 "id=" + id +
-                ", quantidade=" + quantidade +
+                ", datahora='" + datahora + '\'' +
                 ", total='" + total + '\'' +
                 '}';
     }

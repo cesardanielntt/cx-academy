@@ -1,4 +1,4 @@
 package com.nttdata.academy.populators;
 
-public class PrecoPopulator {
+public interface PrecoPopulator {
 }

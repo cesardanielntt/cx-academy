@@ -1,4 +1,4 @@
 package com.nttdata.academy.populators;
 
-public class ItemPopulator {
+public interface ItemPopulator {
 }

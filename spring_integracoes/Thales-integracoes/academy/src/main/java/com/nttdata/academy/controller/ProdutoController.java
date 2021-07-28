@@ -29,6 +29,7 @@ public class ProdutoController {
 
         produtoFacade.adicionar(produto);
 
+        LOG.debug(produto.toString());
 
         return ResponseEntity.ok().body(produto);
 

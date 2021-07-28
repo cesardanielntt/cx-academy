@@ -1,6 +1,6 @@
 package com.nttdata.academy.models;
 
-public class Preco {
+public class PrecoModel {
     private Integer id;
     private String preco;
 

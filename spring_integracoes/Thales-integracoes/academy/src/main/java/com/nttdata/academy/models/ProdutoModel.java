@@ -1,8 +1,18 @@
 package com.nttdata.academy.models;
 
-public class Cliente {
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class ProdutoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String cpf;
+    private String sku;
     private String nome;
 
     public Integer getId() {
@@ -13,12 +23,12 @@ public class Cliente {
         this.id = id;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getSku() {
+        return sku;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSku(String sku) {
+        this.sku = sku;
     }
 
     public String getNome() {
@@ -31,9 +41,9 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "ClienteDTO{" +
+        return "ProdutoDTO{" +
                 "id=" + id +
-                ", cpf='" + cpf + '\'' +
+                ", sku='" + sku + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
     }

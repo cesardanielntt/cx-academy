@@ -1,6 +1,5 @@
 package com.nttdata.academy.controller;
 
-
 import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import org.apache.logging.log4j.LogManager;
@@ -13,11 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 
-
 @RestController
 @RequestMapping("/cliente")
 public class ClienteController {
-        /**executar as execuções e mapear a propria classe */
+
     private static final Logger LOG = LogManager.getLogger(ClienteController.class);
 
     @Resource(name = "clienteFacade")
@@ -25,13 +23,9 @@ public class ClienteController {
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
     public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
-
-
         LOG.debug(cliente.toString());
-        clienteFacade.adicionar(cliente);
+        return clienteFacade.adicionar(cliente);
 
-        return ResponseEntity.ok().body(cliente);
     }
-
 
 }

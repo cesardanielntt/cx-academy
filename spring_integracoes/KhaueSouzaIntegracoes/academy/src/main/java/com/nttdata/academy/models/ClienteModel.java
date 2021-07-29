@@ -1,24 +1,27 @@
-package com.nttdata.academy.dto;
+package com.nttdata.academy.models;
 
-import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
-public class ClienteDTO extends MessageDTO implements Serializable {
+@Entity
+public class ClienteModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String cpf;
 
     private String nome;
 
-    private List<EnderecoDTO> enderecos;
-
-    public ClienteDTO() {
-    }
-
-    public ClienteDTO(String message, int status) {
-        super(message, status);
-    }
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -44,17 +47,17 @@ public class ClienteDTO extends MessageDTO implements Serializable {
         this.nome = nome;
     }
 
-    public List<EnderecoDTO> getEnderecos() {
+    public List<EnderecoModel> getEnderecos() {
         return enderecos;
     }
 
-    public void setEnderecos(List<EnderecoDTO> enderecos) {
+    public void setEnderecos(List<EnderecoModel> enderecos) {
         this.enderecos = enderecos;
     }
 
     @Override
     public String toString() {
-        return "ClienteDTO{" +
+        return "ClienteModel{" +
                 "id=" + id +
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +

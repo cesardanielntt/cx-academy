@@ -62,4 +62,10 @@ public class PrecoModel {
                 ", produto=" + produto +
                 '}';
     }
+
+    public void setPrecoDTO(PrecoModel newPrecoDTO) {
+    }
+
+    public void setMessage(String s) {
+    }
 }

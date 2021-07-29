@@ -1,7 +1,10 @@
 package com.nttdata.academy.resttemplate;
 
+import com.nttdata.academy.dto.CarrinhoDTO;
 import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.dto.EnderecoDTO;
+import com.nttdata.academy.dto.ItemDTO;
+import com.nttdata.academy.dto.PrecoDTO;
 import com.nttdata.academy.dto.ProdutoDTO;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -89,8 +92,6 @@ public class ExternalAppRest {
 
         String sku = "333";
 
-        //produtoDTO.setNome("Produto Rest " + sku);
-        //produtoDTO.setSku("rest-" + sku);
 
         produtoDTO = restTemplate.postForObject(url, produtoDTO, ProdutoDTO.class);
 
@@ -103,25 +104,57 @@ public class ExternalAppRest {
 
     private void gravarPreco() {
 
-        RestTemplate restTemplate = new RestTemplate();
 
-        // TODO desenvolver gravacao do preco
+            LOG.debug("REST Template - Cadastro Preco DTO --- START");
+
+            String url = URL_BASE + "/preco/addOrUpdate";
+            RestTemplate restTemplate = new RestTemplate();
+
+            PrecoDTO precoDTO = new PrecoDTO();
+
+
+            precoDTO = restTemplate.postForObject(url, precoDTO, PrecoDTO.class);
+
+            LOG.debug(precoDTO);
+
+            LOG.debug("REST Template - Cadastro Preco DTO --- END\n\n");
 
     }
 
     private void gravarCarrinho() {
 
+        LOG.debug("REST Template - Cadastro Carrinho DTO --- START");
+
+        String url = URL_BASE + "/carrinho/addOrUpdate";
         RestTemplate restTemplate = new RestTemplate();
 
-        // TODO desenvolver gravacao do carrinho
+        CarrinhoDTO carrinhoDTO = new CarrinhoDTO();
+
+
+        carrinhoDTO = restTemplate.postForObject(url, carrinhoDTO, CarrinhoDTO.class);
+
+        LOG.debug(carrinhoDTO);
+
+        LOG.debug("REST Template - Cadastro Carrinho DTO --- END\n\n");
+
 
     }
 
     private void gravarItem() {
 
+        LOG.debug("REST Template - Cadastro Item DTO --- START");
+
+        String url = URL_BASE + "/item/addOrUpdate";
         RestTemplate restTemplate = new RestTemplate();
 
-        // TODO desenvolver gravacao do carrinho
+        ItemDTO carrinhoDTO = new ItemDTO();
+
+
+        ItemDTO itemDTO = restTemplate.postForObject(url, itemDTO, ItemDTO.class);
+
+        LOG.debug(itemDTO);
+
+        LOG.debug("REST Template - Cadastro Item DTO --- END\n\n");
 
     }
 

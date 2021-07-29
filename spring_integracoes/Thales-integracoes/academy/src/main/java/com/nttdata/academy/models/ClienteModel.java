@@ -67,4 +67,10 @@ public class ClienteModel {
                 ", enderecos=" + enderecos +
                 '}';
     }
+
+    public void setMessage(String s) {
+    }
+
+    public void setClienteDTO(ClienteModel newClienteDTO) {
+    }
 }

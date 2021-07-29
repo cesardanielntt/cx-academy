@@ -47,4 +47,16 @@ public class ProdutoModel {
                 ", nome='" + nome + '\'' +
                 '}';
     }
+
+    public void setMessage(String produto_deletado) {
+    }
+
+    public boolean isPresent() {
+    }
+
+    public Object get() {
+    }
+
+    public void setProduto(ProdutoModel produto) {
+    }
 }

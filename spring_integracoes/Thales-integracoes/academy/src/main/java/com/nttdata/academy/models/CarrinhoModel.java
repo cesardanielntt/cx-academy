@@ -54,5 +54,11 @@ public class CarrinhoModel {
                 ", items=" + items +
                 '}';
     }
+
+    public void setMessage(String s) {
+    }
+
+    public void setCliente(CarrinhoModel carrinho) {
+    }
 }
 

@@ -1,20 +1,9 @@
-<<<<<<< HEAD
-/java/target/
-=======
-*.class
-
-HELP.md
-target/
-.mvn
-=======
-/java/target/*
-=======
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
-  
+
 ### STS ###
 .apt_generated
 .classpath
@@ -42,5 +31,3 @@ build/
 
 ### VS Code ###
 .vscode/
-
->>>>>>> master

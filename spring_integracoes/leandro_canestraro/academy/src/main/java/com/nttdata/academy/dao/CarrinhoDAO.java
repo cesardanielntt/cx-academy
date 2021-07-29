@@ -1,4 +1,8 @@
 package com.nttdata.academy.dao;
 
-public interface CarrinhoDAO {
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CarrinhoDAO extends CrudRepository {
 }

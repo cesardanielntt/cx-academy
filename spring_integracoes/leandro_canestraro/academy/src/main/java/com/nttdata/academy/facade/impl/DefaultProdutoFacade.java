@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-
+//Communication between Controller and Service layers
 @Service("produtoFacade")
 public class DefaultProdutoFacade implements ProdutoFacade {
 
@@ -19,6 +19,7 @@ public class DefaultProdutoFacade implements ProdutoFacade {
     @Autowired
     private ProdutoPopulator produtoPopulator;
 
+    //Call service to insert on db
     @Override
     public ProdutoDTO adicionar(ProdutoDTO source) {
 

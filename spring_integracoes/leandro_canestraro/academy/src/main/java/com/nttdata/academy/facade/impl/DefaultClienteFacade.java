@@ -8,6 +8,10 @@ import com.nttdata.academy.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+
+//Communication between Controller and Service layers
 
 @Service("clienteFacade")
 public class DefaultClienteFacade implements ClienteFacade {
@@ -19,9 +23,12 @@ public class DefaultClienteFacade implements ClienteFacade {
     private ClientePopulator clientePopulator;
 
 
+    //Call service to insert data on db
     @Override
     public ClienteDTO adicionar(ClienteDTO source) {
 
+
+        //Populator to convert objects
         ClienteModel cliente = clienteService
                 .saveCliente(clientePopulator
                         .populateClienteModel(source));
@@ -29,5 +36,11 @@ public class DefaultClienteFacade implements ClienteFacade {
         source = clientePopulator.populateClienteDTO(cliente);
 
         return source;
+    }
+
+    //Call service to retrieve a registry on db
+    @Override
+    public ClienteModel getClienteById(Integer id) {
+        return clienteService.getClienteById(id);
     }
 }

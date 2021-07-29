@@ -7,7 +7,7 @@ public class ClienteDTO implements Serializable {
 
     private Integer id;
     private String cpf;
-    private String name;
+    private String nome;
     private List<EnderecoDTO> enderecos;
 
     public Integer getId() {
@@ -26,12 +26,12 @@ public class ClienteDTO implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public List<EnderecoDTO> getEnderecos() {
@@ -47,7 +47,7 @@ public class ClienteDTO implements Serializable {
         return "ClienteDTO{" +
                 "id=" + id +
                 ", cpf='" + cpf + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + nome + '\'' +
                 '}';
     }
 }

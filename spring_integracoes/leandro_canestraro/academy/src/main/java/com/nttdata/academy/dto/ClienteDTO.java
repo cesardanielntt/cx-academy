@@ -3,7 +3,7 @@ package com.nttdata.academy.dto;
 import java.io.Serializable;
 import java.util.List;
 
-public class ClienteDataDTO implements Serializable {
+public class ClienteDTO implements Serializable {
 
     private Integer id;
     private String cpf;
@@ -44,7 +44,7 @@ public class ClienteDataDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "ClienteDataDTO{" +
+        return "ClienteDTO{" +
                 "id=" + id +
                 ", cpf='" + cpf + '\'' +
                 ", name='" + name + '\'' +

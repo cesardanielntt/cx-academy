@@ -1,7 +1,7 @@
 package com.nttdata.academy.facade;
 
-import com.nttdata.academy.dto.ClienteDataDTO;
+import com.nttdata.academy.dto.ClienteDTO;
 
 public interface ClienteFacade {
-    ClienteDataDTO adicionar(ClienteDataDTO cliente);
+    ClienteDTO adicionar(ClienteDTO cliente);
 }

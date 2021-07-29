@@ -1,6 +1,6 @@
 package com.nttdata.academy.controller;
 
-import com.nttdata.academy.dto.ClienteDataDTO;
+import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,7 +24,7 @@ public class ClienteController {
 
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResponseEntity adicionarCliente(@RequestBody ClienteDataDTO cliente){
+    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
 
 
         LOG.debug(cliente.toString());

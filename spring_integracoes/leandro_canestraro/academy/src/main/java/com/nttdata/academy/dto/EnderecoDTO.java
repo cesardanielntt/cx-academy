@@ -6,18 +6,12 @@ import java.io.Serializable;
 public class EnderecoDTO implements Serializable {
 
     private Integer id;
-
     private String cep;
-
     private String logradouro;
-
-    private String number;
-
-    private String district;
-
+    private String numero;
+    private String bairro;
+    private String cidade;
     private String uf;
-
-    private String city;
 
     public Integer getId() {
         return id;
@@ -43,20 +37,28 @@ public class EnderecoDTO implements Serializable {
         this.logradouro = logradouro;
     }
 
-    public String getNumber() {
-        return number;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getDistrict() {
-        return district;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getUf() {
@@ -67,25 +69,16 @@ public class EnderecoDTO implements Serializable {
         this.uf = uf;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-
     @Override
     public String toString() {
         return "EnderecoDTO{" +
                 "id=" + id +
                 ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +
-                ", number='" + number + '\'' +
-                ", district='" + district + '\'' +
+                ", numero='" + numero + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
                 ", uf='" + uf + '\'' +
-                ", city='" + city + '\'' +
                 '}';
     }
 }

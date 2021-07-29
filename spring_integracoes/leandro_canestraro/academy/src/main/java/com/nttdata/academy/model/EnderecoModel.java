@@ -1,35 +1,28 @@
 package com.nttdata.academy.model;
-
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity(name = "Endereco")
 public class EnderecoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column(nullable = false)
     private String cep;
-
-    @Column(nullable = false)
     private String logradouro;
-
-    @Column(nullable = false)
-    private String number;
-
-    @Column(nullable = false)
-    private String district;
-
-    @Column(nullable = false)
+    private String numero;
+    private String bairro;
+    private String cidade;
     private String uf;
-
-    @Column(nullable = false)
-    private String city;
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCep() {
@@ -40,10 +33,6 @@ public class EnderecoModel {
         this.cep = cep;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public String getLogradouro() {
         return logradouro;
     }
@@ -52,20 +41,28 @@ public class EnderecoModel {
         this.logradouro = logradouro;
     }
 
-    public String getNumber() {
-        return number;
+    public String getNumero() {
+        return numero;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNumero(String numero) {
+        this.numero = numero;
     }
 
-    public String getDistrict() {
-        return district;
+    public String getBairro() {
+        return bairro;
     }
 
-    public void setDistrict(String district) {
-        this.district = district;
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+
+    public String getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(String cidade) {
+        this.cidade = cidade;
     }
 
     public String getUf() {
@@ -76,11 +73,16 @@ public class EnderecoModel {
         this.uf = uf;
     }
 
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
+    @Override
+    public String toString() {
+        return "EnderecoModel{" +
+                "id=" + id +
+                ", cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", uf='" + uf + '\'' +
+                '}';
     }
 }

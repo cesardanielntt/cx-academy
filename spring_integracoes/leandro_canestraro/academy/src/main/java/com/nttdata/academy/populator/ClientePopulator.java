@@ -1,10 +1,10 @@
 package com.nttdata.academy.populator;
 
-import com.nttdata.academy.dto.ClienteDataDTO;
+import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.model.ClienteModel;
 
 public interface ClientePopulator {
-    ClienteModel populateClienteModel(ClienteDataDTO source);
+    ClienteModel populateClienteModel(ClienteDTO source);
 
-    ClienteDataDTO populateClienteDTO(ClienteModel cliente);
+    ClienteDTO populateClienteDTO(ClienteModel cliente);
 }

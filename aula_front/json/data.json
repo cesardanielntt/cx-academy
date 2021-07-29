@@ -1,0 +1,23 @@
+{
+  "data":
+  [
+    {
+      "image": "600x450.jpg",
+      "name": "Produto 1",
+      "description": "Lorem ipsum ea minim.",
+      "sku": "QHV5BR"
+    },
+    {
+      "image": "600x450.jpg",
+      "name": "Produto 2",
+      "description": "Id anim aliquip ex elit.",
+      "sku": "GUVGOE"
+    },
+    {
+      "image": "600x450.jpg",
+      "name": "Produto 3",
+      "description": "Qui cupidatat aute excepteur qui.",
+      "sku": "ZLAIWX"
+    }
+  ]
+}

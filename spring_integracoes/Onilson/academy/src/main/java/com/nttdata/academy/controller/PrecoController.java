@@ -1,8 +1,7 @@
 package com.nttdata.academy.controller;
 
-
-import com.nttdata.academy.dto.ProdutoDTO;
-import com.nttdata.academy.facade.ProdutoFacade;
+import com.nttdata.academy.dto.PrecoDTO;
+import com.nttdata.academy.facade.PrecoFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
@@ -14,24 +13,24 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 @RestController
-@RequestMapping("/produto")
-public class ProdutoController {
+@RequestMapping("/preco")
+public class PrecoController {
 
-    private static final Logger LOG = LogManager.getLogger(ProdutoController.class);
+    private static final Logger LOG = LogManager.getLogger(PrecoController.class);
 
-    @Resource(name = "produtoFacade")
-    private ProdutoFacade produtoFacade;
+    @Resource(name = "precoFacade")
+    private PrecoFacade precoFacade;
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-    public ResponseEntity adicionarProduto(@RequestBody ProdutoDTO produto) {
+    public ResponseEntity adicionarPreco(@RequestBody PrecoDTO preco) {
 
-        LOG.debug(produto.toString());
+        LOG.debug(preco.toString());
 
-        produtoFacade.adicionar(produto);
+        precoFacade.adicionar(preco);
 
-        return ResponseEntity.ok().body(produto);
+        return ResponseEntity.ok().body(preco);
+
+
     }
-
-
 
 }

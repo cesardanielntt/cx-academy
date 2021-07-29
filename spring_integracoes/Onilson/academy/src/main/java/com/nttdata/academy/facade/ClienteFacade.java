@@ -4,7 +4,7 @@ import com.nttdata.academy.dto.ClienteDTO;
 
 public interface ClienteFacade {
 
-    void adicionar(ClienteDTO cliente);
+    ClienteDTO adicionar(ClienteDTO cliente);
 
 
 }

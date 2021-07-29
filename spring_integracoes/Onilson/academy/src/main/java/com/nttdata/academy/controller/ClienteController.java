@@ -2,7 +2,6 @@ package com.nttdata.academy.controller;
 
 import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.facade.ClienteFacade;
-import com.nttdata.academy.facade.impl.DefaultClienteFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +27,9 @@ public class ClienteController {
 
         LOG.debug(cliente.toString());
 
-        clienteFacade.adicionar(cliente);
+        cliente = clienteFacade.adicionar(cliente);
+
+        LOG. debug(cliente.toString());
 
         return ResponseEntity.ok().body(cliente);
     }

@@ -1,22 +1,20 @@
-package com.nttdata.academy.dto;
+package com.nttdata.academy.models;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-public class ProdutoDTO implements Serializable {
+@Entity
+public class ProdutoModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String sku;
+
     private String nome;
-    private Integer preco;
-
-
-    public Integer getPreco() {
-        return preco;
-    }
-
-    public void setPreco(String preco) {
-        this.preco = preco;
-    }
 
     public Integer getId() {
         return id;
@@ -44,7 +42,7 @@ public class ProdutoDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "ProdutoDTO{" +
+        return "Produto{" +
                 "id=" + id +
                 ", sku='" + sku + '\'' +
                 ", nome='" + nome + '\'' +

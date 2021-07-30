@@ -6,4 +6,5 @@ public interface ProdutoFacade {
 
     void adicionar(ProdutoDTO produto);
 
+
 }

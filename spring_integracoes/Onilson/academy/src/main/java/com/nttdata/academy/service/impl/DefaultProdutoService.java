@@ -1,4 +1,13 @@
 package com.nttdata.academy.service.impl;
 
-public class DefaultProdutoService {
-}
+
+import com.nttdata.academy.service.ProdutoService;
+import org.springframework.stereotype.Service;
+
+@Service("produtoService")
+public class DefaultProdutoService implements ProdutoService {
+
+
+
+    }
+

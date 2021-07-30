@@ -30,6 +30,8 @@ public class ProdutoController {
         produtoFacade.adicionar(produto);
 
         return ResponseEntity.ok().body(produto);
+
+
     }
 
 

@@ -1,4 +1,4 @@
-$("#sortable").sortable();
+// $("#sortable").sortable();
 
 getTaskList();
 countTodos();
@@ -22,7 +22,7 @@ $('.add-todo').on('keypress',function (e) {
   }
 });
 // mark task as done
-$('#sortable li .form-check-input').on('change',function(){
+$(document).on('change', '.js-form-check-input' ,function(){
   if($(this).prop('checked')){
     var doneItem = $(this).parent().parent().find('label').text();
     $(this).parent().parent().addClass('remove');
@@ -47,6 +47,8 @@ function getTaskList() {
       for(let i = 0; i < data.length; i++) {
         createTodo(data[i].task);
       }
+
+      countTodos();
     }
   });
 }
@@ -54,12 +56,12 @@ function getTaskList() {
 // count tasks
 function countTodos(){
   var count = $("#sortable li").length;
-  $('.count-todos').html(count);
+  $('.js-count-todos').html(count);
 }
 
 //create task
 function createTodo(text){
-  var markup = '<li class="list-group-item"> <div class="form-check"> <input class="form-check-input" type="checkbox" value=""> <label class="form-check-label" >'+ text +' </label> </div> </li>'
+  var markup = '<li class="list-group-item"> <div class="form-check"> <input class="js-form-check-input form-check-input" type="checkbox" value=""> <label class="form-check-label" >'+ text +' </label> </div> </li>'
   $('#sortable').append(markup);
   $('.add-todo').val('');
 }

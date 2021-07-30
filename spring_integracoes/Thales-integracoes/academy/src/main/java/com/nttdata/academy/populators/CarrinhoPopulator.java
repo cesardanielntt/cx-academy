@@ -1,4 +1,11 @@
 package com.nttdata.academy.populators;
 
-public class CarrinhoPopulator {
+import com.nttdata.academy.dto.CarrinhoDTO;
+import com.nttdata.academy.models.CarrinhoModel;
+
+public interface CarrinhoPopulator {
+    CarrinhoModel populateCarrinhoModel(CarrinhoDTO carrinhoDTO);
+
+    CarrinhoDTO populateCarrinhoDTO(CarrinhoModel carrinho);
 }
+

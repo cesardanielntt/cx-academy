@@ -27,4 +27,7 @@ public class PrecoDTO {
                 ", preco='" + preco + '\'' +
                 '}';
     }
+
+    public void setMessage(String successo) {
+    }
 }

@@ -1,18 +1,30 @@
 <%--
   Created by IntelliJ IDEA.
-  User: lucas
-  Date: 20/07/2021
+<<<<<<< HEAD
+  User: AlphaPlayerOne
+  Date: 20/07/21
   Time: 11:14
+=======
+  User: Onilson Cardoso
+  Date: 20/07/2021
+  Time: 11:12
+>>>>>>> master
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+<<<<<<< HEAD
 
 <script>
     $(document).ready(function () {
         $('.cep').mask("00.000-00");
+=======
+<script>
+    $(document).ready(function () {
+        $('.cep').mask("00.000-000");
+>>>>>>> master
     })
 </script>
 
@@ -21,7 +33,6 @@
         font-family: 'Arial';
         background-color: #ffffff;
     }
-
     input, select, option, textarea {
         margin: 10px auto;
         border: none;
@@ -30,7 +41,6 @@
         border-radius: 10px;
         width: 100%;
     }
-
     button {
         margin: 10px auto;
         border: none;
@@ -42,35 +52,29 @@
         color: #fff;
         font-size: 18px;
     }
-
     .error {
         color: red;
         margin-bottom: 15px;
     }
-
     form {
         width: 400px;
         text-align: left;
         margin: 0 auto;
     }
-
     .row {
         display: block;
     }
-
     .content-form {
         width: 400px;
         text-align: center;
         margin: 0 auto;
     }
-
     .content {
         width: 80%;
         margin: 0 auto;
         border-radius: 10px;
         padding: 2px;
     }
-
     .table {
         width: 100%;
         margin: 0 auto;
@@ -78,55 +82,47 @@
         border-radius: 10px;
         padding: 2px;
     }
-
     table {
         width: 100%;
         margin: 0 auto;
         border-radius: 50px;
     }
-
     tr:last-child {
         border-bottom: solid 1px #ccc;
         width: 16%;
         padding: 15px;
-
     }
+<<<<<<< HEAD
+=======
 
-
+>>>>>>> master
     th {
         border-bottom: solid 0.5px #ccc;
         width: 16%;
         padding: 15px;
     }
-
     td {
         border-bottom: solid 0.5px #ccc;
         border-right: solid 0.5px #ccc;
         padding: 10px;
     }
-
     td:last-child {
         border-right: none;
         padding: 10px;
     }
-
     tr:last-child td {
         border-bottom: none;
     }
-
     .id-collum {
         width: 5%;
     }
-
     .register-button {
         width: auto;
     }
-
     .radio {
         width: 200px;
         display: inline-block;
     }
-
     .radio input {
         width: 30px;
         display: inline-block;

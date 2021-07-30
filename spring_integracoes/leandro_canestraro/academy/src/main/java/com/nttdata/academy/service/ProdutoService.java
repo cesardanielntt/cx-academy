@@ -5,5 +5,5 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 public interface ProdutoService {
 
-    void saveProduto(ProdutoModel produto);
+    ProdutoModel saveProduto(ProdutoModel produto);
 }

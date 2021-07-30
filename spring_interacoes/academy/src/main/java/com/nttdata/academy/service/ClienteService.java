@@ -1,8 +1,19 @@
 package com.nttdata.academy.service;
 
-import com.nttdata.academy.dto.ClienteDTO;
+import com.nttdata.academy.models.ClienteModel;
+
+import java.util.List;
 
 public interface ClienteService {
 
-    void adicionar(ClienteDTO cliente);
+    ClienteModel adicionar(ClienteModel cliente);
+
+    void atualizar(ClienteModel cliente, String cpf);
+
+    public List<ClienteModel> listar();
+
+    public List<ClienteModel> consultarByCpf(String cpf);
+
+    public void deletarByCpf(String cpf);
+
 }

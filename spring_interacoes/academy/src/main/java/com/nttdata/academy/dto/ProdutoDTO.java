@@ -1,8 +1,6 @@
 package com.nttdata.academy.dto;
 
-import java.io.Serializable;
-
-public class ProdutoDTO implements Serializable {
+public class ProdutoDTO {
 
     private Integer id;
 
@@ -32,14 +30,5 @@ public class ProdutoDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    @Override
-    public String toString() {
-        return "ProdutoDTO{" +
-                "id=" + id +
-                ", sku=" + sku +
-                ", nome='" + nome + '\'' +
-                '}';
     }
 }

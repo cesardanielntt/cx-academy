@@ -1,0 +1,89 @@
+package com.nttdata.spring.cxacademy.facade.impl;
+
+import com.nttdata.spring.cxacademy.data.ProductData;
+import com.nttdata.spring.cxacademy.facade.ProductFacade;
+import com.nttdata.spring.cxacademy.model.ProductModel;
+import com.nttdata.spring.cxacademy.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+public class DefaultProductsFacade implements ProductFacade {
+
+    @Autowired
+    private ProductService productService;
+
+    @Override
+    public List<ProductData> getAllProduts() {
+        List<ProductModel> productModels = productService.getAllProduts();
+        List<ProductData> productDatas = new ArrayList<>();
+
+        for(ProductModel product: productModels){
+            ProductData data = convert(product, new ProductData());
+            productDatas.add(data);
+        }
+        return productDatas;
+    }
+/*
+    @Override
+    public List<ProductData> getAllEnabled(){
+        List<ProductModel> productModels = productService.getAllEnabled();
+        List<ProductData> productDatas = new ArrayList<>();
+
+        for(ProductModel product: productModels){
+            ProductData data = convert(product, new ProductData());
+            productDatas.add(data);
+        }
+        return productDatas;
+    }
+*/
+    @Override
+    public void saveProduct(ProductData product) {
+        if(product != null){
+            ProductModel model = reverseConvert(product, new ProductModel());
+            productService.saveProduct(model);
+        }
+    }
+
+    @Override
+    public ProductData getProductByCode(Integer productCode) {
+        ProductModel model = productService.getProductByCode(productCode);
+        if(model != null){
+            return convert(model, new ProductData());
+        }
+
+        return null;
+    }
+
+    @Override
+    public void deleteProduct(Integer productCode) {
+        productService.deleteProduct(productCode);
+    }
+
+    private ProductData convert(ProductModel source, ProductData target){
+        target.setCode(source.getCode());
+        target.setName(source.getNome());
+        target.setPrice("R$ " + source.getPrice());
+        target.setAvailableOnline(source.isAvailableOnline());
+        return target;
+    }
+
+    private ProductModel reverseConvert(ProductData source, ProductModel target){
+        target.setCode(source.getCode());
+        target.setNome(source.getName());
+
+        String price = source.getPrice();
+
+        if(price.contains("R$ ")){
+            price = price.replace("R$ ", "");
+        }
+
+        target.setPrice(price);
+
+        target.setAvailableOnline(source.isAvailableOnline());
+        return target;
+    }
+}

@@ -7,6 +7,4 @@ import java.util.Optional;
 public interface PrecoService {
 
     PrecoModel savePreco(PrecoModel preco);
-
-    PrecoModel getPrecoById(Integer id);
 }

@@ -44,9 +44,4 @@ public class DefaultPrecoService implements PrecoService {
         }
         return null;
     }
-
-    @Override
-    public PrecoModel getPrecoById(Integer id) {
-        return precoDAO.getById(id);
-    }
 }

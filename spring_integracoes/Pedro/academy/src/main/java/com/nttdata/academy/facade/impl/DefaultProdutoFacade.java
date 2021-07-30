@@ -31,6 +31,8 @@ public class DefaultProdutoFacade implements ProdutoFacade {
 
         produto = produtoService.adicionar(produto);
 
+        System.out.println("Id do produto: " + produto.getId());
+
         produtoDTO = produtoPopulator.populateProdutoDto(produto);
 
         LOG.debug(produtoDTO);

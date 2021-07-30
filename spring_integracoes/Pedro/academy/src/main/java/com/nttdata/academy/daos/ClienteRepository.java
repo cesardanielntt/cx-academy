@@ -15,8 +15,4 @@ public interface ClienteRepository extends JpaRepository<ClienteModel, Integer> 
 
     void removeClienteModelByCpf(String cpf);
 
-    @Modifying
-    @Query("UPDATE ClienteModel c SET c.cpf = ?3, c.nome = ?2 WHERE c.cpf = ?1")
-    void updateByCpf(String cpf, String newNome, String newCpf);
-
 }

@@ -59,7 +59,7 @@ public class ExternalAppRest {
         List<EnderecoDTO> enderecosDTO = new ArrayList<>();
 
         EnderecoDTO enderecoDTO = new EnderecoDTO();
-        String cep = "81580010";
+        String cep = "74354230";
         enderecoDTO.setCep(cep);
         enderecoDTO.setLogradouro("Rua rest " + cep);
         enderecoDTO.setNumero("Numero rest " + cep);

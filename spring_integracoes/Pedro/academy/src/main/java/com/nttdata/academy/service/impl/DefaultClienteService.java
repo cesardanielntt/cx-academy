@@ -32,14 +32,20 @@ public class DefaultClienteService implements ClienteService {
 
         LOG.debug(cliente);
         System.out.println("Cliente adicionado ao banco!");
+
         return clienteRepository.save(cliente);
 
     }
 
     @Override
-    public void atualizar(ClienteModel cliente, String cpf) {
+    public void atualizar(ClienteModel cliente, String cpf){
 
-        LOG.debug(cliente);
+        List<ClienteModel> clientes = clienteRepository.findByCpf(cpf);
+
+        ClienteModel clienteAtual = new ClienteModel();
+
+        if(clientes.size() == 1) clienteAtual = clientes.get(0);
+
         System.out.println("Cliente atualizado!");
 
         String newNome="";
@@ -49,7 +55,12 @@ public class DefaultClienteService implements ClienteService {
 
         newCpf = cliente.getCpf();
 
-        clienteRepository.updateByCpf(cpf, newNome, newCpf);
+        clienteAtual.setNome(newNome);
+        clienteAtual.setCpf(newCpf);
+
+        LOG.debug(cliente);
+
+        clienteRepository.save(clienteAtual);
 
     }
 

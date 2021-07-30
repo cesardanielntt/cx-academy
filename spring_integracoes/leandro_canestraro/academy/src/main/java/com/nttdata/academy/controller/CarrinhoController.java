@@ -28,6 +28,23 @@ public class CarrinhoController {
 
 //        LOG.debug(cliente.toString());
 
+//     JSON structure to make a request (values may be changed to make request, these are the ones I used to test)
+//        {
+//            "items": [
+//            {
+//                "quantidade": 10,
+//                    "cliente": {
+//                "id": 2
+//            },
+//                "produto": {
+//                "id": 5
+//            }
+//            }
+//    ]
+//        }
+
+        //Preco is retrievied via query and added to item registry
+
         carrinho = carrinhoFacade.adicionar(carrinho);
 
         return ResponseEntity.ok().body(carrinho);

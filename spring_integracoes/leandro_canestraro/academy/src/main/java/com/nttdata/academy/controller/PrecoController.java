@@ -24,7 +24,22 @@ public class PrecoController {
     public ResponseEntity adicionarPreco(@RequestBody PrecoDTO preco){
 
 
-//        LOG.debug(cliente.toString());
+
+//        JSON structure to make a request (values may be changed to make request, these are the ones I used to test)
+//        {
+//            "valor": 78,
+//                "cliente": {
+//            "id": 3
+//        },
+//            "produto":
+//            {
+//                "id": 6
+//            }
+//        }
+//
+//
+//        All objects are filled in the Service layer via query;
+//
 
         preco = precoFacade.adicionar(preco);
 

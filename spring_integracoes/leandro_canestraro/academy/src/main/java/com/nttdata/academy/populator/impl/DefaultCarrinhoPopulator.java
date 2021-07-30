@@ -33,7 +33,7 @@ public class DefaultCarrinhoPopulator implements CarrinhoPopulator {
 
         target.getCliente().setId(source.getCliente().getId());
         target.getProduto().setId(source.getProduto().getId());
-        target.getPreco().setId(source.getPreco().getId());
+//        target.getPreco().setId(source.getPreco().getId());
 
         return target;
     }

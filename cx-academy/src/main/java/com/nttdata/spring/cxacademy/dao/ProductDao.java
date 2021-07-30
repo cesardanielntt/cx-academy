@@ -11,8 +11,5 @@ public interface ProductDao extends CrudRepository<ProductModel, Integer> {
 
     List<ProductModel> findAll();
 
-<<<<<<< HEAD
-=======
     List<ProductModel> findAllByAvailableOnlineIsTrue();
->>>>>>> master
 }

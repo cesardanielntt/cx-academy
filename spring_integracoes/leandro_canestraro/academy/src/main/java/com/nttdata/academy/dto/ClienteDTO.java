@@ -1,12 +1,14 @@
 package com.nttdata.academy.dto;
 
 import java.io.Serializable;
+import java.util.List;
 
-public class ClienteDataDTO implements Serializable {
+public class ClienteDTO implements Serializable {
 
     private Integer id;
     private String cpf;
-    private String name;
+    private String nome;
+    private List<EnderecoDTO> enderecos;
 
     public Integer getId() {
         return id;
@@ -24,20 +26,28 @@ public class ClienteDataDTO implements Serializable {
         this.cpf = cpf;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<EnderecoDTO> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<EnderecoDTO> enderecos) {
+        this.enderecos = enderecos;
     }
 
     @Override
     public String toString() {
-        return "ClienteDataDTO{" +
+        return "ClienteDTO{" +
                 "id=" + id +
                 ", cpf='" + cpf + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + nome + '\'' +
                 '}';
     }
 }

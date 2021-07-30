@@ -1,6 +1,6 @@
 package com.nttdata.academy.controller;
 
-import com.nttdata.academy.dto.ClienteDataDTO;
+import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,12 +24,28 @@ public class ClienteController {
 
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
-    public ResponseEntity adicionarCliente(@RequestBody ClienteDataDTO cliente){
+    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
+
+//     JSON structure to make a request (values may be changed to make request, these are the ones I used to test)
+//        {
+//            "cpf": "22ere",
+//                "nome": "Mateus",
+//                "enderecos": [
+//            {
+//                "cep": "463523",
+//                "logradouro": "Rua ghjutyyy",
+//                "numero": "512",
+//                "bairro": "Afonso Pena",
+//                "cidade": "Sao Jose dos Pinhais"
+//                "uf": "pr"
+//            }
+//    ]
+//        }
 
 
         LOG.debug(cliente.toString());
 
-        clienteFacade.adicionar(cliente);
+        cliente = clienteFacade.adicionar(cliente);
 
         return ResponseEntity.ok().body(cliente);
     }

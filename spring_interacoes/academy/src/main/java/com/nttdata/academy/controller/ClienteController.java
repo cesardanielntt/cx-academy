@@ -29,6 +29,8 @@ public class ClienteController {
     public void atualizarCliente(@RequestBody ClienteDTO cliente, @PathVariable String cpf){
         LOG.debug(cliente.toString());
         System.out.println("Usuário atualizado!");
+
+        clienteFacade.atualizar(cliente, cpf);
     }
 
     @RequestMapping(value = "/listar", method = RequestMethod.GET)

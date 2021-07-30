@@ -13,9 +13,10 @@ public class DefaultProdutoService implements ProdutoService {
     private ProdutoDAO produtoDAO;
 
     @Override
-    public void saveProduto(ProdutoModel produto) {
+    public ProdutoModel saveProduto(ProdutoModel produto) {
         if (produto != null) {
-            produtoDAO.save(produto);
+            return produtoDAO.save(produto);
         }
+        return null;
     }
 }

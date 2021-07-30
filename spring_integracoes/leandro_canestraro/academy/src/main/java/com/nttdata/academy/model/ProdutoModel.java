@@ -1,26 +1,19 @@
 package com.nttdata.academy.model;
-
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity(name = "Produto")
 public class ProdutoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
     private String sku;
 
-    @Column(nullable = false)
-    private String price;
-
-    @Column(nullable = false)
-    private String name;
-
-    @Column(nullable = false)
-    private String brand;
+    private String nome;
 
     public Integer getId() {
         return id;
@@ -38,27 +31,20 @@ public class ProdutoModel {
         this.sku = sku;
     }
 
-    public String getPrice() {
-        return price;
+    public String getNome() {
+        return nome;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", sku='" + sku + '\'' +
+                ", nome='" + nome + '\'' +
+                '}';
     }
 }

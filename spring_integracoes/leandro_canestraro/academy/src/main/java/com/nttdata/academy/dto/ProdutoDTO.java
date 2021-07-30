@@ -6,9 +6,7 @@ public class ProdutoDTO implements Serializable {
 
     private Integer id;
     private String sku;
-    private String price;
-    private String name;
-    private String brand;
+    private String nome;
 
     public Integer getId() {
         return id;
@@ -26,39 +24,20 @@ public class ProdutoDTO implements Serializable {
         this.sku = sku;
     }
 
-    public String getPrice() {
-        return price;
+    public String getNome() {
+        return nome;
     }
 
-    public void setPrice(String price) {
-        this.price = price;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
 
     @Override
     public String toString() {
         return "ProdutoDTO{" +
                 "id=" + id +
                 ", sku='" + sku + '\'' +
-                ", price='" + price + '\'' +
-                ", name='" + name + '\'' +
-                ", brand='" + brand + '\'' +
+                ", name='" + nome + '\'' +
                 '}';
     }
 }

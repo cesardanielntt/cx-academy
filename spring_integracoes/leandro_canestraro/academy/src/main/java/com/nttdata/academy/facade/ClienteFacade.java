@@ -1,7 +1,11 @@
 package com.nttdata.academy.facade;
 
-import com.nttdata.academy.dto.ClienteDataDTO;
+import com.nttdata.academy.dto.ClienteDTO;
+import com.nttdata.academy.model.ClienteModel;
+
+import java.util.Optional;
 
 public interface ClienteFacade {
-    void adicionar(ClienteDataDTO cliente);
+    ClienteDTO adicionar(ClienteDTO cliente);
+    ClienteModel getClienteById(Integer id);
 }

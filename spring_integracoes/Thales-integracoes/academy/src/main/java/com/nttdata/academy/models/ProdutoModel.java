@@ -1,6 +1,16 @@
 package com.nttdata.academy.models;
 
-public class Produto {
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class ProdutoModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String sku;
     private String nome;
@@ -36,5 +46,17 @@ public class Produto {
                 ", sku='" + sku + '\'' +
                 ", nome='" + nome + '\'' +
                 '}';
+    }
+
+    public void setMessage(String produto_deletado) {
+    }
+
+    public boolean isPresent() {
+    }
+
+    public Object get() {
+    }
+
+    public void setProduto(ProdutoModel produto) {
     }
 }

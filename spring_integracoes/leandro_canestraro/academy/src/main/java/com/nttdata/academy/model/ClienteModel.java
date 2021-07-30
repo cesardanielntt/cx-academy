@@ -1,19 +1,21 @@
 package com.nttdata.academy.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "Cliente")
 public class ClienteModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false)
     private String cpf;
 
-    @Column(nullable = false)
-    private String name;
+    private String nome;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -31,11 +33,29 @@ public class ClienteModel {
         this.cpf = cpf;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<EnderecoModel> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<EnderecoModel> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteModel{" +
+                "id=" + id +
+                ", cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", enderecos=" + enderecos +
+                '}';
     }
 }

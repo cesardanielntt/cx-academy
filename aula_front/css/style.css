@@ -1,0 +1,18 @@
+.header{
+	background-color: #FFF;
+}
+
+.menu_item:hover {
+	color: unset;
+	background-color: #CCC;
+}
+
+.btn {
+	background-color: #f1f1f1;
+	color: #000;
+	border: none;
+}
+
+.btn:hover {
+	background-color: #CCC;
+}

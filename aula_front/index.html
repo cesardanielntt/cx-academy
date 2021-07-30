@@ -25,9 +25,11 @@
 	</header>
 	<main>
 		<section class="container">
-			<img src="img/banner.png" class="page-banner img-responsive">
 
 			<div class="page-grid">
+			<div class="grid-column-12">
+				<img src="img/banner.png" class="page-banner img-responsive">
+			</div>
 				<div class="grid-column-4">
 					<div class="display-card">
 						<img class="img-responsive" src="img/600x450.jpg">
@@ -115,11 +117,11 @@
 							</div>
 
 							<div class="grid-column-3">
-								<input class="page-input" type="tel" name="cep" placeholder="CEP" maxlength="9" required>
+								<input class="page-input js-check-zipcode" type="tel" name="cep" placeholder="CEP" maxlength="9" required>
 							</div>
 
 							<div class="grid-column-6">
-								<input class="page-input" type="tel" name="rua" placeholder="Rua" required>
+								<input class="page-input js-complete-street" type="tel" name="rua" placeholder="Rua" required>
 							</div>
 
 							<div class="grid-column-3">
@@ -127,11 +129,11 @@
 							</div>
 
 							<div class="grid-column-3">
-								<input class="page-input" type="text" name="bairro" placeholder="Bairro" required>
+								<input class="page-input js-complete-district" type="text" name="bairro" placeholder="Bairro" required>
 							</div>
 
 							<div class="grid-column-3">
-								<input class="page-input" type="text" name="cidade" placeholder="Cidade" required>
+								<input class="page-input js-complete-city" type="text" name="cidade" placeholder="Cidade" required>
 							</div>
 
 							<div class="grid-column-3">
@@ -139,7 +141,7 @@
 							</div>
 
 							<div class="grid-column-3">
-								<input class="page-input" type="text" name="estado" placeholder="Estado" required>
+								<input class="page-input js-complete-state" type="text" name="estado" placeholder="Estado" required>
 							</div>
 
 							<div class="grid-column-12">
@@ -154,5 +156,7 @@
 			</div>
 		</div>
 	</footer>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>

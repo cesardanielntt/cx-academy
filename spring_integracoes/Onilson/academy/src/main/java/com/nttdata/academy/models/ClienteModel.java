@@ -1,6 +1,7 @@
 package com.nttdata.academy.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,6 +15,8 @@ public class ClienteModel {
 
     private String nome;
 
+    @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -39,14 +42,21 @@ public class ClienteModel {
         this.nome = nome;
     }
 
+    public List<EnderecoModel> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<EnderecoModel> enderecos) {
+        this.enderecos = enderecos;
+    }
+
     @Override
     public String toString() {
-        return "Cliente{" +
+        return "ClienteModel{" +
                 "id=" + id +
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
+                ", enderecos=" + enderecos +
                 '}';
     }
-
-
 }

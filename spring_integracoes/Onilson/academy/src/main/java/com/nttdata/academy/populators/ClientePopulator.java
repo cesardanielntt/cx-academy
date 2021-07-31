@@ -5,7 +5,7 @@ import com.nttdata.academy.models.ClienteModel;
 
 public interface ClientePopulator {
 
-    ClienteModel populateCliente(ClienteDTO clienteDTO);
+    ClienteModel populateClienteModel(ClienteDTO clienteDTO);
 
-    ClienteDTO populateClienteDTO(ClienteModel clienteModel);
+    ClienteDTO populateClienteDTO(ClienteModel cliente);
 }

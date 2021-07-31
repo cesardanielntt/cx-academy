@@ -17,6 +17,12 @@ public class DefaultProdutoPopulator implements ProdutoPopulator {
     @Override
     public ProdutoModel populateProdutoModel(ProdutoDTO produtoDTO) {
 
-        return null;
+        return modelMapperService.modelMapper().map(produtoDTO, ProdutoModel.class);
+    }
+
+    @Override
+    public ProdutoDTO populateProdutoDTO(ProdutoModel produto) {
+
+        return modelMapperService.modelMapper().map(produto, ProdutoDTO.class);
     }
 }

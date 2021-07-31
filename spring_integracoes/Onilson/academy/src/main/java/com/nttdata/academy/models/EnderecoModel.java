@@ -1,11 +1,17 @@
-package com.nttdata.academy.dto;
+package com.nttdata.academy.models;
 
+import com.nttdata.academy.dto.EnderecoDTO;
 
-import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class EnderecoModel extends EnderecoDTO {
 
-public class EnderecoDTO implements Serializable {
-
+   @Id
+   @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String logradouro;
@@ -76,6 +82,3 @@ public class EnderecoDTO implements Serializable {
         this.estado = estado;
     }
 }
-
-
-

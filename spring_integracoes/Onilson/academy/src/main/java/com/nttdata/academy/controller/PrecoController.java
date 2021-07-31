@@ -26,7 +26,9 @@ public class PrecoController {
 
         LOG.debug(preco.toString());
 
-        precoFacade.adicionar(preco);
+        preco = precoFacade.adicionar(preco);
+
+        LOG.debug(preco.toString());
 
         return ResponseEntity.ok().body(preco);
 

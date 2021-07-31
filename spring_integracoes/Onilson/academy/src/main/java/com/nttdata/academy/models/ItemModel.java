@@ -3,19 +3,24 @@ package com.nttdata.academy.models;
 import javax.persistence.*;
 
 @Entity
-public class PrecoModel {
+public class ItemModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private double valor;
+    private Integer quantidade;
 
-    @OneToOne
+    private Double total;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private ClienteModel cliente;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private ProdutoModel produto;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private PrecoModel preco;
 
     public Integer getId() {
         return id;
@@ -25,12 +30,20 @@ public class PrecoModel {
         this.id = id;
     }
 
-    public double getValor() {
-        return valor;
+    public Integer getQuantidade() {
+        return quantidade;
     }
 
-    public void setValor(double valor) {
-        this.valor = valor;
+    public void setQuantidade(Integer quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public Double getTotal() {
+        return total;
+    }
+
+    public void setTotal(Double total) {
+        this.total = total;
     }
 
     public ClienteModel getCliente() {
@@ -49,13 +62,23 @@ public class PrecoModel {
         this.produto = produto;
     }
 
+    public PrecoModel getPreco() {
+        return preco;
+    }
+
+    public void setPreco(PrecoModel preco) {
+        this.preco = preco;
+    }
+
     @Override
     public String toString() {
-        return "PrecoModel{" +
+        return "ItemModel{" +
                 "id=" + id +
-                ", valor=" + valor +
+                ", quantidade=" + quantidade +
+                ", total=" + total +
                 ", cliente=" + cliente +
                 ", produto=" + produto +
+                ", preco=" + preco +
                 '}';
     }
 }

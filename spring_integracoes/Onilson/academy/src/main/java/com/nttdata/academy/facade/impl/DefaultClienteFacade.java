@@ -26,7 +26,7 @@ public class DefaultClienteFacade implements ClienteFacade {
 
         LOG.debug(clienteDTO);
 
-        ClienteModel clienteModel = clientePopulator.populateCliente(clienteDTO);
+        ClienteModel clienteModel = clientePopulator.populateClienteModel(clienteDTO);
 
         clienteModel = clienteService.adicionar(clienteModel);
 

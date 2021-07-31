@@ -27,9 +27,13 @@ public class ProdutoController {
 
         LOG.debug(produto.toString());
 
-        produtoFacade.adicionar(produto);
+        produto = produtoFacade.adicionar(produto);
+
+        LOG.debug(produto.toString());
 
         return ResponseEntity.ok().body(produto);
+
+
 
 
     }

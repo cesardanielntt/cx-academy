@@ -4,7 +4,7 @@ import com.nttdata.academy.dto.ProdutoDTO;
 
 public interface ProdutoFacade {
 
-    void adicionar(ProdutoDTO produto);
+    ProdutoDTO adicionar(ProdutoDTO produto);
 
 
 }

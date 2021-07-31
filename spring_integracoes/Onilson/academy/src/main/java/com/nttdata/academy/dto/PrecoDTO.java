@@ -1,17 +1,22 @@
 package com.nttdata.academy.dto;
 
 
+
+import javax.persistence.OneToOne;
 import java.io.Serializable;
 
 public class PrecoDTO implements Serializable {
+
 
     private Integer id;
 
     private double valor;
 
-    private String produto_id;
+    @OneToOne
+    private ClienteDTO clienteDTO;
 
-   private String cliente_id;
+    @OneToOne
+    private ProdutoDTO produtoDTO;
 
     public Integer getId() {
         return id;
@@ -29,20 +34,20 @@ public class PrecoDTO implements Serializable {
         this.valor = valor;
     }
 
-    public String getProduto_id() {
-        return produto_id;
+    public ClienteDTO getClienteDTO() {
+        return clienteDTO;
     }
 
-    public void setProduto_id(String produto_id) {
-        this.produto_id = produto_id;
+    public void setClienteDTO(ClienteDTO clienteDTO) {
+        this.clienteDTO = clienteDTO;
     }
 
-    public String getCliente_id() {
-        return cliente_id;
+    public ProdutoDTO getProdutoDTO() {
+        return produtoDTO;
     }
 
-    public void setCliente_id(String cliente_id) {
-        this.cliente_id = cliente_id;
+    public void setProdutoDTO(ProdutoDTO produtoDTO) {
+        this.produtoDTO = produtoDTO;
     }
 
     @Override
@@ -50,8 +55,8 @@ public class PrecoDTO implements Serializable {
         return "PrecoDTO{" +
                 "id=" + id +
                 ", valor=" + valor +
-                ", produto_id='" + produto_id + '\'' +
-                ", cliente_id='" + cliente_id + '\'' +
+                ", clienteDTO=" + clienteDTO +
+                ", produtoDTO=" + produtoDTO +
                 '}';
     }
 }

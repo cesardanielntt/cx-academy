@@ -1,4 +1,4 @@
 package com.nttdata.academy.dao;
 
-public class CarrinhoRepository {
+public interface CarrinhoRepository {
 }

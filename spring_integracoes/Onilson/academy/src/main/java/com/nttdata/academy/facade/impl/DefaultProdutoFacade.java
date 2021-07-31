@@ -22,13 +22,17 @@ public class DefaultProdutoFacade implements ProdutoFacade {
     private ProdutoService produtoService;
 
     @Override
-    public void adicionar(ProdutoDTO produtoDTO) {
+    public ProdutoDTO adicionar(ProdutoDTO produtoDTO) {
 
         LOG.debug(produtoDTO);
 
         ProdutoModel produto = produtoPopulator.populateProdutoModel(produtoDTO);
 
+        produto = produtoService.adicionar(produto);
 
+        produtoDTO = produtoPopulator.populateProdutoDTO(produto);
+
+        return produtoDTO;
 
     }
 

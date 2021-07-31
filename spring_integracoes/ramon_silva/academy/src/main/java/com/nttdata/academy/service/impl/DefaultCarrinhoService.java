@@ -36,4 +36,12 @@ public class DefaultCarrinhoService implements CarrinhoService {
 
         return carrinhoRepository.save(carrinho);
     }
+
+    @Override
+    public CarrinhoModel deletar(Integer id) {
+
+        carrinhoRepository.deleteById(id);
+
+        return null;
+    }
 }

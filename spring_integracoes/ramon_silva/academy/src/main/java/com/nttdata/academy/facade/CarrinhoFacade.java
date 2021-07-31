@@ -15,4 +15,6 @@ public interface CarrinhoFacade {
     ResponseEntity<Optional<CarrinhoModel>> listar(Integer id);
 
     ResponseEntity<CarrinhoDTO> atualizar(CarrinhoDTO carrinhoDTO, Integer id);
+
+    ResponseEntity deletar(Integer id);
 }

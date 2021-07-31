@@ -9,9 +9,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service("clienteService")
 public class DefaultClienteService implements ClienteService {
@@ -44,6 +42,14 @@ public class DefaultClienteService implements ClienteService {
         cliente.setId(id);
 
         return clienteRepository.save(cliente);
+    }
+
+    @Override
+    public ClienteModel deletar(Integer id) {
+
+        clienteRepository.deleteById(id);
+
+        return null;
     }
 
 

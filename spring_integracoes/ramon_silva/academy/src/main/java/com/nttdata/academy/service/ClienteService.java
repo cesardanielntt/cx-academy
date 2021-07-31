@@ -1,7 +1,7 @@
 package com.nttdata.academy.service;
 
+import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.models.ClienteModel;
-import com.nttdata.academy.models.EnderecoModel;
 
 import java.util.Optional;
 
@@ -11,5 +11,8 @@ public interface ClienteService {
     Optional<ClienteModel> listar(Integer id);
 
     ClienteModel atualizar(ClienteModel cliente, Integer id);
+
+    ClienteModel deletar(Integer id);
+
 
 }

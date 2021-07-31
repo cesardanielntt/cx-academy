@@ -46,4 +46,10 @@ public class ProdutoController {
 
     }
 
+    @DeleteMapping (path = "/{id}")
+    public ResponseEntity<ProdutoModel> deletarProduto(@PathVariable Integer id) {
+        return produtoFacade.deletar(id);
+
+    }
+
 }

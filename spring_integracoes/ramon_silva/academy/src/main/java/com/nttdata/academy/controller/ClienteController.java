@@ -37,4 +37,10 @@ public class ClienteController {
             return clienteFacade.atualizar(cliente, id);
 
     }
+
+    @DeleteMapping (path = "/{id}")
+    public ResponseEntity<ClienteModel> deletarCliente(@PathVariable Integer id) {
+        return clienteFacade.deletar(id);
+
+    }
 }

@@ -16,5 +16,6 @@ public interface ClienteFacade {
 
     ResponseEntity<ClienteDTO> atualizar(ClienteDTO clienteDTO, Integer id);
 
+    ResponseEntity deletar(Integer id);
 
 }

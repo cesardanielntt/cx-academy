@@ -43,4 +43,10 @@ public class DefaultProdutoService implements ProdutoService {
 
         return produtoRepository.save(produto);
     }
+
+    @Override
+    public ProdutoModel deletar(Integer id) {
+        produtoRepository.deleteById(id);
+        return null;
+    }
 }

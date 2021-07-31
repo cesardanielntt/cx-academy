@@ -20,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 
 @Service("clienteFacade")
@@ -35,7 +36,6 @@ public class DefaultClienteFacade implements ClienteFacade {
 
     @Override
     public ResponseEntity adicionar(ClienteDTO clienteDTO) {
-        LOG.debug(clienteDTO);
 
         if(!validaEnderecoEPreencheDados(clienteDTO.getEnderecos())){
             return messageEnderecoInvalido(clienteDTO);
@@ -55,9 +55,11 @@ public class DefaultClienteFacade implements ClienteFacade {
     @Override
     public ResponseEntity<Optional<ClienteModel>> listar(Integer id) {
 
-        Optional<ClienteModel> cliente = clienteService.listar(id);;
+        Optional<ClienteModel> cliente = clienteService.listar(id);
 
-        LOG.debug(cliente);
+        if(cliente.isEmpty()) {
+            return messageFalha();
+        }
 
         return ResponseEntity.ok().body(cliente);
     }
@@ -83,6 +85,19 @@ public class DefaultClienteFacade implements ClienteFacade {
         clienteDTO = clientePopulator.populateClienteDTO(cliente);
 
         return ResponseEntity.ok().body(clienteDTO);
+    }
+
+    @Override
+    public ResponseEntity deletar(Integer id) {
+
+        Optional<ClienteModel> clienteData = clienteService.listar(id);
+
+        if(clienteData.isEmpty()) {
+            return messageFalha();
+        } else {
+            clienteService.deletar(id);
+            return messageSucesso();
+        }
     }
 
     private boolean validaEnderecoEPreencheDados(List<EnderecoDTO> enderecos) {

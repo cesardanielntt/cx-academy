@@ -16,5 +16,6 @@ public interface ProdutoFacade {
 
     ResponseEntity<ProdutoDTO> atualizar(ProdutoDTO produtoDTO, Integer id);
 
+    ResponseEntity deletar(Integer id);
 
 }

@@ -41,6 +41,11 @@ public class CarrinhoController {
     @PutMapping(path = "/{id}")
     public ResponseEntity<CarrinhoDTO> atualizarCarrinho(@RequestBody CarrinhoDTO carrinho, @PathVariable Integer id) {
         return carrinhoFacade.atualizar(carrinho, id);
+    }
+
+    @DeleteMapping (path = "/{id}")
+    public ResponseEntity<ClienteModel> deletarCliente(@PathVariable Integer id) {
+        return carrinhoFacade.deletar(id);
 
     }
 }

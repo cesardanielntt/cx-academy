@@ -13,4 +13,6 @@ public interface ProdutoService {
 
     ProdutoModel atualizar(ProdutoModel produto, Integer id);
 
+    ProdutoModel deletar(Integer id);
+
 }

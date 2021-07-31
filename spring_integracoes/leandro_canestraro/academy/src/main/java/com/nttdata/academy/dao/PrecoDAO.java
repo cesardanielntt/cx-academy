@@ -14,8 +14,9 @@ import java.util.Optional;
 @Repository
 public interface PrecoDAO extends CrudRepository<PrecoModel, Integer> {
 
-    String query = "FROM Preco WHERE cliente_id = :clienteId AND produto_id = :produtoId";
-
-    @Query("FROM Preco WHERE cliente_id = :clienteId AND produto_id = :produtoId")
+    @Query("FROM Preco WHERE cliente.id = :clienteId AND produto.id = :produtoId")
     PrecoModel getPrecoByClienteAndProduto(@Param("clienteId") Integer clienteId, @Param("produtoId") Integer produtoId);
+
+    @Query("FROM Preco p JOIN Cliente c ON c.id = p.cliente.id WHERE p.cliente.id = :clienteId")
+    List<PrecoModel> getPrecoByCliente(@Param("clienteId") Integer clienteId);
 }

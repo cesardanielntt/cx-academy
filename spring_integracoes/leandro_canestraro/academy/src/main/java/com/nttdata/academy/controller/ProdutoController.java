@@ -37,4 +37,9 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produto);
     }
 
+    @GetMapping
+    public ResponseEntity getProdutos(){
+        return ResponseEntity.ok().body(produtoFacade.getProdutos());
+    }
+
 }

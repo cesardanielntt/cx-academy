@@ -8,6 +8,9 @@ import com.nttdata.academy.service.PrecoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Service ("precoFacade")
 public class DefaultPrecoFacade implements PrecoFacade {
@@ -29,5 +32,18 @@ public class DefaultPrecoFacade implements PrecoFacade {
         source = precoPopulator.populatePrecoDTO(preco);
 
         return source;
+    }
+
+    @Override
+    public List<PrecoDTO> getPrecoByCliente(Integer clienteId) {
+
+        List<PrecoDTO> target = new ArrayList<>();
+        List<PrecoModel> precos = precoService.getPrecoByCliente(clienteId);
+
+        for(PrecoModel preco : precos) {
+            target.add(precoPopulator.populatePrecoDTO(preco));
+        }
+
+        return target;
     }
 }

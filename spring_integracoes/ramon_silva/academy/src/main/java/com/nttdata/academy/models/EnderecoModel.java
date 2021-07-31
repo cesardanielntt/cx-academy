@@ -1,6 +1,8 @@
 package com.nttdata.academy.models;
 
 
+import com.nttdata.academy.dto.EnderecoDTO;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

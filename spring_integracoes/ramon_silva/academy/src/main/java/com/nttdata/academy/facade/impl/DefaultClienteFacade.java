@@ -6,6 +6,7 @@ import com.nttdata.academy.dto.EnderecoDTO;
 import com.nttdata.academy.dto.ViaCepDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import com.nttdata.academy.models.ClienteModel;
+import com.nttdata.academy.models.EnderecoModel;
 import com.nttdata.academy.populators.ClientePopulator;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
@@ -18,6 +19,7 @@ import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service("clienteFacade")
@@ -39,6 +41,7 @@ public class DefaultClienteFacade implements ClienteFacade {
             return messageEnderecoInvalido(clienteDTO);
         }
 
+
         ClienteModel cliente = clientePopulator.populateClienteModel(clienteDTO);
 
         cliente = clienteService.adicionar(cliente);
@@ -47,6 +50,39 @@ public class DefaultClienteFacade implements ClienteFacade {
 
         return ResponseEntity.ok().body(clienteDTO);
 
+    }
+
+    @Override
+    public ResponseEntity<Optional<ClienteModel>> listar(Integer id) {
+
+        Optional<ClienteModel> cliente = clienteService.listar(id);;
+
+        LOG.debug(cliente);
+
+        return ResponseEntity.ok().body(cliente);
+    }
+
+    @Override
+    public ResponseEntity<ClienteDTO> atualizar(ClienteDTO clienteDTO, Integer id) {
+
+        if(!validaEnderecoEPreencheDados(clienteDTO.getEnderecos())){
+            return messageEnderecoInvalido(clienteDTO);
+        }
+
+        Optional<ClienteModel> clienteData;
+        clienteData = clienteService.listar(id);
+
+        if(clienteData.isEmpty()) {
+            return messageFalha();
+        }
+
+        ClienteModel cliente = clientePopulator.populateClienteModel(clienteDTO);
+
+        cliente = clienteService.atualizar(cliente, id);
+
+        clienteDTO = clientePopulator.populateClienteDTO(cliente);
+
+        return ResponseEntity.ok().body(clienteDTO);
     }
 
     private boolean validaEnderecoEPreencheDados(List<EnderecoDTO> enderecos) {

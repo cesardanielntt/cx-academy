@@ -1,9 +1,7 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class ProdutoModel {
@@ -15,6 +13,12 @@ public class ProdutoModel {
     private String sku;
 
     private String nome;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PrecoModel> precos;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ItemModel> items;
 
     public Integer getId() {
         return id;
@@ -38,5 +42,21 @@ public class ProdutoModel {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<PrecoModel> getPrecos() {
+        return precos;
+    }
+
+    public void setPrecos(List<PrecoModel> precos) {
+        this.precos = precos;
+    }
+
+    public List<ItemModel> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemModel> items) {
+        this.items = items;
     }
 }

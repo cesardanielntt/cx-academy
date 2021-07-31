@@ -6,6 +6,8 @@ import com.nttdata.academy.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class DefaultProdutoService implements ProdutoService {
 
@@ -18,5 +20,8 @@ public class DefaultProdutoService implements ProdutoService {
             return produtoDAO.save(produto);
         }
         return null;
+    }
+    public List<ProdutoModel> getProdutos(){
+        return produtoDAO.findAll();
     }
 }

@@ -1,5 +1,6 @@
 package com.nttdata.academy.facade.impl;
 
+import com.nttdata.academy.dao.ClienteDAO;
 import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import com.nttdata.academy.model.ClienteModel;
@@ -8,6 +9,8 @@ import com.nttdata.academy.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -42,5 +45,19 @@ public class DefaultClienteFacade implements ClienteFacade {
     @Override
     public ClienteModel getClienteById(Integer id) {
         return clienteService.getClienteById(id);
+    }
+
+    @Override
+    public List<ClienteDTO> getClientes() {
+
+        List<ClienteDTO> target = new ArrayList<>();
+
+        List<ClienteModel> clientes = clienteService.getClientes();
+
+        for (ClienteModel cliente : clientes) {
+            target.add(clientePopulator.populateClienteDTO(cliente));
+        }
+
+        return target;
     }
 }

@@ -10,6 +10,9 @@ import com.nttdata.academy.service.CarrinhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 public class DefaultCarrinhoService implements CarrinhoService {
@@ -53,4 +56,23 @@ public class DefaultCarrinhoService implements CarrinhoService {
         }
         return null;
     }
+
+    @Override
+    public List<CarrinhoModel> getCarrinhoByCliente(Integer clienteId) {
+        List<CarrinhoModel> carrinhos = new ArrayList<>();
+        carrinhoDAO.findAll().forEach(carrinhos::add);
+
+        List<CarrinhoModel> carrinhoByCliente = new ArrayList<>();
+
+        //This filter should've been done via sql query on DAO layer, but it works in this context
+        for(CarrinhoModel carrinho : carrinhos) {
+            if (carrinho.getItems().get(0).getCliente().getId() == clienteId) {
+                carrinhoByCliente.add(carrinho);
+            }
+        }
+
+        return carrinhoByCliente;
+    }
+
+
 }

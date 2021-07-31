@@ -6,10 +6,7 @@ import com.nttdata.academy.dto.PrecoDTO;
 import com.nttdata.academy.facade.CarrinhoFacade;
 import com.nttdata.academy.facade.PrecoFacade;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -48,6 +45,14 @@ public class CarrinhoController {
         carrinho = carrinhoFacade.adicionar(carrinho);
 
         return ResponseEntity.ok().body(carrinho);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getCarrinhosByCliente(@PathVariable Integer id) {
+
+
+        return ResponseEntity.ok().body(carrinhoFacade.getCarrinhoByCliente(id));
+
     }
 
 }

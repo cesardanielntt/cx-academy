@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
@@ -37,6 +38,11 @@ public class DefaultClienteService implements ClienteService {
     @Override
     public ClienteModel getClienteById(Integer id) {
         return clienteDAO.getById(id);
+    }
+
+    @Override
+    public List<ClienteModel> getClientes() {
+        return clienteDAO.findAll();
     }
 
 

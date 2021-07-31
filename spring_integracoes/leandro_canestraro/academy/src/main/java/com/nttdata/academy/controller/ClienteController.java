@@ -5,10 +5,7 @@ import com.nttdata.academy.facade.ClienteFacade;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -29,17 +26,17 @@ public class ClienteController {
 //     JSON structure to make a request (values may be changed to make request, these are the ones I used to test)
 //        {
 //            "cpf": "22ere",
-//                "nome": "Mateus",
-//                "enderecos": [
-//            {
-//                "cep": "463523",
-//                "logradouro": "Rua ghjutyyy",
-//                "numero": "512",
-//                "bairro": "Afonso Pena",
-//                "cidade": "Sao Jose dos Pinhais"
-//                "uf": "pr"
-//            }
-//    ]
+//            "nome": "Mateus",
+//            "enderecos": [
+//              {
+//                  "cep": "463523",
+//                  "logradouro": "Rua ghjutyyy",
+//                  "numero": "512",
+//                  "bairro": "Afonso Pena",
+//                  "cidade": "Sao Jose dos Pinhais"
+//                  "uf": "pr"
+//              }
+//            ]
 //        }
 
 
@@ -48,5 +45,10 @@ public class ClienteController {
         cliente = clienteFacade.adicionar(cliente);
 
         return ResponseEntity.ok().body(cliente);
+    }
+
+    @GetMapping
+    public ResponseEntity getClientes() {
+        return ResponseEntity.ok().body(clienteFacade.getClientes());
     }
 }

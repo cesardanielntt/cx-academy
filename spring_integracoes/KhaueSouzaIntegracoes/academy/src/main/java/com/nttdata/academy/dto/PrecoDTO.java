@@ -1,8 +1,19 @@
 package com.nttdata.academy.dto;
 
-public class PrecoDTO {
+
+
+import javax.persistence.OneToMany;
+import java.io.Serializable;
+
+public class PrecoDTO implements Serializable {
+
+
     private Integer id;
-    private String preco;
+    private String valor;
+    @OneToMany
+    private ClienteDTO clienteDTO;
+    @OneToMany
+    private ProdutoDTO produtoDTO;
 
     public Integer getId() {
         return id;
@@ -12,19 +23,37 @@ public class PrecoDTO {
         this.id = id;
     }
 
-    public String getPreco() {
-        return preco;
+    public String getValor() {
+        return valor;
     }
 
-    public void setPreco(String preco) {
-        this.preco = preco;
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public ClienteDTO getClienteDTO() {
+        return clienteDTO;
+    }
+
+    public void setClienteDTO(ClienteDTO clienteDTO) {
+        this.clienteDTO = clienteDTO;
+    }
+
+    public ProdutoDTO getProdutoDTO() {
+        return produtoDTO;
+    }
+
+    public void setProdutoDTO(ProdutoDTO produtoDTO) {
+        this.produtoDTO = produtoDTO;
     }
 
     @Override
     public String toString() {
         return "PrecoDTO{" +
                 "id=" + id +
-                ", preco='" + preco + '\'' +
+                ", valor=" + valor +
+                ", clienteDTO=" + clienteDTO +
+                ", produtoDTO=" + produtoDTO +
                 '}';
     }
 }

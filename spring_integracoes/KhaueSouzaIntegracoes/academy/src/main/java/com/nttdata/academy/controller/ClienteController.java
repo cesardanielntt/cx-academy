@@ -23,9 +23,15 @@ public class ClienteController {
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
     public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
-        LOG.debug(cliente.toString());
-        return clienteFacade.adicionar(cliente);
 
+        LOG.debug(cliente.toString());
+
+
+        cliente = clienteFacade.adicionar(cliente);
+
+
+
+        return ResponseEntity.ok().body(cliente);
     }
 
 }

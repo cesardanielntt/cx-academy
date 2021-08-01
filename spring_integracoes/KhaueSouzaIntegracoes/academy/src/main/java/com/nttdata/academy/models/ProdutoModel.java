@@ -42,7 +42,7 @@ public class ProdutoModel {
 
     @Override
     public String toString() {
-        return "Produto{" +
+        return "ProdutoModel{" +
                 "id=" + id +
                 ", sku='" + sku + '\'' +
                 ", nome='" + nome + '\'' +

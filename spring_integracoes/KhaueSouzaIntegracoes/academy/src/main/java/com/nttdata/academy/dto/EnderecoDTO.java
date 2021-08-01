@@ -2,7 +2,7 @@ package com.nttdata.academy.dto;
 
 import java.io.Serializable;
 
-public class EnderecoDTO extends MessageDTO implements Serializable {
+public class EnderecoDTO  implements Serializable {
 
     private Integer id;
     private String cep;
@@ -12,12 +12,6 @@ public class EnderecoDTO extends MessageDTO implements Serializable {
     private String cidade;
     private String uf;
 
-    public EnderecoDTO() {
-    }
-
-    public EnderecoDTO(String message, int status) {
-        super(message, status);
-    }
 
     public Integer getId() {
         return id;

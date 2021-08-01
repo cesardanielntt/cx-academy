@@ -6,6 +6,7 @@ import com.nttdata.academy.dto.ClienteDTO;
 import com.nttdata.academy.dto.ProdutoDTO;
 import com.nttdata.academy.facade.ProdutoFacade;
 import com.nttdata.academy.models.ClienteModel;
+import com.nttdata.academy.models.ItemModel;
 import com.nttdata.academy.models.ProdutoModel;
 import com.nttdata.academy.populators.ProdutoPopulator;
 import com.nttdata.academy.service.ProdutoService;
@@ -30,6 +31,16 @@ public class DefaultProdutoFacade implements ProdutoFacade {
     private ProdutoService produtoService;
 
     @Override
+    public ResponseEntity<Optional<ProdutoModel>> listar(Integer id) {
+
+
+        Optional<ProdutoModel> produto = produtoService.listar(id);;
+
+
+        return ResponseEntity.ok().body(produto);
+    }
+
+    @Override
     public  ProdutoDTO adicionar(ProdutoDTO produtoDTO) {
 
         ProdutoModel produto = produtoPopulator.populateProdutoModel(produtoDTO);
@@ -40,16 +51,6 @@ public class DefaultProdutoFacade implements ProdutoFacade {
 
         return produtoDTO;
 
-    }
-
-    @Override
-    public ResponseEntity<Optional<ProdutoModel>> listar(Integer id) {
-
-
-        Optional<ProdutoModel> produto = produtoService.listar(id);;
-
-
-        return ResponseEntity.ok().body(produto);
     }
 
     @Override

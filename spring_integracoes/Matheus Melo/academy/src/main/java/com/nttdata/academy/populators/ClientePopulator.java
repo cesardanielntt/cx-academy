@@ -7,6 +7,5 @@ public interface ClientePopulator {
 
     ClienteModels populateClienteModel(ClienteDTO clienteDTO);
 
-
-    ClienteDTO populateCriateDTO(ClienteModels cliente);
+    ClienteDTO populateClienteDTO(ClienteModels cliente);
 }

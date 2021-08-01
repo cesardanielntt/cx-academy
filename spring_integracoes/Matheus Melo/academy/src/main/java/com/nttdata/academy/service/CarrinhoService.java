@@ -1,8 +1,16 @@
 package com.nttdata.academy.service;
 
-import com.nttdata.academy.dto.CarrinhoDTO;
+import com.nttdata.academy.models.CarrinhoModels;
+
+import java.util.Optional;
 
 public interface CarrinhoService {
 
-    void adicionar(CarrinhoDTO carrinho);
+    CarrinhoModels adicionar(CarrinhoModels carrinho);
+
+    Optional<CarrinhoModels> listar(Integer id);
+
+    CarrinhoModels atualizar(CarrinhoModels carrinho, Integer id);
+
+    CarrinhoModels deletar(Integer id);
 }

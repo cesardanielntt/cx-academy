@@ -4,8 +4,10 @@ import com.nttdata.academy.models.ClienteModels;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface ClienteRepositoryDao extends JpaRepository<ClienteModels, Integer> {
+import javax.persistence.Entity;
 
+
+@Repository
+public interface ClienteRepositoryDao extends JpaRepository<ClienteModels, Integer>{
 
 }

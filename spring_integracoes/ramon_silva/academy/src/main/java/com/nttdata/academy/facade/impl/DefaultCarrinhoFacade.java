@@ -34,17 +34,6 @@ public class DefaultCarrinhoFacade implements CarrinhoFacade {
     private CarrinhoService carrinhoService;
 
     @Override
-    public CarrinhoDTO adicionar(CarrinhoDTO carrinhoDTO) {
-        CarrinhoModel carrinho = carrinhoPopulator.populateCarrinhoModel(carrinhoDTO);
-
-        carrinho = carrinhoService.adicionar(carrinho);
-
-        carrinhoDTO = carrinhoPopulator.populateCarrinhoDTO(carrinho);
-
-        return carrinhoDTO;
-    }
-
-    @Override
     public ResponseEntity<Optional<CarrinhoModel>> listar(Integer id) {
 
         Optional<CarrinhoModel> carrinho = carrinhoService.listar(id);;
@@ -55,6 +44,18 @@ public class DefaultCarrinhoFacade implements CarrinhoFacade {
 
         return ResponseEntity.ok().body(carrinho);
     }
+
+    @Override
+    public CarrinhoDTO adicionar(CarrinhoDTO carrinhoDTO) {
+        CarrinhoModel carrinho = carrinhoPopulator.populateCarrinhoModel(carrinhoDTO);
+
+        carrinho = carrinhoService.adicionar(carrinho);
+
+        carrinhoDTO = carrinhoPopulator.populateCarrinhoDTO(carrinho);
+
+        return carrinhoDTO;
+    }
+
 
     @Override
     public ResponseEntity<CarrinhoDTO> atualizar(CarrinhoDTO carrinhoDTO, Integer id) {

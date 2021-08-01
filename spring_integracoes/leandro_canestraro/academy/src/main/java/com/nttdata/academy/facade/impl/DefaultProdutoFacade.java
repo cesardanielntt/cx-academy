@@ -44,4 +44,15 @@ public class DefaultProdutoFacade implements ProdutoFacade {
         }
         return target;
     }
+
+    @Override
+    public String deleteProduto(Integer id) {
+
+        try {
+            produtoService.deleteProduto(id);
+        } catch (Exception e) {
+            return "Erro ao deletar produto: " + e.getMessage();
+        }
+        return "Produto deletado com sucesso (precos relacionados ao produto tambem foram deletados)";
+    }
 }

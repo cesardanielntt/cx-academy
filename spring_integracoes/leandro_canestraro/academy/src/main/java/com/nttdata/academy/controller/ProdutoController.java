@@ -42,4 +42,8 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produtoFacade.getProdutos());
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteProduto(@PathVariable("id") Integer id){
+        return ResponseEntity.ok().body(produtoFacade.deleteProduto(id));
+    }
 }

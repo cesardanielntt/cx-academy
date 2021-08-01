@@ -9,7 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public interface PrecoDAO extends CrudRepository<PrecoModel, Integer> {
@@ -19,4 +18,10 @@ public interface PrecoDAO extends CrudRepository<PrecoModel, Integer> {
 
     @Query("FROM Preco p JOIN Cliente c ON c.id = p.cliente.id WHERE p.cliente.id = :clienteId")
     List<PrecoModel> getPrecoByCliente(@Param("clienteId") Integer clienteId);
+
+    @Query("DELETE FROM Preco WHERE cliente.id = :clienteId")
+    void deletePrecoByCliente(@Param("clienteId") Integer id);
+
+    @Query("DELETE FROM Preco WHERE produto.id = :produtoId")
+    void deletePrecoByProduto(@Param("produtoId") Integer id);
 }

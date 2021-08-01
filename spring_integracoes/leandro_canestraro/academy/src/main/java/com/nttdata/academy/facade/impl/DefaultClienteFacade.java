@@ -60,4 +60,15 @@ public class DefaultClienteFacade implements ClienteFacade {
 
         return target;
     }
+
+    @Override
+    public String deleteCliente(Integer id) {
+
+        try {
+            clienteService.deleteCliente(id);
+        } catch (Exception e) {
+            return "Erro ao deletar cliente: " + e.getMessage();
+        }
+        return "Cliente deletado com sucesso (precos relacionados ao cliente tambem foram deletados)";
+    }
 }

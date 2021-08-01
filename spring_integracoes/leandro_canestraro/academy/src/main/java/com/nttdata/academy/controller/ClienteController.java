@@ -51,4 +51,9 @@ public class ClienteController {
     public ResponseEntity getClientes() {
         return ResponseEntity.ok().body(clienteFacade.getClientes());
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteCliente(@PathVariable("id") Integer id) {
+        return ResponseEntity.ok().body(clienteFacade.deleteCliente(id));
+    }
 }

@@ -10,4 +10,5 @@ public interface ClienteFacade {
     ClienteDTO adicionar(ClienteDTO cliente);
     ClienteModel getClienteById(Integer id);
     List<ClienteDTO> getClientes();
+    String deleteCliente(Integer id);
 }

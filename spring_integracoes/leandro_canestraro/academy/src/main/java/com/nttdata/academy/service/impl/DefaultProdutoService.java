@@ -1,5 +1,6 @@
 package com.nttdata.academy.service.impl;
 
+import com.nttdata.academy.dao.PrecoDAO;
 import com.nttdata.academy.dao.ProdutoDAO;
 import com.nttdata.academy.model.ProdutoModel;
 import com.nttdata.academy.service.ProdutoService;
@@ -10,6 +11,9 @@ import java.util.List;
 
 @Component
 public class DefaultProdutoService implements ProdutoService {
+
+    @Autowired
+    private PrecoDAO precoDAO;
 
     @Autowired
     private ProdutoDAO produtoDAO;
@@ -24,4 +28,11 @@ public class DefaultProdutoService implements ProdutoService {
     public List<ProdutoModel> getProdutos(){
         return produtoDAO.findAll();
     }
+
+    @Override
+    public void deleteProduto(Integer id) {
+        precoDAO.deletePrecoByProduto(id);
+        produtoDAO.deleteById(id);
+    }
+
 }

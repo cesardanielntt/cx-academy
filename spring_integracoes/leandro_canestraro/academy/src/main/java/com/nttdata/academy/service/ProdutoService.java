@@ -9,4 +9,5 @@ public interface ProdutoService {
 
     ProdutoModel saveProduto(ProdutoModel produto);
     List<ProdutoModel> getProdutos();
+    void deleteProduto(Integer id);
 }

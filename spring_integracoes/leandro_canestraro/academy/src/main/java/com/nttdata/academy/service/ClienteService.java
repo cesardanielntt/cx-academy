@@ -12,4 +12,6 @@ public interface ClienteService {
     ClienteModel getClienteById(Integer id);
 
     List<ClienteModel> getClientes();
+
+    void deleteCliente(Integer id);
 }

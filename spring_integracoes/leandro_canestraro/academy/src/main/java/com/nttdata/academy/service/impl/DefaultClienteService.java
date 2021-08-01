@@ -1,6 +1,7 @@
 package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.dao.ClienteDAO;
+import com.nttdata.academy.dao.PrecoDAO;
 import com.nttdata.academy.model.ClienteModel;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
@@ -14,6 +15,8 @@ import java.util.Optional;
 @Component
 public class DefaultClienteService implements ClienteService {
 
+    @Autowired
+    private PrecoDAO precoDAO;
 
     private ClienteDAO clienteDAO;
 
@@ -43,6 +46,12 @@ public class DefaultClienteService implements ClienteService {
     @Override
     public List<ClienteModel> getClientes() {
         return clienteDAO.findAll();
+    }
+
+    @Override
+    public void deleteCliente(Integer id) {
+        precoDAO.deletePrecoByCliente(id);
+        clienteDAO.deleteById(id);
     }
 
 

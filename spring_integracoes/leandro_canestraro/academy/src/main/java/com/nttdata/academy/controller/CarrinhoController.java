@@ -10,6 +10,17 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+/*
+
+Cart Controller is not finished. It is still lacking a delete mapping for cart deletion and a patch request to remove an
+item from the cart.
+
+Also, the client and product deletion still dont affect the cart items, but it should.
+
+
+ */
+
+
 @RestController
 @RequestMapping("/carrinho")
 public class CarrinhoController {

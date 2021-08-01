@@ -8,16 +8,18 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service("clienteService")
 public class DefaultClienteService implements ClienteService {
 
     private static final Logger LOG = LogManager.getLogger(DefaultClienteService.class);
 
-    private ClienteRepositoryDao clienteRepositoryDao;
+    private ClienteRepositoryDao clienteRepository;
 
     @Autowired
-    public DefaultClienteService(ClienteRepositoryDao clienteRepositoryDao) {
-        this.clienteRepositoryDao = clienteRepositoryDao;
+    public DefaultClienteService(ClienteRepositoryDao clienteRepository) {
+        this.clienteRepository = clienteRepository;
     }
 
     @Override
@@ -25,6 +27,25 @@ public class DefaultClienteService implements ClienteService {
 
         LOG.debug(cliente);
 
-        return clienteRepositoryDao.save(cliente);
+        return clienteRepository.save(cliente);
+
     }
+
+    @Override
+    public Optional<ClienteModels> listar(Integer id) {
+        return clienteRepository.findById(id);
+    }
+
+    @Override
+    public ClienteModels atualizar(ClienteModels cliente, Integer id) {
+        cliente.setId(id);
+        return clienteRepository.save(cliente);
+    }
+
+    @Override
+    public ClienteModels deletar(Integer id) {
+        clienteRepository.deleteById(id);
+        return null;
+    }
+
 }

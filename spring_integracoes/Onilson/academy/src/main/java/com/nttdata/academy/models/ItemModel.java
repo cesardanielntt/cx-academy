@@ -1,6 +1,10 @@
 package com.nttdata.academy.models;
 
+
+
 import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 public class ItemModel {
@@ -21,6 +25,8 @@ public class ItemModel {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private PrecoModel preco;
+
+
 
     public Integer getId() {
         return id;

@@ -2,18 +2,21 @@ package com.nttdata.academy.dto;
 
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.io.Serializable;
+import java.util.List;
 
 
-public class ItemDTO implements Serializable {
+public class ItemDTO  implements Serializable {
 
     private Integer id;
 
     private Integer quantidade;
 
-    private Double total;
+    private String total;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private ClienteDTO cliente;
@@ -23,6 +26,17 @@ public class ItemDTO implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private PrecoDTO preco;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ClienteDTO> clientes;
+
+    public List<ClienteDTO> getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(List<ClienteDTO> clientes) {
+        this.clientes = clientes;
+    }
 
     public Integer getId() {
         return id;
@@ -40,11 +54,11 @@ public class ItemDTO implements Serializable {
         this.quantidade = quantidade;
     }
 
-    public Double getTotal() {
+    public String getTotal() {
         return total;
     }
 
-    public void setTotal(Double total) {
+    public void setTotal(String total) {
         this.total = total;
     }
 
@@ -82,5 +96,8 @@ public class ItemDTO implements Serializable {
                 ", produto=" + produto +
                 ", preco=" + preco +
                 '}';
+    }
+
+    public void setItens(List<ItemDTO> itensDTO) {
     }
 }

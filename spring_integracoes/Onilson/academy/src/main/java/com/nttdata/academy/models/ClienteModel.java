@@ -18,6 +18,17 @@ public class ClienteModel {
     @OneToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<EnderecoModel> enderecos;
 
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ItemModel> itens;
+
+    public List<ItemModel> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemModel> itens) {
+        this.itens = itens;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -57,6 +68,7 @@ public class ClienteModel {
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", enderecos=" + enderecos +
+                ", itens=" + itens +
                 '}';
     }
 }

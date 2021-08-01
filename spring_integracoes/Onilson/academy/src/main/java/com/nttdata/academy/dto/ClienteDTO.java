@@ -15,6 +15,16 @@ public class ClienteDTO implements Serializable {
 
     private List<EnderecoDTO> enderecos;
 
+    private List<ItemDTO> itens;
+
+    public List<ItemDTO> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemDTO> itens) {
+        this.itens = itens;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -54,6 +64,7 @@ public class ClienteDTO implements Serializable {
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", enderecos=" + enderecos +
+                ", itens=" + itens +
                 '}';
     }
 }

@@ -14,8 +14,8 @@ public class DefaultItemPopulator implements ItemPopulator {
     private ModelMapperService modelMapperService;
 
     @Override
-    public ItemModel populateItemModel(ItemDTO itemDTO) {
-        return modelMapperService.modelMapper().map(itemDTO, ItemModel.class);
+    public ItemModel populateItemModel(ItemDTO item) {
+        return modelMapperService.modelMapper().map(item, ItemModel.class);
 
     }
 

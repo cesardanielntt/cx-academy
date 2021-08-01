@@ -10,7 +10,7 @@ public class PrecoDTO implements Serializable {
 
     private Integer id;
 
-    private double valor;
+    private String valor;
 
     @OneToOne
     private ClienteDTO clienteDTO;
@@ -26,11 +26,11 @@ public class PrecoDTO implements Serializable {
         this.id = id;
     }
 
-    public double getValor() {
+    public String getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(String valor) {
         this.valor = valor;
     }
 

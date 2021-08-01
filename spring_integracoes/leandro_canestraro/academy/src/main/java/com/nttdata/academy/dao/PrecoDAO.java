@@ -19,6 +19,9 @@ public interface PrecoDAO extends CrudRepository<PrecoModel, Integer> {
     @Query("FROM Preco p JOIN Cliente c ON c.id = p.cliente.id WHERE p.cliente.id = :clienteId")
     List<PrecoModel> getPrecoByCliente(@Param("clienteId") Integer clienteId);
 
+
+    //  DELETE QUERIES NOT WORKING FOR NOW
+
     @Query("DELETE FROM Preco WHERE cliente.id = :clienteId")
     void deletePrecoByCliente(@Param("clienteId") Integer id);
 

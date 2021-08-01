@@ -9,12 +9,12 @@ public interface ClienteFacade {
 
     ResponseEntity adicionar(ClienteDTO cliente);
 
-    void atualizar(ClienteDTO cliente, String cpf);
+    void atualizar(ClienteDTO cliente, Integer id);
 
     public List<ClienteDTO> listar();
 
-    public List<ClienteDTO> consultarByCpf(String cpf);
+    public ClienteDTO consultar(Integer id);
 
-    public void deletarByCpf(String cpf);
+    public void deletar(Integer id);
 
 }

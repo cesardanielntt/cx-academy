@@ -25,12 +25,12 @@ public class ClienteController {
         return clienteFacade.adicionar(cliente);
     }
 
-    @RequestMapping(value = "/atualizar/{cpf}", method = RequestMethod.POST)
-    public void atualizarCliente(@RequestBody ClienteDTO cliente, @PathVariable String cpf){
+    @RequestMapping(value = "/atualizar/{id}", method = RequestMethod.POST)
+    public void atualizarCliente(@RequestBody ClienteDTO cliente, @PathVariable Integer id){
         LOG.debug(cliente.toString());
         System.out.println("Usuário atualizado!");
 
-        clienteFacade.atualizar(cliente, cpf);
+        clienteFacade.atualizar(cliente, id);
     }
 
     @RequestMapping(value = "/listar", method = RequestMethod.GET)
@@ -44,29 +44,22 @@ public class ClienteController {
 
     }
 
-    @RequestMapping(value = "/listar/{cpf}", method = RequestMethod.GET)
+    @RequestMapping(value = "/consultar/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public List<ClienteDTO> getClientesByCpf(@PathVariable String cpf){
-        List<ClienteDTO> clientes = clienteFacade.consultarByCpf(cpf);
+    public ClienteDTO getClienteById(@PathVariable Integer id){
+        ClienteDTO cliente = clienteFacade.consultar(id);
 
-        System.out.println("Clientes: " + clientes);
+        System.out.println("Cliente: " + cliente);
 
-        return clientes;
+        return cliente;
 
     }
 
-    @RequestMapping(value = "/deletar/{cpf}", method = RequestMethod.DELETE)
-    public void deletarCliente(@PathVariable String cpf){
+    @RequestMapping(value = "/deletar/{id}", method = RequestMethod.DELETE)
+    public void deletarCliente(@PathVariable Integer id){
 
-        clienteFacade.deletarByCpf(cpf);
+        clienteFacade.deletar(id);
 
-        System.out.println("Usuário de CPF " + cpf + " deletado!");
+        System.out.println("Usuário de ID " + id + " deletado!");
     }
-
-    @RequestMapping(value = "/teste", method = RequestMethod.GET)
-    @ResponseBody
-    public ResponseEntity teste(){
-        return ResponseEntity.ok().body("Teste!!");
-    }
-
 }

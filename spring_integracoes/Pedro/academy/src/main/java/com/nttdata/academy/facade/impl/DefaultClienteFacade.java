@@ -5,6 +5,7 @@ import com.nttdata.academy.dto.EnderecoDTO;
 import com.nttdata.academy.dto.ViaCepDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import com.nttdata.academy.models.ClienteModel;
+import com.nttdata.academy.models.EnderecoModel;
 import com.nttdata.academy.populators.ClientePopulator;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
@@ -52,7 +53,7 @@ public class DefaultClienteFacade implements ClienteFacade {
     }
 
     @Override
-    public void atualizar(ClienteDTO clienteDTO, String cpf) {
+    public void atualizar(ClienteDTO clienteDTO, Integer id) {
 
         LOG.debug(clienteDTO);
 
@@ -60,9 +61,9 @@ public class DefaultClienteFacade implements ClienteFacade {
             LOG.debug("Endereço inválido!");
         }
 
-        ClienteModel cliente = clientePopulator.populateClienteModel(clienteDTO);
+        ClienteModel clienteModel = clientePopulator.populateClienteModel(clienteDTO);
 
-        clienteService.atualizar(cliente, cpf);
+        clienteService.atualizar(clienteModel, id);
 
     }
 
@@ -80,10 +81,8 @@ public class DefaultClienteFacade implements ClienteFacade {
         return clientesDTO;
     }
 
-    @Override
-    public List<ClienteDTO> consultarByCpf(String cpf){
-
-        List<ClienteModel> clienteModels = clienteService.consultarByCpf(cpf); // returns List<ClienteModel>
+    public ClienteDTO consultar(Integer id){
+        List<ClienteModel> clienteModels = clienteService.consultar(id); // returns List<ClienteModel>
 
         List<ClienteDTO> clientesDTO = new ArrayList<>();
 
@@ -91,13 +90,17 @@ public class DefaultClienteFacade implements ClienteFacade {
             clientesDTO.add(clientePopulator.populateClienteDto(cliente));
         }
 
-        return clientesDTO;
+        ClienteDTO cliente = new ClienteDTO();
+
+        if(clientesDTO.size() > 0 ) cliente = clientesDTO.get(0);
+
+        return cliente;
     }
 
     @Override
-    public void deletarByCpf(String cpf){
+    public void deletar(Integer id){
 
-        clienteService.deletarByCpf(cpf);
+        clienteService.deletar(id);
 
     }
 

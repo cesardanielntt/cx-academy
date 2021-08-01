@@ -12,8 +12,7 @@ public class EnderecoDTO extends MessageDTO implements Serializable {
     private String cidade;
     private String uf;
 
-    public EnderecoDTO() {
-    }
+    public EnderecoDTO(){}
 
     public EnderecoDTO(String message, int status) {
         super(message, status);

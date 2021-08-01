@@ -1,20 +1,20 @@
-package com.nttdata.academy.models;
+package com.nttdata.academy.dto;
 
-import javax.persistence.*;
+import com.nttdata.academy.models.ItemModel;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-public class Carrinho {
+public class CarrinhoDTO{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private Double total;
+    private List<ItemDTO> items = new ArrayList<>();
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ItemModel> items = new ArrayList<>();
+    public CarrinhoDTO() {
+        this.total = 0.0;
+    }
 
     public Integer getId() {
         return id;
@@ -32,17 +32,17 @@ public class Carrinho {
         this.total = total;
     }
 
-    public List<ItemModel> getItems() {
+    public List<ItemDTO> getItems() {
         return items;
     }
 
-    public void setItems(List<ItemModel> items) {
+    public void setItems(List<ItemDTO> items) {
         this.items = items;
     }
 
     @Override
     public String toString() {
-        return "Carrinho{" +
+        return "CarrinhoDTO{" +
                 "id=" + id +
                 ", total=" + total +
                 ", items=" + items +

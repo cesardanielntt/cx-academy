@@ -14,9 +14,12 @@ public class ClienteDTO extends MessageDTO implements Serializable {
     private List<EnderecoDTO> enderecos;
 
     public ClienteDTO() {
+        this.cpf = "";
+        this.nome = "";
     }
 
     public ClienteDTO(String message, int status) {
+
         super(message, status);
     }
 

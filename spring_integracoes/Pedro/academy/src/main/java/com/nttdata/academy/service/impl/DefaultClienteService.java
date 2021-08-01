@@ -2,17 +2,16 @@ package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.daos.ClienteRepository;
 import com.nttdata.academy.models.ClienteModel;
-import com.nttdata.academy.models.EnderecoModel;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.lang.Integer;
 
 @Service("clienteService")
 @Transactional
@@ -24,7 +23,9 @@ public class DefaultClienteService implements ClienteService {
 
     @Autowired
     public DefaultClienteService(ClienteRepository clienteRepository) {
+
         this.clienteRepository = clienteRepository;
+
     }
 
     @Override
@@ -38,34 +39,18 @@ public class DefaultClienteService implements ClienteService {
     }
 
     @Override
-    public void atualizar(ClienteModel cliente, String cpf){
+    public void atualizar(ClienteModel cliente, Integer id){
 
-        List<ClienteModel> clientes = clienteRepository.findByCpf(cpf);
-
-        ClienteModel clienteAtual = new ClienteModel();
-
-        if(clientes.size() == 1) clienteAtual = clientes.get(0);
-
-        System.out.println("Cliente atualizado!");
-
-        String newNome="";
-        String newCpf="";
-
-        newNome = cliente.getNome();
-
-        newCpf = cliente.getCpf();
-
-        clienteAtual.setNome(newNome);
-        clienteAtual.setCpf(newCpf);
+        cliente.setId(id);
 
         LOG.debug(cliente);
 
-        clienteRepository.save(clienteAtual);
+        clienteRepository.save(cliente);
 
     }
 
     @Override
-    public List<ClienteModel> listar(){
+    public List<ClienteModel> listar() {
 
         System.out.println("Pegando os clientes do banco...");
 
@@ -74,17 +59,18 @@ public class DefaultClienteService implements ClienteService {
     }
 
     @Override
-    public List<ClienteModel> consultarByCpf(String cpf){
+    public List<ClienteModel> consultar(Integer id) {
 
-        System.out.println("Pegando o cliente com cpf:" + cpf);
+        System.out.println("Pegando os clientes do banco...");
 
-        return clienteRepository.findByCpf(cpf);
+        return clienteRepository.findAllById(Collections.singleton(id));
+
     }
 
     @Override
-    public void deletarByCpf(String cpf){
+    public void deletar(Integer id){
 
-        clienteRepository.removeClienteModelByCpf(cpf);
+        clienteRepository.removeClienteModelById(id);
     }
 
 }

@@ -12,6 +12,12 @@ public class ProdutoDTO {
         return id;
     }
 
+    public ProdutoDTO() {
+        this.id = id;
+        this.sku = "";
+        this.nome = "";
+    }
+
     public void setId(Integer id) {
         this.id = id;
     }

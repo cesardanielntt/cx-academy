@@ -1,18 +1,24 @@
-package com.nttdata.academy.dto;
+package com.nttdata.academy.models;
 
+import javax.persistence.*;
 import java.util.List;
 
-public class ProdutoDTO {
+@Entity
+public class ProdutoModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String sku;
 
     private String nome;
 
-    private List<PrecoDTO> precos;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<PrecoModel> precos;
 
-    private List<ItemDTO> items;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ItemModel> items;
 
     public Integer getId() {
         return id;
@@ -38,30 +44,19 @@ public class ProdutoDTO {
         this.nome = nome;
     }
 
-    public List<PrecoDTO> getPrecos() {
+    public List<PrecoModel> getPrecos() {
         return precos;
     }
 
-    public void setPrecos(List<PrecoDTO> precos) {
+    public void setPrecos(List<PrecoModel> precos) {
         this.precos = precos;
     }
 
-    public List<ItemDTO> getItems() {
+    public List<ItemModel> getItems() {
         return items;
     }
 
-    public void setItems(List<ItemDTO> items) {
+    public void setItems(List<ItemModel> items) {
         this.items = items;
-    }
-
-    @Override
-    public String toString() {
-        return "ProdutoDTO{" +
-                "id=" + id +
-                ", sku='" + sku + '\'' +
-                ", nome='" + nome + '\'' +
-                ", precos=" + precos +
-                ", items=" + items +
-                '}';
     }
 }

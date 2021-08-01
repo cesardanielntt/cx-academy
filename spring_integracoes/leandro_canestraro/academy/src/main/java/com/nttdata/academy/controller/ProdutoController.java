@@ -37,4 +37,13 @@ public class ProdutoController {
         return ResponseEntity.ok().body(produto);
     }
 
+    @GetMapping
+    public ResponseEntity getProdutos(){
+        return ResponseEntity.ok().body(produtoFacade.getProdutos());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteProduto(@PathVariable("id") Integer id){
+        return ResponseEntity.ok().body(produtoFacade.deleteProduto(id));
+    }
 }

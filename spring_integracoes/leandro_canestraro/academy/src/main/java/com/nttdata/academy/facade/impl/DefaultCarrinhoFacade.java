@@ -8,6 +8,9 @@ import com.nttdata.academy.service.CarrinhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service("carrinhoFacade")
 public class DefaultCarrinhoFacade implements CarrinhoFacade {
 
@@ -26,5 +29,18 @@ public class DefaultCarrinhoFacade implements CarrinhoFacade {
         source = carrinhoPopulator.populateCarrinhoDTO(target);
 
         return source;
+    }
+
+    @Override
+    public List<CarrinhoDTO> getCarrinhoByCliente(Integer clienteId) {
+        List<CarrinhoModel> carrinhos = carrinhoService.getCarrinhoByCliente(clienteId);
+
+        List<CarrinhoDTO> target = new ArrayList<>();
+
+        for (CarrinhoModel e : carrinhos) {
+            target.add(carrinhoPopulator.populateCarrinhoDTO(e));
+        }
+
+        return target;
     }
 }

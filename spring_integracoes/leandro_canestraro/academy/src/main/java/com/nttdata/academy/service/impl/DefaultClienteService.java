@@ -1,6 +1,7 @@
 package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.dao.ClienteDAO;
+import com.nttdata.academy.dao.PrecoDAO;
 import com.nttdata.academy.model.ClienteModel;
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
@@ -8,11 +9,14 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 @Component
 public class DefaultClienteService implements ClienteService {
 
+    @Autowired
+    private PrecoDAO precoDAO;
 
     private ClienteDAO clienteDAO;
 
@@ -37,6 +41,17 @@ public class DefaultClienteService implements ClienteService {
     @Override
     public ClienteModel getClienteById(Integer id) {
         return clienteDAO.getById(id);
+    }
+
+    @Override
+    public List<ClienteModel> getClientes() {
+        return clienteDAO.findAll();
+    }
+
+    @Override
+    public void deleteCliente(Integer id) {
+        precoDAO.deletePrecoByCliente(id);
+        clienteDAO.deleteById(id);
     }
 
 

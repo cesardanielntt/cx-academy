@@ -1,4 +1,9 @@
 package com.nttdata.academy.service;
 
-public interface ClienteService {
+import com.nttdata.academy.model.ClienteModel;
+import org.springframework.stereotype.Service;
+
+@Service("clienteService")
+public interface ClienteService{
+    ClienteModel adicionar(ClienteModel cliente);
 }

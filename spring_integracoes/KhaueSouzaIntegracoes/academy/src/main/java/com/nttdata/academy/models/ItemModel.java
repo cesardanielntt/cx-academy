@@ -13,9 +13,7 @@ public class ItemModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
     private Integer quantidade;
-
     private Double total;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -67,9 +65,7 @@ public class ItemModel {
         this.produto = produto;
     }
 
-    public PrecoModel getPreco() {
-        return preco;
-    }
+    public PrecoModel getPreco() { return preco; }
 
     public void setPreco(PrecoModel preco) {
         this.preco = preco;
@@ -77,7 +73,7 @@ public class ItemModel {
 
     @Override
     public String toString() {
-        return "Item{" +
+        return "ItemModel{" +
                 "id=" + id +
                 ", quantidade=" + quantidade +
                 ", total=" + total +

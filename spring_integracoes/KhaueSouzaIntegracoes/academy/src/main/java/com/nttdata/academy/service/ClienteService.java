@@ -4,6 +4,7 @@ import com.nttdata.academy.models.ClienteModel;
 
 public interface ClienteService {
 
-    ClienteModel adicionar(ClienteModel cliente);
+    ClienteModel adicionar(ClienteModel clienteModel);
+
 
 }

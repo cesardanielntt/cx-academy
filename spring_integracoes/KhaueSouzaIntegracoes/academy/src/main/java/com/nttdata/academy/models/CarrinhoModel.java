@@ -20,7 +20,7 @@ public class CarrinhoModel {
     private Double total;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ItemModel> items = new ArrayList<>();
+    private List<ItemModel> itens = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -39,19 +39,19 @@ public class CarrinhoModel {
     }
 
     public List<ItemModel> getItems() {
-        return items;
+        return itens;
     }
 
     public void setItems(List<ItemModel> items) {
-        this.items = items;
+        this.itens = items;
     }
 
     @Override
     public String toString() {
-        return "Carrinho{" +
+        return "CarrinhoModel{" +
                 "id=" + id +
                 ", total=" + total +
-                ", items=" + items +
+                ", itens=" + itens +
                 '}';
     }
 }

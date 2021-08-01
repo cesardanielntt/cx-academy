@@ -3,7 +3,7 @@ package com.nttdata.academy.dto;
 import java.io.Serializable;
 import java.util.List;
 
-public class ClienteDTO extends MessageDTO implements Serializable {
+public class ClienteDTO implements Serializable {
 
     private Integer id;
 
@@ -13,11 +13,14 @@ public class ClienteDTO extends MessageDTO implements Serializable {
 
     private List<EnderecoDTO> enderecos;
 
-    public ClienteDTO() {
+    private List<ItemDTO> itens;
+
+    public List<ItemDTO> getItens() {
+        return itens;
     }
 
-    public ClienteDTO(String message, int status) {
-        super(message, status);
+    public void setItens(List<ItemDTO> itens) {
+        this.itens = itens;
     }
 
     public Integer getId() {
@@ -59,6 +62,7 @@ public class ClienteDTO extends MessageDTO implements Serializable {
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", enderecos=" + enderecos +
+                ", itens=" + itens +
                 '}';
     }
 }

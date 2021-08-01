@@ -9,6 +9,7 @@ import com.nttdata.academy.models.ClienteModel;
 import com.nttdata.academy.models.EnderecoModel;
 import com.nttdata.academy.populators.ClientePopulator;
 import com.nttdata.academy.service.ClienteService;
+import com.nttdata.academy.service.ProdutoService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,18 @@ public class DefaultClienteFacade implements ClienteFacade {
 
     @Autowired
     private ClienteService clienteService;
+    
+    @Override
+    public ResponseEntity<Optional<ClienteModel>> listar(Integer id) {
+
+        Optional<ClienteModel> cliente = clienteService.listar(id);
+
+        if(cliente.isEmpty()) {
+            return messageFalha();
+        }
+
+        return ResponseEntity.ok().body(cliente);
+    }
 
     @Override
     public ResponseEntity adicionar(ClienteDTO clienteDTO) {
@@ -50,18 +63,6 @@ public class DefaultClienteFacade implements ClienteFacade {
 
         return ResponseEntity.ok().body(clienteDTO);
 
-    }
-
-    @Override
-    public ResponseEntity<Optional<ClienteModel>> listar(Integer id) {
-
-        Optional<ClienteModel> cliente = clienteService.listar(id);
-
-        if(cliente.isEmpty()) {
-            return messageFalha();
-        }
-
-        return ResponseEntity.ok().body(cliente);
     }
 
     @Override

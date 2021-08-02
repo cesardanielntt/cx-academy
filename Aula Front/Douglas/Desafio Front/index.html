@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <!-- Biblioteca  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+  <!--Navbar-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Ntt Data</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Events</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Menus
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+              <li><a class="dropdown-item" href="#">Menu 1</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Menu 2</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Menu 3</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Menu 4</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Menu 5</a></li>
+            </ul>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link disabled " href="#" tabindex="-1" aria-disabled="true">Link</a>
+          </li>
+        </ul>
+        <form class="d-flex ">
+          <input class="form-control me-2 " type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success " type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+  <img src="img/banner.png" alt="Image" height="500" width="2519">
+
+  <!--Cartões-->
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="display-card">
+        <img src="img/values.jpg" alt="Image" height="150" width="300">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Values</h2>
+          <p class="card-text">Know our values.</p>
+          <a href="#" class="btn btn-primary">VALUES</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-6 ">
+      <div class="display-card ">
+        <img src="img/leaders.jpg" alt="Image" height="150" width="300">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">NTT DATA Leaders</h2>
+          <p class="card-text">Find out more about our leadership team.</p>
+          <a href="#" class="btn btn-primary">NTT DATA LEADERS</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="display-card">
+        <img src="img/plan.jpg" alt="Image" height="150" width="300">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Mid-term Management Plan </h2>
+          <p class="card-text">The plan propelling our innovation.</p>
+          <a href="#" class="btn btn-primary">Mid-term Management Plan</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="display-card">
+        <img src="img/history.jpg" alt="Image" height="150" width="300">
+      </div>
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">History</h2>
+          <p class="card-text">A look at our history and how we got here.</p>
+          <a href="#" class="btn btn-primary">History</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Google map-->
+  <div class="bg-dark">
+    <div class="container d-flex mx-auto">
+
+  <div class="container">
+    <div class="w-100">
+      <iframe src="https://maps.google.com/maps?q=warsaw&t=k&z=13&ie=UTF8&iwloc=&output=embed " frameborder="100"
+        style="border:1110px" allowfullscreen width="500px" height="500px"></iframe>
+    </div>
+  </div>
+
+
+    <!--Cadastro-->
+   
+    <form>
+      <div class="row g-3">
+        <div class="form-group col-md-5">
+          <label for="inputName" class="text-light form-label">Name</label>
+          <input type="email" class="form-control" id="inputName" placeholder="name">
+        </div>
+
+        <div class="form-group col-md-5">
+          <label for="inputSurname" class="text-light form-label">Surname</label>
+          <input type="email" class="form-control" id="inputSurname" placeholder="surname">
+        </div>
+
+        <div class="form-group col-5">
+          <label for="inputEmail" class="text-light form-label">E-Mail</label>
+          <input type="text" class="form-control" id="inputEmail" placeholder="...@gmail.com">
+        </div>
+
+        <div class="form-group col-md-5">
+          <label for="inputTelephone" class="text-light form-label">Telephone</label>
+          <input type="text" class="form-control" id="inputTelephone" placeholder="(xx) 9-xxxx-xxxx">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="inputCep" class="text-light form-label">CEP</label>
+          <input type="text" class="form-control" placeholder="cep">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputStreet" class="text-light form-label">Street</label>
+          <input type="text" class="form-control js-complete-street"  placeholder="street">
+        </div>
+
+        <div class="form-group col-md-2">
+          <label for="inputNumber" class="text-light form-label">Number</label>
+          <input type="text" class="form-control" id="inputNumber" placeholder="number">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputDistrict" class="text-light form-label">District</label>
+          <input type="text" class="form-control js-complete-district" placeholder="district">
+        </div>
+
+        <div class="form-group col-md-4">
+          <label for="inputComplement" class="text-light form-label">Complement</label>
+          <input type="text" class="form-control" id="inputComplement" placeholder="complement">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="inputCity" class="text-light form-label">City</label>
+          <input type="text" class="form-control js-complete-city" placeholder="city">
+        </div>
+
+        <div class="form-group col-md-3">
+          <label for="inputState" class="text-light form-label">State</label>
+          <input type="text" class="form-control js-complete-state" placeholder="state">
+        </div>
+
+        <div class="form-group col-md-8">
+          <label for="inputMessage" class="text-light form-label">Message</label>
+          <input type="text" class="form-control" id="inputCity" placeholder="message">
+        </div>
+
+        <div class="form-group col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+      </div>
+    </form>
+  </div>

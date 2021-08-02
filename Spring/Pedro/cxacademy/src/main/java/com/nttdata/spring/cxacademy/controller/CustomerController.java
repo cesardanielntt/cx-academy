@@ -40,6 +40,46 @@ public class CustomerController {
             return "redirect:/customers";
         }
 
+        if(customerForm.getSobrenome().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O sobrenome do cliente é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEmail().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O email do cliente é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getRua().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "A rua do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getComplemento().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O complemento do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getCidade().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "A cidade do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getEstado().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O estado do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getCep().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O CEP do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
+        if(customerForm.getEnderecos().get(0).getNumero().isEmpty()) {
+            redirectAttributes.addFlashAttribute("error", "O número do endereço é obrigatório!");
+            return "redirect:/customers";
+        }
+
         CustomerData customerData = convert(customerForm);
 
         customerFacade.save(customerData); // inseriu o customer o na tabela
@@ -56,7 +96,7 @@ public class CustomerController {
         CustomerData customer = customerFacade.getCustomerByCode(code);
 
         if(customer != null){
-            model.addAttribute("costumer", customer);
+            model.addAttribute("customer", customer);
             return "customerEditPage";
         }
 
@@ -66,8 +106,48 @@ public class CustomerController {
 
         @PostMapping("/edit")
         public String editCustomer(CustomerForm customerForm, RedirectAttributes redirectAttributes){
-            if(customerForm.getName().isEmpty()){
+            if(customerForm.getName().isEmpty()) {
                 redirectAttributes.addFlashAttribute("error", "O nome do cliente é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getSobrenome().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O sobrenome do cliente é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEmail().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O email do cliente é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getRua().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "A rua do endereço é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getComplemento().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O complemento do endereço é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getCidade().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "A cidade do endereço é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getEstado().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O estado do endereço é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getCep().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O CEP do endereço é obrigatório!");
+                return "redirect:/customers";
+            }
+
+            if(customerForm.getEnderecos().get(0).getNumero().isEmpty()) {
+                redirectAttributes.addFlashAttribute("error", "O número do endereço é obrigatório!");
                 return "redirect:/customers";
             }
 
@@ -88,7 +168,7 @@ public class CustomerController {
             } catch (Exception e) {
                 redirectAttributes.addFlashAttribute("error", "Erro na deleção do cliente!");
             }
-            return "redirect:/products";
+            return "redirect:/customers";
         }
 
     private CustomerData convert(CustomerForm form){

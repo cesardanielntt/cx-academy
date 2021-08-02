@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Edit Product</title>
+  <style type="text/css">
+    #todocontainer {
+      margin-top: 50px;
+    }
+  </style>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<section id="header">
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <a class="navbar-brand text-white" href="/">Home</a>
+    <a class="navbar-brand text-white" href="/customers">Customers</a>
+    <a class="navbar-brand text-white" href="/products">Products</a>
+    <a class="navbar-brand text-white" href="/cart">Cart</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</section>
+<section id="todocontainer">
+  <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
+  <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <form th:action="@{/customers/edit}" method="POST" name="customerForm">
+        <div class="form-group">
+          <label for="id">Code</label>
+          <input type="text" class="form-control" name="code"  placeholder="Code" readonly th:value="${customer.code}">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name"  placeholder="Name" th:value="${customer.name}">
+            <div class="form-group">
+              <label for="sobrenome">Sobrenome</label>
+              <input type="text" class="form-control" name="sobrenome"  placeholder="sobrenome" th:value="${customer.sobrenome}">
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="text" class="form-control" name="email"  placeholder="email" th:value="${customer.email}">
+            </div>
+            <div class="form-group">
+              <label for="rua">Rua</label>
+              <input type="text" class="form-control" name="enderecos[0].rua"  placeholder="rua" th:value="${customer.enderecos[0].rua}">
+            </div>
+            <div class="form-group">
+              <label for="complemento">Complemento</label>
+              <input type="text" class="form-control" name="enderecos[0].complemento"  placeholder="complemento" th:value="${customer.enderecos[0].complemento}">
+            </div>
+            <div class="form-group">
+              <label for="cidade">Cidade</label>
+              <input type="text" class="form-control" name="enderecos[0].cidade"  placeholder="cidade" th:value="${customer.enderecos[0].cidade}">
+            </div>
+            <div class="form-group">
+              <label for="estado">Estado</label>
+              <input type="text" class="form-control" name="enderecos[0].estado"  placeholder="estado" th:value="${customer.enderecos[0].estado}">
+            </div>
+            <div class="form-group">
+              <label for="cep">CEP</label>
+              <input type="text" class="form-control" name="enderecos[0].cep"  placeholder="cep" th:value="${customer.enderecos[0].cep}">
+            </div>
+            <div class="form-group">
+              <label for="numero">Número</label>
+              <input type="text" class="form-control" name="enderecos[0].numero"  placeholder="numero" th:value="${customer.enderecos[0].numero}">
+            </div>
+
+            <button type="submit" class="btn btn-primary">SAVE</button>
+            <a th:href="@{/customers}" class="btn btn-secondary text-white">BACK</a>
+      </form>
+    </div>
+  </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

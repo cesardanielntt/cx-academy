@@ -1,11 +1,10 @@
-package com.nttdata.academy.populator;
+package com.nttdata.academy.populators;
 
 import com.nttdata.academy.dto.ClienteDTO;
-import com.nttdata.academy.model.ClienteModel;
-import org.springframework.stereotype.Service;
+import com.nttdata.academy.models.ClienteModel;
 
+public interface ClientePopulator {
 
-public interface ClientePopulator  {
   ClienteModel populateClienteModel(ClienteDTO clienteDTO);
 
   ClienteDTO populateClienteDto(ClienteModel cliente);

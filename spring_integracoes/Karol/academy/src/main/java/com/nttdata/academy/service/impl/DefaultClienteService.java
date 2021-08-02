@@ -1,7 +1,7 @@
 package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.dao.ClienteRepository;
-import com.nttdata.academy.model.ClienteModel;
+
 import com.nttdata.academy.service.ClienteService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,9 +23,15 @@ public class DefaultClienteService implements ClienteService {
     }
 
     @Override
-    public ClienteModel adicionar(ClienteModel cliente) {
+    public com.nttdata.academy.models.ClienteModel adicionar(com.nttdata.academy.models.ClienteModel cliente) {
 
         LOG.debug(cliente);
+
+        cliente.getId();
+
+        cliente = clienteRepository.save(cliente);
+
+        cliente.getId();
 
         return clienteRepository.save(cliente);
     }

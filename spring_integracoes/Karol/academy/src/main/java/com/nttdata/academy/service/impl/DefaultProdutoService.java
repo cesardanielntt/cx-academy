@@ -1,7 +1,7 @@
 package com.nttdata.academy.service.impl;
 
 import com.nttdata.academy.dao.ProdutoRepository;
-import com.nttdata.academy.model.ProdutoModel;
+
 import com.nttdata.academy.service.ProdutoService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -20,7 +20,7 @@ public class DefaultProdutoService implements ProdutoService {
         this.produtoRepository = produtoRepository;
     }
 
-    public ProdutoModel adicionar(ProdutoModel produto){
+    public com.nttdata.academy.models.ProdutoModel adicionar(com.nttdata.academy.models.ProdutoModel produto){
 
         LOG.debug(produto);
 

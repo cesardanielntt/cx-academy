@@ -1,9 +1,9 @@
 package com.nttdata.academy.facade.impl;
 
-import com.nttdata.academy.dto.ClienteDTO;
+
 import com.nttdata.academy.dto.ProdutoDTO;
 import com.nttdata.academy.facade.ProdutoFacade;
-import com.nttdata.academy.model.ProdutoModel;
+
 import com.nttdata.academy.populator.ProdutoPopulator;
 import com.nttdata.academy.service.ProdutoService;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.logging.LogManager;
 
-@Service("clienteFacade")
+@Service("produtoFacade")
 public class DefaultProdutoFacade implements ProdutoFacade {
 
     private static final Logger LOG = LogManager.getLogger(DefaultProdutoFacade.class);
@@ -28,11 +28,11 @@ public class DefaultProdutoFacade implements ProdutoFacade {
 
         LOG.debug(produtoDTO);
 
-        ProdutoModel produto = produtoPopulator.populateProdutoModel(produtoDTO);
+        com.nttdata.academy.models.ProdutoModel produto = produtoPopulator.populateProdutoModel(produtoDTO);
 
-        cliente = clienteService.adicionar(cliente);
+       produto = produtoService.adicionar(produto);
 
-        ClienteDTO = clientePopulator.populateProdutoDto(produto);
+        ProdutoDTO = produtoPopulator.populateProdutoDto(produto);
 
         return produtoDTO;
     }

@@ -1,15 +1,9 @@
-package com.nttdata.academy.models;
+package com.nttdata.academy.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.io.Serializable;
 
-@Entity
-public class EnderecoModel {
+public class EnderecoDTO extends MessageDTO implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String cep;
     private String logradouro;
@@ -17,6 +11,13 @@ public class EnderecoModel {
     private String bairro;
     private String cidade;
     private String uf;
+
+    public EnderecoDTO() {
+    }
+
+    public EnderecoDTO(String message, int status) {
+        super(message, status);
+    }
 
     public Integer getId() {
         return id;
@@ -76,7 +77,7 @@ public class EnderecoModel {
 
     @Override
     public String toString() {
-        return "EnderecoModel{" +
+        return "EnderecoDTO{" +
                 "id=" + id +
                 ", cep='" + cep + '\'' +
                 ", logradouro='" + logradouro + '\'' +

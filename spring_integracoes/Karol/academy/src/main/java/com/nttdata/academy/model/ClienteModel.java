@@ -1,10 +1,6 @@
-package com.nttdata.academy.model;
+package com.nttdata.academy.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -12,14 +8,14 @@ public class ClienteModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Integer id;
+    private Integer id;
 
     private String cpf;
 
     private String nome;
 
-    @OneToMany
-    private List<EnderecoModel> enderecos;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<com.nttdata.academy.models.EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -43,6 +39,14 @@ public class ClienteModel {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public List<com.nttdata.academy.models.EnderecoModel> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<com.nttdata.academy.models.EnderecoModel> enderecos) {
+        this.enderecos = enderecos;
     }
 
     @Override

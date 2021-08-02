@@ -7,16 +7,7 @@ public class ProdutoDTO implements Serializable {
     private Integer id;
     private String sku;
     private String nome;
-    private Integer preco;
 
-
-    public Integer getPreco() {
-        return preco;
-    }
-
-    public void setPreco(String preco) {
-        this.preco = preco;
-    }
 
     public Integer getId() {
         return id;

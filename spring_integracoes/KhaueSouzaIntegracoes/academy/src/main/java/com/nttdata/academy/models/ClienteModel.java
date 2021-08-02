@@ -6,7 +6,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
+
 import java.util.List;
 
 @Entity
@@ -20,8 +21,19 @@ public class ClienteModel {
 
     private String nome;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany (fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<EnderecoModel> enderecos;
+
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<ItemModel> itens;
+
+    public List<ItemModel> getItens() {
+        return itens;
+    }
+
+    public void setItens(List<ItemModel> itens) {
+        this.itens = itens;
+    }
 
     public Integer getId() {
         return id;
@@ -62,6 +74,7 @@ public class ClienteModel {
                 ", cpf='" + cpf + '\'' +
                 ", nome='" + nome + '\'' +
                 ", enderecos=" + enderecos +
+                ", itens=" + itens +
                 '}';
     }
 }

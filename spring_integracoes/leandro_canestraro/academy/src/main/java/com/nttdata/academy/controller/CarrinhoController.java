@@ -6,12 +6,20 @@ import com.nttdata.academy.dto.PrecoDTO;
 import com.nttdata.academy.facade.CarrinhoFacade;
 import com.nttdata.academy.facade.PrecoFacade;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+
+/*
+
+Cart Controller is not finished. It is still lacking a delete mapping for cart deletion and a patch request to remove an
+item from the cart.
+
+Also, the client and product deletion still dont affect the cart items, but it should.
+
+
+ */
+
 
 @RestController
 @RequestMapping("/carrinho")
@@ -48,6 +56,14 @@ public class CarrinhoController {
         carrinho = carrinhoFacade.adicionar(carrinho);
 
         return ResponseEntity.ok().body(carrinho);
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getCarrinhosByCliente(@PathVariable Integer id) {
+
+
+        return ResponseEntity.ok().body(carrinhoFacade.getCarrinhoByCliente(id));
+
     }
 
 }

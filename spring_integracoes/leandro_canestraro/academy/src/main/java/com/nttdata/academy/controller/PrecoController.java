@@ -5,10 +5,7 @@ import com.nttdata.academy.dto.PrecoDTO;
 import com.nttdata.academy.facade.ClienteFacade;
 import com.nttdata.academy.facade.PrecoFacade;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -45,4 +42,12 @@ public class PrecoController {
 
         return ResponseEntity.ok().body(preco);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity getPrecoByCliente(@PathVariable(name = "id") Integer id) {
+
+        return ResponseEntity.ok().body(precoFacade.getPrecoByCliente(id));
+
+    }
+
 }

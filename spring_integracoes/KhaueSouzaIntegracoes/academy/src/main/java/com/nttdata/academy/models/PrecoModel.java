@@ -4,8 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Index;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Table(name = "PrecoModel", indexes = {
+        @Index(name = "idx_precomodel_cliente_id", columnList = "cliente_ID"),
+        @Index(name = "idx_precomodel_produto_id", columnList = "produto_ID")
+})
 @Entity
 public class PrecoModel {
 

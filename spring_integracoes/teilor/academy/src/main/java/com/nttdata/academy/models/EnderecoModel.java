@@ -1,40 +1,22 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "endereco")
 public class EnderecoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    @Column
     private String cep;
-
-    @Column
+    private String logradouro;
     private String numero;
-
-    @Column
     private String bairro;
-
-    @Column
     private String cidade;
-
-    @Column
     private String uf;
-
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private ClienteModel cliente;
 
     public Integer getId() {
         return id;
@@ -50,6 +32,14 @@ public class EnderecoModel {
 
     public void setCep(String cep) {
         this.cep = cep;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
     public String getNumero() {
@@ -84,11 +74,16 @@ public class EnderecoModel {
         this.uf = uf;
     }
 
-    public ClienteModel getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(ClienteModel cliente) {
-        this.cliente = cliente;
+    @Override
+    public String toString() {
+        return "EnderecoModel{" +
+                "id=" + id +
+                ", cep='" + cep + '\'' +
+                ", logradouro='" + logradouro + '\'' +
+                ", numero='" + numero + '\'' +
+                ", bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", uf='" + uf + '\'' +
+                '}';
     }
 }

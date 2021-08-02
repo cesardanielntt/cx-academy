@@ -1,9 +1,14 @@
 package com.nttdata.academy.facade;
 
 import com.nttdata.academy.dto.ClienteDTO;
+import org.springframework.http.ResponseEntity;
 
 public interface ClienteFacade {
 
-    void adicionar(ClienteDTO clienteDTO);
+    ResponseEntity adicionar(ClienteDTO cliente);
+
+    ResponseEntity consultar(Integer id);
+
+    ResponseEntity listar();
 
 }

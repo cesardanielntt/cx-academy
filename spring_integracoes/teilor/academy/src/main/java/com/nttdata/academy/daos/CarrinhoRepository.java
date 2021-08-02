@@ -1,4 +1,4 @@
-package com.nttdata.academy.dao;
+package com.nttdata.academy.daos;
 
 import com.nttdata.academy.models.CarrinhoModel;
 import org.springframework.data.jpa.repository.JpaRepository;

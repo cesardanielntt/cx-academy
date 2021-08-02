@@ -1,35 +1,21 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "preco")
 public class PrecoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private double valor;
+    private Double valor;
 
     @OneToOne
-    @JoinColumn(name = "cliente_id")
     private ClienteModel cliente;
 
     @OneToOne
-    @JoinColumn(name = "produto_id")
     private ProdutoModel produto;
-
-    @OneToOne(mappedBy = "preco")
-    private ItemModel item;
 
     public Integer getId() {
         return id;
@@ -39,11 +25,11 @@ public class PrecoModel {
         this.id = id;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 
@@ -63,11 +49,13 @@ public class PrecoModel {
         this.produto = produto;
     }
 
-    public ItemModel getItem() {
-        return item;
-    }
-
-    public void setItem(ItemModel item) {
-        this.item = item;
+    @Override
+    public String toString() {
+        return "Preco{" +
+                "id=" + id +
+                ", valor=" + valor +
+                ", cliente=" + cliente +
+                ", produto=" + produto +
+                '}';
     }
 }

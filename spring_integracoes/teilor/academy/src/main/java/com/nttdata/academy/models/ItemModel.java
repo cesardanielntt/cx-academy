@@ -1,40 +1,26 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
-@Table(name = "item")
 public class ItemModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
     private Integer quantidade;
 
-    @Column
     private Double total;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "produto_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ClienteModel cliente;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     private ProdutoModel produto;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "preco_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private PrecoModel preco;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cliente_id")
-    private ClienteModel cliente;
 
     public Integer getId() {
         return id;
@@ -60,6 +46,14 @@ public class ItemModel {
         this.total = total;
     }
 
+    public ClienteModel getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ClienteModel cliente) {
+        this.cliente = cliente;
+    }
+
     public ProdutoModel getProduto() {
         return produto;
     }
@@ -76,11 +70,15 @@ public class ItemModel {
         this.preco = preco;
     }
 
-    public ClienteModel getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(ClienteModel cliente) {
-        this.cliente = cliente;
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", quantidade=" + quantidade +
+                ", total=" + total +
+                ", cliente=" + cliente +
+                ", produto=" + produto +
+                ", preco=" + preco +
+                '}';
     }
 }

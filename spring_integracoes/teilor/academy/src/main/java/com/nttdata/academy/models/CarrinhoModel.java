@@ -1,33 +1,20 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-import java.sql.Timestamp;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "carrinho")
 public class CarrinhoModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private java.sql.Timestamp datahora;
+    private Double total;
 
-    @Column
-    private double total;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "cliente_id")
-    private ClienteModel cliente;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<ItemModel> items = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -35,14 +22,6 @@ public class CarrinhoModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Timestamp getDatahora() {
-        return datahora;
-    }
-
-    public void setDatahora(Timestamp datahora) {
-        this.datahora = datahora;
     }
 
     public Double getTotal() {
@@ -53,15 +32,20 @@ public class CarrinhoModel {
         this.total = total;
     }
 
-    public void setTotal(double total) {
-        this.total = total;
+    public List<ItemModel> getItems() {
+        return items;
     }
 
-    public ClienteModel getCliente() {
-        return cliente;
+    public void setItems(List<ItemModel> items) {
+        this.items = items;
     }
 
-    public void setCliente(ClienteModel cliente) {
-        this.cliente = cliente;
+    @Override
+    public String toString() {
+        return "Carrinho{" +
+                "id=" + id +
+                ", total=" + total +
+                ", items=" + items +
+                '}';
     }
 }

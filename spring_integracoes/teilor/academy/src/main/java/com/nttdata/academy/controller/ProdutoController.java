@@ -22,13 +22,10 @@ public class ProdutoController {
     private ProdutoFacade produtoFacade;
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-    public ResponseEntity adicionarProduto(@RequestBody ProdutoDTO produtoDTO){
+    public ResponseEntity adicionarProduto(@RequestBody ProdutoDTO produto){
+        LOG.debug(produto.toString());
+        return produtoFacade.adicionar(produto);
 
-        LOG.debug(produtoDTO.toString());
-
-        produtoFacade.adicionar(produtoDTO);
-
-        return ResponseEntity.ok().body(produtoDTO);
     }
 
 }

@@ -6,4 +6,8 @@ public interface ClienteService {
 
     ClienteModel adicionar(ClienteModel cliente);
 
+    ClienteModel consultar(Integer id);
+
+    ClienteModel listar();
+
 }

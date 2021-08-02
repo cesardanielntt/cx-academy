@@ -22,13 +22,24 @@ public class ClienteController {
     private ClienteFacade clienteFacade;
 
     @RequestMapping(value = "/adicionar", method = RequestMethod.POST)
-    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO clienteDTO){
+    public ResponseEntity adicionarCliente(@RequestBody ClienteDTO cliente){
+        LOG.debug(cliente.toString());
+        return clienteFacade.adicionar(cliente);
 
-        LOG.debug(clienteDTO.toString());
-
-        clienteFacade.adicionar(clienteDTO);
-
-        return ResponseEntity.ok().body(clienteDTO);
     }
+    
+    @RequestMapping(value = "/consultar", method = RequestMethod.POST)
+    public ResponseEntity consultarCliente(@RequestBody String str){
+        LOG.debug(str);
+        Integer id = Integer.parseInt(str);
+        return clienteFacade.consultar(id);
+    }
+
+    @RequestMapping(value = "/listar", method = RequestMethod.POST)
+    public ResponseEntity listarCliente(@RequestBody String str){
+        return clienteFacade.listar();
+    }
+
+
 
 }

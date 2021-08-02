@@ -1,41 +1,21 @@
 package com.nttdata.academy.models;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "cliente")
 public class ClienteModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column
-    private String nome;
-
-    @Column
     private String cpf;
 
-    @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<EnderecoModel> endereco;
+    private String nome;
 
-    @OneToOne(mappedBy = "cliente")
-    private CarrinhoModel carrinho;
-
-    @OneToOne(mappedBy = "cliente")
-    private PrecoModel preco;
-
-    @OneToOne(mappedBy = "cliente")
-    private ItemModel item;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<EnderecoModel> enderecos;
 
     public Integer getId() {
         return id;
@@ -43,14 +23,6 @@ public class ClienteModel {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
     }
 
     public String getCpf() {
@@ -61,35 +33,29 @@ public class ClienteModel {
         this.cpf = cpf;
     }
 
-    public List<EnderecoModel> getEndereco() {
-        return endereco;
+    public String getNome() {
+        return nome;
     }
 
-    public void setEndereco(List<EnderecoModel> endereco) {
-        this.endereco = endereco;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
-    public CarrinhoModel getCarrinho() {
-        return carrinho;
+    public List<EnderecoModel> getEnderecos() {
+        return enderecos;
     }
 
-    public void setCarrinho(CarrinhoModel carrinho) {
-        this.carrinho = carrinho;
+    public void setEnderecos(List<EnderecoModel> enderecos) {
+        this.enderecos = enderecos;
     }
 
-    public PrecoModel getPreco() {
-        return preco;
-    }
-
-    public void setPreco(PrecoModel preco) {
-        this.preco = preco;
-    }
-
-    public ItemModel getItem() {
-        return item;
-    }
-
-    public void setItem(ItemModel item) {
-        this.item = item;
+    @Override
+    public String toString() {
+        return "ClienteModel{" +
+                "id=" + id +
+                ", cpf='" + cpf + '\'' +
+                ", nome='" + nome + '\'' +
+                ", enderecos=" + enderecos +
+                '}';
     }
 }

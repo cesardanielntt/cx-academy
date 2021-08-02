@@ -1,6 +1,8 @@
 package com.nttdata.spring.cxacademy.data;
 
-import com.nttdata.spring.cxacademy.form.AdressForm;
+import com.nttdata.spring.cxacademy.form.AddressForm;
+
+import java.util.List;
 
 public class CustomerData {
 
@@ -8,7 +10,9 @@ public class CustomerData {
     private String name;
     private String sobrenome;
     private String email;
-    private AdressForm endereco;
+    private List<AddressData> enderecos;
+
+
 
     public Integer getCode() {
         return code;
@@ -34,12 +38,12 @@ public class CustomerData {
         this.email = email;
     }
 
-    public AdressForm getEndereco() {
-        return endereco;
+    public List<AddressData> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(AdressForm endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<AddressData> enderecos) {
+        this.enderecos = enderecos;
     }
 
     public void setCode(Integer code) {
@@ -54,4 +58,14 @@ public class CustomerData {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "CustomerData{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", email='" + email + '\'' +
+                ", enderecos=" + enderecos +
+                '}';
+    }
 }

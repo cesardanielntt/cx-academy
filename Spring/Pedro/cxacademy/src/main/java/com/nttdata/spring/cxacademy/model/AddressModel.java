@@ -1,25 +1,31 @@
-package com.nttdata.spring.cxacademy.form;
+package com.nttdata.spring.cxacademy.model;
 
-import com.nttdata.spring.cxacademy.model.CustomerModel;
+import javax.persistence.*;
 
-public class AdressForm {
+@Entity
+public class AddressModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int code;
+
+    @Column(nullable = false)
     private String rua;
+
+    @Column(nullable = false)
     private String numero;
-    private String complemento;
+
+    @Column(nullable = false)
     private String cep;
+
+    @Column(nullable = false)
     private String cidade;
+
+    @Column(nullable = false)
     private String estado;
-    private CustomerModel customer;
 
-    public CustomerModel getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(CustomerModel customer) {
-        this.customer = customer;
-    }
+    @Column
+    private String complemento;
 
     public int getCode() {
         return code;
@@ -45,14 +51,6 @@ public class AdressForm {
         this.numero = numero;
     }
 
-    public String getComplemento() {
-        return complemento;
-    }
-
-    public void setComplemento(String complemento) {
-        this.complemento = complemento;
-    }
-
     public String getCep() {
         return cep;
     }
@@ -76,4 +74,13 @@ public class AdressForm {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
+    }
+
 }

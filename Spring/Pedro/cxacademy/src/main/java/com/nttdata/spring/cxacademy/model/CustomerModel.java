@@ -1,6 +1,7 @@
 package com.nttdata.spring.cxacademy.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity(name = "Customer")
 public class CustomerModel {
@@ -17,6 +18,13 @@ public class CustomerModel {
 
     @Column(nullable = false)
     private String email;
+
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<AddressModel> enderecos;
+
+    public CustomerModel() {
+
+    }
 
     public int getCode() {
         return code;
@@ -48,5 +56,13 @@ public class CustomerModel {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<AddressModel> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<AddressModel> enderecos) {
+        this.enderecos = enderecos;
     }
 }

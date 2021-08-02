@@ -1,7 +1,6 @@
 package com.nttdata.spring.cxacademy.data;
 
-public class AdressData {
-    private int customerCode;
+public class AddressData {
     private int code;
     private String rua;
     private String numero;
@@ -10,20 +9,12 @@ public class AdressData {
     private String cidade;
     private String estado;
 
-    public void setCustomerCode(int customerCode) {
-        this.customerCode = customerCode;
-    }
-
     public int getCode() {
         return code;
     }
 
     public void setCode(int code) {
         this.code = code;
-    }
-
-    public int getCustomerCode() {
-        return customerCode;
     }
 
     public String getRua() {

@@ -74,7 +74,9 @@ public class ProductController {
 
     private ProductData convert(ProductForm form){
         ProductData data = new ProductData();
-        data.setCode(form.getCode());
+
+        if(form.getCode() == null){}
+        else data.setCode(form.getCode());
         data.setName(form.getName());
         data.setPrice(form.getPrice());
         data.setAvailableOnline(form.isAvailableOnline());

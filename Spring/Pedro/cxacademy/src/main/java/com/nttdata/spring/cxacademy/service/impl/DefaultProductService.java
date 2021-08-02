@@ -17,7 +17,7 @@ public class DefaultProductService implements ProductService {
 
     @Override
     public List<ProductModel> getAllProduts() {
-        return productDao.findAll();
+        return productDao.findByAvailableOnline(true);
     }
 /*
     @Override

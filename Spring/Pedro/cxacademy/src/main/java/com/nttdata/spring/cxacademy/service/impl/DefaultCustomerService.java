@@ -1,12 +1,8 @@
 package com.nttdata.spring.cxacademy.service.impl;
 
 import com.nttdata.spring.cxacademy.dao.CustomerDao;
-import com.nttdata.spring.cxacademy.dao.ProductDao;
-import com.nttdata.spring.cxacademy.model.AdressModel;
 import com.nttdata.spring.cxacademy.model.CustomerModel;
-import com.nttdata.spring.cxacademy.model.ProductModel;
 import com.nttdata.spring.cxacademy.service.CustomerService;
-import com.nttdata.spring.cxacademy.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,6 +17,7 @@ public class DefaultCustomerService implements CustomerService {
 
     @Override
     public List<CustomerModel> getAllCustomers() {
+
         return customerDao.findAll();
     }
 

@@ -8,8 +8,6 @@ public interface ProductService {
 
     List<ProductModel> getAllProduts();
 
-   // List<ProductModel> getAllEnabled();
-
     void saveProduct(ProductModel product);
 
     ProductModel getProductByCode(Integer productCode);

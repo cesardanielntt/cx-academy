@@ -1,6 +1,7 @@
 package com.nttdata.spring.cxacademy.form;
 
-import com.nttdata.spring.cxacademy.model.AdressModel;
+import java.util.ArrayList;
+import java.util.List;
 
 public class CustomerForm {
 
@@ -8,7 +9,13 @@ public class CustomerForm {
     private String name;
     private String sobrenome;
     private String email;
-    private AdressForm endereco;
+    private List<AddressForm> enderecos;
+
+    public CustomerForm() {
+        this.enderecos = new ArrayList<>();
+        AddressForm formVazio = new AddressForm();
+        enderecos.add(formVazio);
+    }
 
     public int getCode() {
         return code;
@@ -42,11 +49,22 @@ public class CustomerForm {
         this.email = email;
     }
 
-    public AdressForm getEndereco() {
-        return endereco;
+    public List<AddressForm> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(AdressForm endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<AddressForm> enderecos) {
+        this.enderecos = enderecos;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerForm{" +
+                "code=" + code +
+                ", name='" + name + '\'' +
+                ", sobrenome='" + sobrenome + '\'' +
+                ", email='" + email + '\'' +
+
+                '}';
     }
 }

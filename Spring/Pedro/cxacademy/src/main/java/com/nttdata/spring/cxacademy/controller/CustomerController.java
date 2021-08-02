@@ -1,16 +1,19 @@
 package com.nttdata.spring.cxacademy.controller;
 
-import com.nttdata.spring.cxacademy.data.AdressData;
+import com.nttdata.spring.cxacademy.data.AddressData;
 import com.nttdata.spring.cxacademy.data.CustomerData;
-import com.nttdata.spring.cxacademy.facade.AdressFacade;
 import com.nttdata.spring.cxacademy.facade.CustomerFacade;
-import com.nttdata.spring.cxacademy.form.AdressForm;
+import com.nttdata.spring.cxacademy.form.AddressForm;
 import com.nttdata.spring.cxacademy.form.CustomerForm;
+import com.nttdata.spring.cxacademy.model.AddressModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/customers")
@@ -18,32 +21,30 @@ public class CustomerController {
 
     @Autowired
     private CustomerFacade customerFacade;
-    @Autowired
-    private AdressFacade adressFacade;
 
     @GetMapping
     public String getCustomers(Model model){
         model.addAttribute("customers", customerFacade.getAllCustomers());
+
+        List<CustomerData> dados;
+
+        dados = customerFacade.getAllCustomers();
+
         return "customerPage";
     }
 
     @PostMapping("/create")
-    public String create(CustomerForm customerForm, AdressForm adressForm, RedirectAttributes redirectAttributes){
-        if(customerForm.getName().isEmpty()){
+    public String create(CustomerForm customerForm, RedirectAttributes redirectAttributes){
+        if(customerForm.getName().isEmpty()) {
             redirectAttributes.addFlashAttribute("error", "O nome do cliente é obrigatório!");
             return "redirect:/customers";
         }
-        //System.out.println("cliente cadastrado com sucesso!");
 
-        int idAdress = adressFacade.saveAdress(convertAdress(adressForm)); // inseriu o endereço na tabela
+        CustomerData customerData = convert(customerForm);
 
-        adressForm.setCode(idAdress); //atualiza code do endereço
+        customerFacade.save(customerData); // inseriu o customer o na tabela
 
-        customerForm.setEndereco(adressForm);
-
-      //  System.out.println("id do endereco do mano: " + customerForm.getEndereco().getCode());
-
-        customerFacade.saveCustomer(convert(customerForm));
+        System.out.println("cliente cadastrado com sucesso!");
 
         redirectAttributes.addFlashAttribute("sucess", "Cliente salvo com sucesso!");
 
@@ -70,10 +71,13 @@ public class CustomerController {
                 return "redirect:/customers";
             }
 
-            customerFacade.saveCustomer(convert(customerForm));
-            redirectAttributes.addFlashAttribute("sucess", "Cliente salvo com sucesso!");
+            CustomerData customerData = convert(customerForm);
 
-            return "redirect:/products";
+            customerFacade.save(customerData); // atualiza o customer o na tabela
+
+            redirectAttributes.addFlashAttribute("sucess", "Cliente atualizado com sucesso!");
+
+            return "redirect:/customers";
         }
 
         @PostMapping("/delete/{id}")
@@ -89,26 +93,33 @@ public class CustomerController {
 
     private CustomerData convert(CustomerForm form){
         CustomerData data = new CustomerData();
+
         data.setCode(form.getCode());
         data.setName(form.getName());
         data.setSobrenome(form.getSobrenome());
         data.setEmail(form.getEmail());
-        data.setEndereco(form.getEndereco());
 
-        return data;
-    }
+        List<AddressData> enderecos = new ArrayList<>();
+        List<AddressForm> enderecosF = new ArrayList<>();
 
-    private AdressData convertAdress(AdressForm form){
+        enderecosF = form.getEnderecos();
 
-        AdressData data = new AdressData();
+        for(AddressForm address: enderecosF){
 
-        data.setCode(form.getCode());
-        data.setRua(form.getRua());
-        data.setNumero(form.getNumero());
-        data.setComplemento(form.getComplemento());
-        data.setCep(form.getCep());
-        data.setEstado(form.getEstado());
-        data.setCidade(form.getCidade());
+            AddressData addressData = new AddressData();
+
+            addressData.setRua(address.getRua());
+            addressData.setNumero(address.getNumero());
+            addressData.setComplemento(address.getComplemento());
+            addressData.setCidade(address.getCidade());
+            addressData.setEstado(address.getEstado());
+            addressData.setCep(address.getCep());
+
+            enderecos.add(addressData);
+
+            data.setEnderecos(enderecos);
+
+        }
 
         return data;
     }

@@ -29,10 +29,10 @@
 </section>
 
 
-<section id="todocontainer">
+<section id="todocontainer" style="overflow-x: scroll">
     <div class="alert alert-danger" role="alert" th:text="${error}" th:if="${error}"></div>
     <div class="alert alert-primary" role="alert" th:text="${success}" th:if="${success}"></div>
-    <div class="row">
+    <div>
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <table class="table">
@@ -42,24 +42,28 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Sobrenome</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Endereço</th>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Complemento</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">CEP</th>
+                    <th scope="col">Número</th>
                     <th scope="col">EDIT</th>
                     <th scope="col">DELETE</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr th:each="customer : ${customers}">
-                    <th scope="row" th:text=${customer.code}></th>
+                   <th scope="row" th:text=${customer.code}></th>
                     <td th:text=${customer.name}></td>
                     <td th:text=${customer.sobrenome}></td>
                     <td th:text=${customer.email}></td>
-                    <td>
-                        <div class="form-group">
-                            <a class="btn btn-success btn-sm text-white"
-                               data-toggle="modal"
-                               data-target="#viewModal2">Adress</a>
-                        </div>
-                    </td>
+                    <td th:text=${customer.enderecos[0].rua}></td>
+                    <td th:text=${customer.enderecos[0].complemento}></td>
+                    <td th:text=${customer.enderecos[0].cidade}></td>
+                    <td th:text=${customer.enderecos[0].estado}></td>
+                    <td th:text=${customer.enderecos[0].cep}></td>
+                    <td th:text=${customer.enderecos[0].numero}></td>
                     <td>
                         <div class="form-group">
                             <a th:href="@{/customers/edit?code={id}(id=${customer.code})}" class="btn btn-success btn-sm text-white">EDIT</a>
@@ -73,12 +77,12 @@
                          </form>
                      </td>
                  </tr>
-                 </tbody>
-             </table>
-             <div class="d-flex justify-content-center">
-                 <a class="btn btn-success btn-lg text-white" data-toggle="modal" data-target="#viewModal">CREATE</a>
-             </div>
+            </table>
+            </tbody>
          </div>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-success btn-lg text-white" data-toggle="modal" data-target="#viewModal">CREATE</a>
+        </div>
          <div class="col-md-2"></div>
      </div>
      <!-- View Modal -->
@@ -110,32 +114,32 @@
 
                         <div class="form-group">
                             <label for="street">Street</label>
-                            <input type="text" class="form-control" name="rua" placeholder="Street">
+                            <input type="text" class="form-control" name="enderecos[0].rua" placeholder="Street">
                         </div>
 
                         <div class="form-group">
                             <label for="number">Number</label>
-                            <input type="text" class="form-control" name="numero" placeholder="Number">
+                            <input type="text" class="form-control" name="enderecos[0].numero" placeholder="Number">
                         </div>
 
                         <div class="form-group">
                             <label for="complement">Complement</label>
-                            <input type="text" class="form-control" name="complemento" placeholder="complement">
+                            <input type="text" class="form-control" name="enderecos[0].complemento" placeholder="complement">
                         </div>
 
                         <div class="form-group">
-                            <label for="cep">CEP</label>
-                            <input type="text" class="form-control" name="cep" placeholder="CEP">
+                            <label for="cep">Cep</label>
+                            <input type="text" class="form-control" name="enderecos[0].cep" placeholder="Cep">
                         </div>
 
                         <div class="form-group">
                             <label for="city">City</label>
-                            <input type="text" class="form-control" name="cidade" placeholder="City">
+                            <input type="text" class="form-control" name="enderecos[0].cidade" placeholder="City">
                         </div>
 
                         <div class="form-group">
                             <label for="state">State</label>
-                            <input type="text" class="form-control" name="estado" placeholder="State">
+                            <input type="text" class="form-control" name="enderecos[0].estado" placeholder="State">
                         </div>
 
                         <button type="submit" class="btn btn-primary">SAVE</button>
@@ -146,48 +150,6 @@
         </div>
     </div>
 
-    <div class="modal fade" id="viewModal2" tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel2">Endereço</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                  <!--  <table class="table">
-                        <thead>
-                        <tr>
-                            <th scope="col">Rua</th>
-                            <th scope="col">Número</th>
-                            <th scope="col">Complemento</th>
-                            <th scope="col">CEP</th>
-                            <th scope="col">Cidade</th>
-                            <th scope="col">Estado</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr th:each="customer : ${customers}">
-                            <th scope="row" th:text=${customer.endereco.rua}></th>
-                            <td th:text=${customer.endereco.numero}></td>
-                            <td th:text=${customer.endereco.complemento}></td>
-                            <td th:text=${customer.endereco.cep}></td>
-                            <td th:text=${customer.endereco.cidade}></td>
-                            <td th:text=${customer.endereco.estado}></td>
-                            <td>
-                                <div class="form-group">
-                                    <a class="btn btn-success btn-sm text-white"
-                                       data-toggle="modal"
-                                       data-target="#viewModal2">Adress</a>
-                                </div>
-                        </tr>
-                        </tbody>
-                    </table> !--> <p>Aqui vai ficar os dados do endereço</p>
-                </div>
-            </div>
-        </div>
-    </div>
 </section>
 
 
